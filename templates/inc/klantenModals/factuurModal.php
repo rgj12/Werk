@@ -30,11 +30,11 @@
 
                     <div class="form-group">
                         <label>product</label>
-                        <input type="text" class="form-control" name="telefoonnummer" id="product">
+                        <input type="text" class="form-control" name="product" id="product">
                     </div>
                     <div class="form-group">
                         <label>dienst</label>
-                        <input type="text" class="form-control" name="telefoonnummer" id="dienst">
+                        <input type="text" class="form-control" name="dienst" id="dienst">
                     </div>
 
 

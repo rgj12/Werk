@@ -2,3 +2,13 @@
 2. manier vinden om gegevens van specifieke klanten uit te printen en te mailen
 3.beginnen met facturatie systeem
 4.leer GIT en gooi bestanden erin
+
+
+
+GIT COMMANDS
+git remote set-url origin https://github.com/rgj12/Werk.git
+git remote add origin https://github.com/rgj12/Werk.git
+git push -u origin master
+git add
+git commit -m ""
+git status 

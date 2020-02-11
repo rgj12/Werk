@@ -37,9 +37,9 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Overzicht:</h6>
                 <a class="collapse-item" href="afspraak.php?overzichtafspraken">Afspraken</a>
-                <a class="collapse-item" href="templates/factuur-template.php?overzicht">Facturen</a>
-                <a class="collapse-item" href="templates/producten-template.php?overzicht">Producten</a>
-                <a class="collapse-item" href="templates/diensten-template.php?overzicht">Diensten</a>
+                <a class="collapse-item" href="templates/factuur.php?overzicht">Facturen</a>
+                <a class="collapse-item" href="templates/producten.php">Producten</a>
+                <a class="collapse-item" href="templates/diensten.php">Diensten</a>
             </div>
         </div>
     </li>
