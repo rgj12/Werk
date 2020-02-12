@@ -73,11 +73,11 @@ require_once 'inc/klantenModals/toevoegModal.php';
                                             <a href="#" title="Bekijk facturen" class="fas fa-file-invoice fa-lg"
                                                 style="color:black;"><sup class="fas fa-eye fa-sm"></a> |&nbsp;
 
-                                            <a href="#" id="<?= $klant->id; ?>" title="Bekijk afspraken"
+                                            <!-- <a href="#" id="<?= $klant->id; ?>" title="Bekijk afspraken"
                                                 data-toggle="modal" data-target="#bekijkAfspraak"
                                                 class="fa fa-calendar fa-lg bk_afspraak"
                                                 style="color:darkgoldenrod;"><sup class="fas fa-eye fa-sm"></a>
-                                            |&nbsp;
+                                            |&nbsp; -->
 
                                             <a class="fa fa-edit fa-lg editBtn" href="#" data-toggle="modal"
                                                 data-target="#editModal" id="<?= $klant->id ?>" title="Pas klant aan"
@@ -87,8 +87,8 @@ require_once 'inc/klantenModals/toevoegModal.php';
                                                 class="fa fa-trash fa-lg" style="color:red;"
                                                 onclick="return confirm('Weet je zeker dat je deze klant wilt verwijderen?')"></a>
                                             |&nbsp;
-                                            <a href="pdf.php?id=<?= $klant->id ?>" class="fa fa-file-pdf-o"
-                                                title="Exporteer afspraak gegevens"></a>
+                                            <a href="pdf.php?id=<?= $klant->id ?>" class="fa fa-file-pdf-o fa-lg"
+                                                title="Bekijk afspraak"></a>
 
                                         </td>
                                     </tr>
