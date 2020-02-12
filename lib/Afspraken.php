@@ -6,12 +6,16 @@ class Afspraken
     public function __construct()
     {
         $this->db = new Database();
-
     }
 
     public function getAllAppointments()
     {
-        $this->db->query("SELECT * FROM `afspraken` LEFT JOIN klanten on afspraken.klant_id = klanten.id WHERE afspraak_voltooid = false ORDER BY afspraken.id DESC");
+        $this->db->query("SELECT afspraken.id, afspraken.klant_id, afspraken.datum, afspraken.tijd,afspraken.omschrijving,afspraken.afspraak_voltooid,
+         klanten.voornaam,klanten.achternaam 
+         FROM afspraken 
+         INNER JOIN klanten 
+         ON afspraken.klant_id = klanten.id 
+         WHERE afspraak_voltooid = false");
 
         $results = $this->db->resultSet();
         return $results;
@@ -19,7 +23,7 @@ class Afspraken
 
     public function deleteAppointment($id)
     {
-        $this->db->query('DELETE FROM afspraken WHERE klant_id = :id');
+        $this->db->query('DELETE FROM afspraken WHERE id = :id');
         $this->db->bind(':id', $id);
 
         if ($this->db->execute()) {
@@ -40,5 +44,4 @@ class Afspraken
             return false;
         }
     }
-
 }

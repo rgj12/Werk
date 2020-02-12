@@ -38,7 +38,6 @@ if (isset($_GET['overzichtafspraken'])) {
     $template = new Template('templates/overzichtafspraken.php');
     $template->afspraken = $afspraken->getAllAppointments();
     echo $template;
-
 }
 //verwijder afspraak
 if (isset($_GET['del_id'])) {
