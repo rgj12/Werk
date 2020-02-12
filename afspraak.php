@@ -50,6 +50,7 @@ if (isset($_GET['del_id'])) {
     }
 }
 
+//zet een afspraak op voltooid
 if (isset($_GET['afspr_voltooid'])) {
     $id = $_GET['afspr_voltooid'];
 

@@ -86,6 +86,9 @@ require_once 'inc/klantenModals/toevoegModal.php';
                                             <a href="klanten.php?del_id=<?= $klant->id ?>" title="Verwijder klant"
                                                 class="fa fa-trash fa-lg" style="color:red;"
                                                 onclick="return confirm('Weet je zeker dat je deze klant wilt verwijderen?')"></a>
+                                            |&nbsp;
+                                            <a href="pdf.php?id=<?= $klant->id ?>" class="fa fa-file-pdf-o"
+                                                title="Exporteer afspraak gegevens"></a>
 
                                         </td>
                                     </tr>
