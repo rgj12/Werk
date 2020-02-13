@@ -20,7 +20,7 @@ $(document).ready(function() {
     });
   });
 
-  //edit form invullen
+  //edit form klanten invullen
   $(".editBtn").click(function(e) {
     e.preventDefault();
     id = $(this).attr("id");
@@ -38,6 +38,25 @@ $(document).ready(function() {
         $("#editemail").val(data.email);
         $("#edittelefoonnummer").val(data.telefoonnummer);
         $("#editwoonplaats").val(data.woonplaats);
+      }
+    });
+  });
+  //afspraak form in afspraak overzicht invullen
+  $(".edit_afspr_Btn").click(function(e) {
+    e.preventDefault();
+    id = $(this).attr("id");
+
+    $.ajax({
+      url: "edit.php",
+      method: "POST",
+      data: { edit_afspr_id: id },
+      success: function(response) {
+        data = JSON.parse(response);
+        console.log(data);
+        $("#id").val(data.id);
+        $("#datum").val(data.datum);
+        $("#tijd").val(data.tijd);
+        $("#omschrijving").val(data.omschrijving);
       }
     });
   });

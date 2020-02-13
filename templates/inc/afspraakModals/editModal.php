@@ -5,7 +5,7 @@
             <form action="edit.php" method="POST">
                 <input type="hidden" name="editid" id="editid">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Pas klant aan
+                    <h5 class="modal-title" id="exampleModalLabel">Pas Afspraak aan
                     </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -13,35 +13,27 @@
                 </div>
                 <div class="modal-body">
                     <input type="hidden" id="id" name="id">
+
                     <div class="form-group">
-                        <label>Voornaam</label>
-                        <input type="text" name="editvoornaam" id="editvoornaam" class="form-control">
+                        <label>Datum</label>
+                        <input type="date" class="form-control" id="datum" name="datum">
                     </div>
 
                     <div class="form-group">
-                        <label>Achternaam</label>
-                        <input type="text" class="form-control" name="editachternaam" id="editachternaam">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Email address</label>
-                        <input type="email" class="form-control" id="editemail" name="editemail">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Telefoon</label>
-                        <input type="text" class="form-control" name="edittelefoonnummer" id="edittelefoonnummer">
+                        <label>Tijd</label>
+                        <input type="time" class="form-control" name="tijd" id="tijd">
                     </div>
                     <div class="form-group">
-                        <label>Woonplaats</label>
-                        <input type="text" class="form-control" name="editwoonplaats" id="editwoonplaats">
+                        <label>Omschrijving</label>
+                        <textarea class="form-control" name="omschrijving" id="omschrijving" cols="30"
+                            rows="10"></textarea>
                     </div>
 
 
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluit af</button>
-                    <input type="submit" class="btn btn-primary" name="editKlant" value="Pas aan">
+                    <input type="submit" class="btn btn-primary" name="editAppointment" value="Pas aan">
                 </div>
             </form>
         </div>
