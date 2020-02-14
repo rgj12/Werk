@@ -2,8 +2,13 @@
 include_once 'config/init.php';
 require_once 'helpers/system_helper.php';
 
+$template = new Template('templates/overzichtafspraken.php');
 $klanten = new Klant;
 $afspraken = new Afspraken;
+$userChatInfo = new Chat;
+
+$template->navbarChatInfo = $userChatInfo->getMessage($_SESSION['id']);
+$template->aantalBerichten = $userChatInfo->getNumberOfMessages($_SESSION['id']);
 
 //klant gegevens ophalen en naar js versturen
 if (isset($_POST['af_id'])) {
@@ -21,7 +26,6 @@ if (isset($_POST['bk_afspraak_id'])) {
 
 //krijg overzicht van alle afspraken
 if (isset($_GET['overzichtafspraken'])) {
-    $template = new Template('templates/overzichtafspraken.php');
     $template->afspraken = $afspraken->getAllAppointments();
     echo $template;
 }
