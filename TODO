@@ -9,15 +9,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
 GIT COMMANDS
 git remote set-url origin https://github.com/rgj12/Werk.git
 git remote add origin https://github.com/rgj12/Werk.git
@@ -26,5 +17,5 @@ git add
 git commit -m ""
 git status 
 
-deze video bekijken:
+deze video bekijken voor livechat:
  (https://www.webslesson.info/2018/07/live-chat-system-in-php-using-ajax-jquery.html)
