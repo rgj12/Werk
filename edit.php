@@ -6,16 +6,29 @@ $klanten = new Klant;
 $afspraak = new Afspraken;
 //klant edit gegevens ophalen
 if (isset($_POST['edit_id'])) {
+
     $id = $_POST['edit_id'];
-    $klant = $klanten->getCustomerInfo($id);
-    echo json_encode($klant);
+
+    //check of het id numeriek is
+    if (!checkId($id)) {
+        redirect('klanten.php', 'Er is iets misgegaan', 'error');
+    } else {
+        $klant = $klanten->getCustomerInfo($id);
+        echo json_encode($klant);
+    }
 }
 
 //afspraak edit gegevens ophalen
 if (isset($_POST['edit_afspr_id'])) {
     $id = $_POST['edit_afspr_id'];
-    $appointment = $afspraak->getAppointmentInfo($id);
-    echo json_encode($appointment);
+
+    //check of het id numeriek is
+    if (!checkId($id)) {
+        redirect('klanten.php', 'Er is iets misgegaan', 'error');
+    } else {
+        $appointment = $afspraak->getAppointmentInfo($id);
+        echo json_encode($appointment);
+    }
 }
 
 //klant aanpassen
