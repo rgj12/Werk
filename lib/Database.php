@@ -13,7 +13,7 @@ class Database
 
     public function __construct()
     {
-//set dsn
+        //set dsn
         $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->dbname;
 
         $options = array(
@@ -25,12 +25,9 @@ class Database
         //PDO INSTANCE
         try {
             $this->dbh = new PDO($dsn, $this->user, $this->pass, $this->options);
-
         } catch (PDOException $e) {
             $this->error = $e->getMessage();
-
         }
-
     }
 
     public function query($query)
@@ -53,11 +50,9 @@ class Database
                     break;
                 default:
                     $type = PDO::PARAM_STR;
-
             }
         }
         $this->stmt->bindValue($param, $value, $type);
-
     }
 
     public function execute()
@@ -81,5 +76,4 @@ class Database
     {
         $this->stmt->rowCount();
     }
-
 }

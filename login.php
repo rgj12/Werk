@@ -19,6 +19,8 @@ if (isset($_POST['login'])) {
             $loggedUser = $login->userInfo($username, $password);
             foreach ($loggedUser as $logged) {
                 $_SESSION['username'] = $logged->username;
+                $_SESSION['profielfoto'] = $logged->profiel_foto;
+                $_SESSION['id'] = $logged->id;
                 $_SESSION['loggedIn'] = true;
             }
             header('Location:index.php');

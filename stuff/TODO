@@ -4,11 +4,6 @@
 
 
 
-
-
-
-
-
 GIT COMMANDS
 git remote set-url origin https://github.com/rgj12/Werk.git
 git remote add origin https://github.com/rgj12/Werk.git
