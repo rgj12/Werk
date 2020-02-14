@@ -3,7 +3,6 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <form action="edit.php" method="POST">
-                <input type="hidden" name="editid" id="editid">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Pas Afspraak aan
                     </h5>
@@ -12,7 +11,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <input type="hidden" id="id" name="id">
+                    <input type="hidden" id="id" name="editid">
 
                     <div class="form-group">
                         <label>Datum</label>

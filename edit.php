@@ -47,7 +47,7 @@ if (isset($_POST['editKlant'])) {
     if ($klanten->editCustomer($data)) {
         redirect('klanten.php', 'Succesvol aangepast', 'success');
     } else {
-        redirect('klanten.php', 'er is iets misgegaan', 'danger');
+        redirect('klanten.php', 'er is iets misgegaan', 'error');
     }
 }
 
@@ -60,9 +60,13 @@ if (isset($_POST['editAppointment'])) {
     $data['tijd'] = $_POST['tijd'];
     $data['omschrijving'] = $_POST['omschrijving'];
 
+    date_format(new DateTime($data['datum']), 'Y/m/d');
+    date("H:i:s", strtotime($data['tijd']));
+
+
     if ($afspraak->editAppointment($data)) {
         redirect('afspraak.php?overzichtafspraken', 'Succesvol aangepast', 'success');
     } else {
-        redirect('afspraak.php?overzichtafspraken', 'er is iets misgegaan', 'danger');
+        redirect('afspraak.php?overzichtafspraken', 'er is iets misgegaan', 'error');
     }
 }

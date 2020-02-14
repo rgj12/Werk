@@ -47,7 +47,7 @@ class Afspraken
 
     public function editAppointment($data)
     {
-        $this->db->query('UPDATE afspraken SET datum = :datum, tijd = :tijd, omschrijving = :omschrijving  WHERE klant_id = :id');
+        $this->db->query('UPDATE afspraken SET datum = :datum, tijd = :tijd, omschrijving = :omschrijving  WHERE id = :id');
 
         $this->db->bind(':id', $data['id']);
         $this->db->bind(':datum', $data['datum']);
