@@ -7,13 +7,17 @@ $afspraken = new Afspraken;
 
 //klant verwijderen
 if (isset($_GET['del_id'])) {
-
     $id = $_GET['del_id'];
-    if (is_numeric($id)) {
+
+    //check of het id numeriek is
+    if (!checkId($id)) {
+        redirect('klanten.php', 'Er is iets misgegaan', 'error');
+    } else {
+
         if ($klanten->deleteCustomer($id)) {
-            redirect('klanten.php', 'Succesvol verwijderd', 'success');
+            redirect('klanten.php', 'Succesvol verwijderd', 'error');
         } else {
-            redirect('klanten.php', 'Er is iets misgegaan', 'danger');
+            redirect('klanten.php', 'Er is iets misgegaan', 'error');
         }
     }
 }
@@ -22,9 +26,14 @@ if (isset($_GET['del_id'])) {
 if (isset($_GET['afspr_del_id'])) {
     $id = $_GET['afspr_del_id'];
 
-    if ($afspraken->deleteAppointment($id)) {
-        redirect('afspraak.php?overzichtafspraken', 'Afspraak verwijdert', 'success');
+    //check of het id numeriek is
+    if (!checkId($id)) {
+        redirect('klanten.php', 'Er is iets misgegaan', 'error');
     } else {
-        redirect('afspraak.php?overzichtafspraken', 'Er is iets misgegaan', 'error');
+        if ($afspraken->deleteAppointment($id)) {
+            redirect('afspraak.php?overzichtafspraken', 'Afspraak verwijdert', 'success');
+        } else {
+            redirect('afspraak.php?overzichtafspraken', 'Er is iets misgegaan', 'error');
+        }
     }
 }

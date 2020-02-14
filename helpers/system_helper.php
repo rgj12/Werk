@@ -15,7 +15,6 @@ function redirect($page = false, $message = null, $message_type = null)
         $_SESSION['message_type'] = $message_type;
     }
     header("location:" . $location);
-
 }
 
 function displayMessage()
@@ -26,19 +25,28 @@ function displayMessage()
         if (!empty($_SESSION['message_type'])) {
             $message_type = $_SESSION['message_type'];
 
-            if ($message == 'error') {
-                echo '<div class="alert alert-danger alert-dismissible fade show"> ' . $message . '</div>';
-
+            if ($message_type == 'error') {
+                echo '<div class="alert alert-danger alert-dismissible fade show text-center"><button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button> ' . $message . '</div>';
             } else {
                 echo '<div class="alert alert-success  alert-dismissible fade show text-center"><button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>' . $message . '</div>';
             }
-
         }
         unset($_SESSION['message']);
         unset($_SESSION['message_type']);
     } else {
         echo '';
+    }
+}
+
+function checkId($id)
+{
+    if (!is_numeric($id)) {
+        return false;
+    } else {
+        return true;
     }
 }
