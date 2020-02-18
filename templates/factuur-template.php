@@ -51,8 +51,8 @@ echo "<b>BTW nr:</b></br>";
 echo "<b>Factuurnummer:</b></br>";
 echo "<b>Klantnummer:</b></br>";
 echo "<b>Datum:</b></br>";
-echo "<b>Medewerker:</b></br>";
-?>
+// echo "<b>Medewerker:</b></br>";
+ ?>
             </div>
 
             <div class="bedragen">

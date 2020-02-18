@@ -7,6 +7,15 @@ class Factuur
     {
         $this->db = new Database;
     }
+
+    public function getAllInvoices()
+    {
+        $this->db->query("SELECT * FROM facturen");
+
+        $results = $this->db->resultSet();
+        return $results;
+    }
+
     public function makeInvoice($data)
     {
         $this->db->query(
@@ -29,4 +38,5 @@ class Factuur
             return false;
         }
     }
+
 }

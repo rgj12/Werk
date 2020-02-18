@@ -2,7 +2,7 @@
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <form action="#" method="post">
+            <form action="factuur.php" method="post">
                 <input type="hidden" name="id">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Maak factuur
@@ -29,12 +29,73 @@
                     </div>
 
                     <div class="form-group">
-                        <label>product</label>
-                        <input type="text" class="form-control" name="product" id="product">
+                        <label>product1</label>
+
+                        <select class="form-control producten" name="product1" id="product1">
+                            <option value="" selected hidden>Selecteer product</option>
+                            <?php foreach ($producten as $product): ?>
+
+                            <option value="<?=$product->productnaam;?> | <?=$product->prijs;?>">
+                                <?=$product->productnaam?></option>
+
+                            <?php endforeach;?>
+                        </select>
+
+
                     </div>
                     <div class="form-group">
-                        <label>dienst</label>
-                        <input type="text" class="form-control" name="dienst" id="dienst">
+                        <label>product2</label>
+
+                        <select class="form-control producten" name="product2" id="product2">
+                            <option value="" selected hidden>Selecteer product</option>
+                            <?php foreach ($producten as $product): ?>
+
+                            <option value="<?=$product->productnaam;?> | <?=$product->prijs;?>">
+                                <?=$product->productnaam?></option>
+
+                            <?php endforeach;?>
+                        </select>
+
+
+                    </div>
+
+                    <div class="form-group">
+                        <label>product3</label>
+                        <select class="form-control" name="product3" id="product3">
+                            <option value="" selected>Selecteer product</option>
+
+                            <option value="<?=$product->productnaam?>"><?=$product->productnaam;?></option>
+
+                            <input type="hidden" name="productprijs3" value="<?=$product->prijs;?>">
+                        </select>
+                    </div> -->
+
+                    <div class="form-group">
+                        <label>Dienst1</label>
+                        <select class="form-control" name="dienst1" id="dienst1">
+                            <option value="" selected>Selecteer dienst</option>
+                            <?php foreach ($diensten as $dienst): ?>
+                            <option value="<?=$dienst->dienstnaam?>"><?=$dienst->dienstnaam;?></option>
+                            <input type="hidden" name="dienstprijs1" value="<?=$dienst->dienstprijs;?>">
+                            <?php endforeach;?>
+                        </select>
+                        <label>Dienst2</label>
+                        <select class="form-control" name="dienst2" id="dienst2">
+                            <option value="" selected>Selecteer dienst</option>
+                            <?php foreach ($diensten as $dienst): ?>
+                            <option value="<?=$dienst->dienstnaam?>"><?=$dienst->dienstnaam;?></option>
+                            <input type="hidden" name="dienstprijs2" value="<?=$dienst->dienstprijs;?>">
+                            <?php endforeach;?>
+                        </select>
+                        <label>Dienst3</label>
+                        <select class="form-control" name="dienst3" id="dienst3">
+                            <option value="" selected>Selecteer dienst</option>
+                            <?php foreach ($diensten as $dienst): ?>
+                            <option value="<?=$dienst->dienstnaam?>"><?=$dienst->dienstnaam;?></option>
+                            <input type="hidden" name="dienstprijs3" value="<?=$dienst->dienstprijs;?>">
+                            <?php endforeach;?>
+                        </select>
+
                     </div>
 
 

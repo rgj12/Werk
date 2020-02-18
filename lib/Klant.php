@@ -11,7 +11,7 @@ class Klant
 
     public function getAllCustomers()
     {
-        $this->db->query("SELECT * FROM klanten ORDER BY voornaam DESC");
+        $this->db->query("SELECT * FROM klanten");
 
         $results = $this->db->resultSet();
         return $results;
