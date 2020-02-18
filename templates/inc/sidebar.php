@@ -38,7 +38,7 @@
                 <h6 class="collapse-header">Overzicht:</h6>
                 <a class="collapse-item" href="afspraak.php?overzichtafspraken">Afspraken</a>
                 <a class="collapse-item" href="templates/factuur.php?overzicht">Facturen</a>
-                <a class="collapse-item" href="templates/producten.php">Producten</a>
+                <a class="collapse-item" href="products.php">Producten</a>
                 <a class="collapse-item" href="templates/diensten.php">Diensten</a>
             </div>
         </div>
