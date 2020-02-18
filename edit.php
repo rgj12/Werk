@@ -4,6 +4,7 @@ require_once 'helpers/system_helper.php';
 
 $klanten = new Klant;
 $afspraak = new Afspraken;
+
 //klant edit gegevens ophalen
 if (isset($_POST['edit_id'])) {
 
@@ -62,7 +63,6 @@ if (isset($_POST['editAppointment'])) {
 
     date_format(new DateTime($data['datum']), 'Y/m/d');
     date("H:i:s", strtotime($data['tijd']));
-
 
     if ($afspraak->editAppointment($data)) {
         redirect('afspraak.php?overzichtafspraken', 'Succesvol aangepast', 'success');
