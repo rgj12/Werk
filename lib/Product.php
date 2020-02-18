@@ -20,7 +20,7 @@ class Product
     public function addProduct($data)
     {
         $this->db->query(
-            "INSERT INTO klanten (productnaam, prijs)
+            "INSERT INTO producten (productnaam, prijs)
             VALUES (:pnaam, :pprijs)"
         );
 

@@ -106,4 +106,44 @@ $(document).ready(function() {
       }
     });
   });
+
+  //edit form producten invullen
+  $(".edit_product_Btn").click(function(e) {
+    e.preventDefault();
+
+    id = $(this).attr("id");
+
+    $.ajax({
+      url: "edit.php",
+      method: "POST",
+      data: { edit_product_id: id },
+      success: function(response) {
+        data = JSON.parse(response);
+        console.log(data);
+        $("#editid").val(data.id);
+        $("#editproductnaam").val(data.productnaam);
+        $("#editprijs").val(data.prijs);
+      }
+    });
+  });
+
+  //edit form diensten invullen
+  $(".edit_dienst_Btn").click(function(e) {
+    e.preventDefault();
+
+    id = $(this).attr("id");
+
+    $.ajax({
+      url: "edit.php",
+      method: "POST",
+      data: { edit_dienst_id: id },
+      success: function(response) {
+        data = JSON.parse(response);
+        console.log(data);
+        $("#editid").val(data.id);
+        $("#editdienstnaam").val(data.dienstnaam);
+        $("#editdienstprijs").val(data.dienstprijs);
+      }
+    });
+  });
 });
