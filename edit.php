@@ -4,6 +4,9 @@ require_once 'helpers/system_helper.php';
 
 $klanten = new Klant;
 $afspraak = new Afspraken;
+$producten = new Product;
+$diensten = new Dienst;
+
 //klant edit gegevens ophalen
 if (isset($_POST['edit_id'])) {
 
@@ -28,6 +31,34 @@ if (isset($_POST['edit_afspr_id'])) {
     } else {
         $appointment = $afspraak->getAppointmentInfo($id);
         echo json_encode($appointment);
+    }
+}
+
+// product edit gegevens ophalen
+if (isset($_POST['edit_product_id'])) {
+
+    $id = $_POST['edit_product_id'];
+
+    //check of het id numeriek is
+    if (!checkId($id)) {
+        redirect('products.php', 'Er is iets misgegaan', 'error');
+    } else {
+        $product = $producten->getProductInfo($id);
+        echo json_encode($product);
+    }
+}
+
+// dienst edit gegevens ophalen
+if (isset($_POST['edit_dienst_id'])) {
+
+    $id = $_POST['edit_dienst_id'];
+
+    //check of het id numeriek is
+    if (!checkId($id)) {
+        redirect('diensten.php', 'Er is iets misgegaan', 'error');
+    } else {
+        $dienst = $diensten->getDienstInfo($id);
+        echo json_encode($dienst);
     }
 }
 
@@ -68,5 +99,35 @@ if (isset($_POST['editAppointment'])) {
         redirect('afspraak.php?overzichtafspraken', 'Succesvol aangepast', 'success');
     } else {
         redirect('afspraak.php?overzichtafspraken', 'er is iets misgegaan', 'error');
+    }
+}
+
+// edit product
+if (isset($_POST['editProduct'])) {
+
+    $data = array();
+    $data['id'] = $_POST['editid'];
+    $data['pnaam'] = $_POST['editproductnaam'];
+    $data['pprijs'] = $_POST['editprijs'];
+
+    if ($producten->editProduct($data)) {
+        redirect('products.php', 'Succesvol aangepast', 'success');
+    } else {
+        redirect('products.php', 'er is iets misgegaan', 'error');
+    }
+}
+
+// edit dienst
+if (isset($_POST['editDienst'])) {
+
+    $data = array();
+    $data['id'] = $_POST['editid'];
+    $data['dnaam'] = $_POST['editdienstnaam'];
+    $data['dprijs'] = $_POST['editdienstprijs'];
+
+    if ($diensten->editDienst($data)) {
+        redirect('diensten.php', 'Succesvol aangepast', 'success');
+    } else {
+        redirect('diensten.php', 'er is iets misgegaan', 'error');
     }
 }

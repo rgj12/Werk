@@ -4,6 +4,8 @@ require_once 'helpers/system_helper.php';
 
 $klanten = new Klant;
 $afspraken = new Afspraken;
+$producten = new Product;
+$diensten = new Dienst;
 
 //klanten toevoegen
 if (isset($_POST['toevoegen'])) {
@@ -50,5 +52,43 @@ if (isset($_POST['maakAfspraak'])) {
         redirect('klanten.php', 'afspraak aangemaakt', 'success');
     } else {
         redirect('klanten.php', 'er is iets misgegaan', 'error');
+    }
+}
+
+// product toevoegen 
+if (isset($_POST['maakProduct'])) {
+    $data = array();
+
+    if (!empty($_POST['productnaam']) || !empty($_POST['prijs'])) {
+
+        $data['pnaam'] = trim(htmlspecialchars($_POST['productnaam']));
+        $data['pprijs'] = $_POST['prijs'];
+
+        if ($producten->addProduct($data)) {
+            redirect('products.php', 'Succesvol toegevoegd', 'success');
+        } else {
+            redirect('products.php', 'Er is iets misgegaan', 'error');
+        }
+    } else {
+        redirect('products.php', 'Vul alle velden in!', 'error');
+    }
+}
+
+// dienst toevoegen 
+if (isset($_POST['maakDienst'])) {
+    $data = array();
+
+    if (!empty($_POST['dienstnaam']) || !empty($_POST['dienstprijs'])) {
+
+        $data['dnaam'] = trim(htmlspecialchars($_POST['dienstnaam']));
+        $data['dprijs'] = $_POST['dienstprijs'];
+
+        if ($diensten->addDienst($data)) {
+            redirect('diensten.php', 'Succesvol toegevoegd', 'success');
+        } else {
+            redirect('diensten.php', 'Er is iets misgegaan', 'error');
+        }
+    } else {
+        redirect('diensten.php', 'Vul alle velden in!', 'error');
     }
 }

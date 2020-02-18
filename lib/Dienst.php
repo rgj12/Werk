@@ -16,4 +16,58 @@ class Dienst
         $results = $this->db->resultSet();
         return $results;
     }
+
+    public function addDienst($data)
+    {
+        $this->db->query(
+            "INSERT INTO diensten (dienstnaam, dienstprijs)
+            VALUES (:dnaam, :dprijs)"
+        );
+
+        //bind data
+        $this->db->bind(':dnaam', $data['dnaam']);
+        $this->db->bind(':dprijs', $data['dprijs']);
+
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function deleteDienst($id)
+    {
+        $this->db->query('DELETE FROM diensten WHERE id = :id');
+        $this->db->bind(':id', $id);
+
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function getDienstInfo($id)
+    {
+        $this->db->query("SELECT * FROM diensten WHERE id = :id");
+        $this->db->bind(':id', $id);
+
+        $info = $this->db->single();
+        return $info;
+    }
+
+    public function editDienst($data)
+    {
+        $this->db->query('UPDATE diensten SET dienstnaam = :dnaam, dienstprijs = :dprijs WHERE id = :id');
+
+        $this->db->bind(':id', $data['id']);
+        $this->db->bind(':dnaam', $data['dnaam']);
+        $this->db->bind(':dprijs', $data['dprijs']);
+
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

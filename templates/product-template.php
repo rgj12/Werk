@@ -48,14 +48,14 @@ require_once 'inc/productModals/toevoegModal.php';
                                     <?php foreach ($producten as $product) : ?>
                                     <tr>
                                         <td><?= $product->productnaam;  ?></td>
-                                        <td><?= $product->prijs; ?></td>
+                                        <td>€<?= $product->prijs; ?></td>
                                         <td>
-                                            <a class="fa fa-edit fa-lg editBtn" href="#" data-toggle="modal"
+                                            <a class="fa fa-edit fa-lg edit_product_Btn" href="#" data-toggle="modal"
                                                 data-target="#editModal" id="<?= $product->id ?>"
                                                 title="Pas product aan" style="color:orange;">
                                             </a> |&nbsp;
-                                            <a href="delete.php?del_id=<?= $product->id ?>" title="Verwijder product"
-                                                class="fa fa-trash fa-lg" style="color:red;"
+                                            <a href="delete.php?product_del_id=<?= $product->id ?>"
+                                                title="Verwijder product" class="fa fa-trash fa-lg" style="color:red;"
                                                 onclick="return confirm('Weet je zeker dat je deze product wilt verwijderen?')"></a>
                                         </td>
                                     </tr>
@@ -65,8 +65,6 @@ require_once 'inc/productModals/toevoegModal.php';
                                     <?php
                                     /* Modal voor editen */
                                     include 'inc/productModals/editModal.php';
-                                    /* Modal voor voor afspraak maken */
-                                    include 'inc/klantenModals/afspraakModal.php';
                                     ?>
                                 </tbody>
                             </table>

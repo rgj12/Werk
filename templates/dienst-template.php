@@ -1,6 +1,6 @@
 <?php
 include 'inc/header.php';
-require_once 'inc/klantenModals/toevoegModal.php';
+require_once 'inc/dienstModals/toevoegModal.php';
 
 ?>
 
@@ -25,13 +25,13 @@ require_once 'inc/klantenModals/toevoegModal.php';
             <div class="container-fluid">
                 <?php displayMessage(); ?>
                 <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">Klanten</h1>
-                <p class="mb-4">Overzicht klanten</p>
+                <h1 class="h3 mb-2 text-gray-800">Diensten</h1>
+                <p class="mb-4">Overzicht diensten</p>
 
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
                         <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal"><i
-                                class="fa fa-plus" aria-hidden="true"> Voeg klant toe </i></button>
+                                class="fa fa-plus" aria-hidden="true"> Voeg dienst toe </i></button>
                         <!-- <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6> -->
                     </div>
                     <div class="card-body">
@@ -48,25 +48,23 @@ require_once 'inc/klantenModals/toevoegModal.php';
                                     <?php foreach ($diensten as $dienst) : ?>
                                     <tr>
                                         <td><?= $dienst->dienstnaam;  ?></td>
-                                        <td><?= $dienst->dienstprijs; ?></td>
+                                        <td>€<?= $dienst->dienstprijs; ?></td>
                                         <td>
-                                            <a class="fa fa-edit fa-lg editBtn" href="#" data-toggle="modal"
-                                                data-target="#editModal" id="<?= $klant->id ?>" title="Pas klant aan"
+                                            <a class="fa fa-edit fa-lg edit_dienst_Btn" href="#" data-toggle="modal"
+                                                data-target="#editModal" id="<?= $dienst->id ?>" title="Pas dienst aan"
                                                 style="color:orange;">
                                             </a> |&nbsp;
-                                            <a href="delete.php?del_id=<?= $klant->id ?>" title="Verwijder klant"
-                                                class="fa fa-trash fa-lg" style="color:red;"
+                                            <a href="delete.php?dienst_del_id=<?= $dienst->id ?>"
+                                                title="Verwijder klant" class="fa fa-trash fa-lg" style="color:red;"
                                                 onclick="return confirm('Weet je zeker dat je deze klant wilt verwijderen?')"></a>
                                         </td>
                                     </tr>
 
                                     <?php endforeach; ?>
                                     <!-- Modals-->
-                                    <?php include 'inc/klantenModals/factuurModal.php';
+                                    <?php
                                     /* Modal voor editen */
-                                    include 'inc/klantenModals/editModal.php';
-                                    /* Modal voor voor afspraak maken */
-                                    include 'inc/klantenModals/afspraakModal.php';
+                                    include 'inc/dienstModals/editModal.php';
                                     ?>
                                 </tbody>
                             </table>
