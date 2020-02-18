@@ -39,7 +39,7 @@
                 <a class="collapse-item" href="afspraak.php?overzichtafspraken">Afspraken</a>
                 <a class="collapse-item" href="templates/factuur.php?overzicht">Facturen</a>
                 <a class="collapse-item" href="products.php">Producten</a>
-                <a class="collapse-item" href="templates/diensten.php">Diensten</a>
+                <a class="collapse-item" href="diensten.php">Diensten</a>
             </div>
         </div>
     </li>

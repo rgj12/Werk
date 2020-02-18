@@ -1,6 +1,6 @@
 <?php
 include 'inc/header.php';
-require_once 'inc/productModals/toevoegModal.php';
+require_once 'inc/klantenModals/toevoegModal.php';
 
 ?>
 
@@ -25,13 +25,13 @@ require_once 'inc/productModals/toevoegModal.php';
             <div class="container-fluid">
                 <?php displayMessage(); ?>
                 <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">Producten</h1>
-                <p class="mb-4">Overzicht producten</p>
+                <h1 class="h3 mb-2 text-gray-800">Klanten</h1>
+                <p class="mb-4">Overzicht klanten</p>
 
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
                         <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal"><i
-                                class="fa fa-plus" aria-hidden="true"> Voeg product toe </i></button>
+                                class="fa fa-plus" aria-hidden="true"> Voeg klant toe </i></button>
                         <!-- <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6> -->
                     </div>
                     <div class="card-body">
@@ -39,32 +39,32 @@ require_once 'inc/productModals/toevoegModal.php';
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                     <tr>
-                                        <th>Product</th>
+                                        <th>Diensten</th>
                                         <th>Prijs</th>
                                         <th>Actie</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($producten as $product) : ?>
+                                    <?php foreach ($diensten as $dienst) : ?>
                                     <tr>
-                                        <td><?= $product->productnaam;  ?></td>
-                                        <td><?= $product->prijs; ?></td>
+                                        <td><?= $dienst->dienstnaam;  ?></td>
+                                        <td><?= $dienst->dienstprijs; ?></td>
                                         <td>
                                             <a class="fa fa-edit fa-lg editBtn" href="#" data-toggle="modal"
-                                                data-target="#editModal" id="<?= $product->id ?>"
-                                                title="Pas product aan" style="color:orange;">
+                                                data-target="#editModal" id="<?= $klant->id ?>" title="Pas klant aan"
+                                                style="color:orange;">
                                             </a> |&nbsp;
-                                            <a href="delete.php?del_id=<?= $product->id ?>" title="Verwijder product"
+                                            <a href="delete.php?del_id=<?= $klant->id ?>" title="Verwijder klant"
                                                 class="fa fa-trash fa-lg" style="color:red;"
-                                                onclick="return confirm('Weet je zeker dat je deze product wilt verwijderen?')"></a>
+                                                onclick="return confirm('Weet je zeker dat je deze klant wilt verwijderen?')"></a>
                                         </td>
                                     </tr>
 
                                     <?php endforeach; ?>
                                     <!-- Modals-->
-                                    <?php
+                                    <?php include 'inc/klantenModals/factuurModal.php';
                                     /* Modal voor editen */
-                                    include 'inc/productModals/editModal.php';
+                                    include 'inc/klantenModals/editModal.php';
                                     /* Modal voor voor afspraak maken */
                                     include 'inc/klantenModals/afspraakModal.php';
                                     ?>
