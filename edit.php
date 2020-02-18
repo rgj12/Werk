@@ -4,11 +4,8 @@ require_once 'helpers/system_helper.php';
 
 $klanten = new Klant;
 $afspraak = new Afspraken;
-<<<<<<< HEAD
-=======
 $producten = new Product;
 $diensten = new Dienst;
->>>>>>> 7f83d0a1293ab776ad6385ce5a19de56e864352d
 
 //klant edit gegevens ophalen
 if (isset($_POST['edit_id'])) {
