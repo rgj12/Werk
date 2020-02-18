@@ -79,7 +79,7 @@ $(document).ready(function() {
     });
   });
 
-  //afspraken vcan klant ophalen
+  //afspraken van klant ophalen
   $(".bk_afspraak").click(function(e) {
     e.preventDefault();
     id = $(this).attr("id");
@@ -103,7 +103,6 @@ $(document).ready(function() {
                 "</b></div>"
             );
         }
-        // $("#af_tijd").val(data.tijd);
       }
     });
   });
