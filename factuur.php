@@ -22,9 +22,41 @@ if (isset($_GET['overzicht'])) {
 }
 
 if (isset($_POST['maakFactuur'])) {
+    $data = array();
+    $data["k_id"] = $_POST["id"];
+    $data["vnaam"] = $_POST["voornaam"];
+    $data["anaam"] = $_POST["achternaam"];
 
-    preg_match_all('!\d+!', $_POST['product1'], $product1);
-    preg_match_all('!\d+!', $_POST['product2'], $product2);
-    var_dump($product1[0]);
-    var_dump($product2[0]);
+    $data["pp1"] = explode("|", $_POST["product1"]);
+    $data["pp2"] = explode("|", $_POST["product2"]);
+    $data["pp3"] = explode("|", $_POST["product3"]);
+
+    $data["dp1"] = explode("|", $_POST["dienst1"]);
+    $data["dp2"] = explode("|", $_POST["dienst2"]);
+    $data["dp3"] = explode("|", $_POST["dienst3"]);
+//gebruik explode om ook de namen te krijgen
+    //wat hieronder gecomment is is misschien niet eens nodig
+    // $data["prod1"] = $_POST["product1"];
+    // $data["prod2"] = $_POST["product2"];
+    // $data["prod3"] = $_POST["product3"];
+
+    // $data["dienst1"] = $_POST["dienst1"];
+    // $data["dienst2"] = $_POST["dienst2"];
+    // $data["dienst3"] = $_POST["dienst3"];
+
+    $data["btoptie"] = $_POST["betaalOpties"];
+
+    $data["datum"] = date("d/m/Y");
+    $data["totaal"] = number_format((float) $data["pp1"][1] + $data["pp2"][1] + $data["pp3"][1] + $data["dp1"][1] + $data["dp2"][1] + $data["dp3"][1], 2, '.', '');
+
+    $data["totaalexBtw"] = number_format((float) $facturen->VAT($data), 2, '.', '');
+    $data["totaalBTW"] = $data["totaal"] - $data["totaalexBtw"];
+    // echo ($data["totaal"]);
+
+    if ($facturen->makeInvoice($data)) {
+        redirect("klanten.php", "factuur aangemaakt", "success");
+    } else {
+        redirect("klanten.php", "Er is iets misgegaan", "error");
+    }
+
 }
