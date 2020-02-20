@@ -1,0 +1,46 @@
+.container-chatbox {
+  display: none;
+  width: 15vw;
+  height: 40vh;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  background-color: white;
+  /* padding: 1%; */
+}
+
+.chatbox-header {
+  background-color: #4e73df;
+  display: flex;
+  justify-content: space-between;
+  padding: 2% 3%;
+  color: #dfdfdf;
+}
+
+.chatbox-header img {
+  width: auto;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.chatbox-header h4 {
+  text-align: center;
+  margin: 2% 0 0 2%;
+}
+
+.chatbox-content {
+  padding: 3%;
+}
+
+.chatbox-bericht {
+  background-color: #858796;
+  position: fixed;
+  bottom: 0;
+  padding: 0.3%;
+  /* width: 60%; */
+}
+
+.close {
+  cursor: pointer;
+}
