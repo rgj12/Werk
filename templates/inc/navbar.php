@@ -114,7 +114,7 @@
                     Message Center
                 </h6>
                 <?php foreach ($navbarChatInfo as $chatInfo) : ?>
-                <a class="dropdown-item d-flex align-items-center" href="#">
+                <a class="dropdown-item d-flex align-items-center" href="#" id="openchat">
                     <div class="dropdown-list-image mr-3">
                         <?php if ($chatInfo->profiel_foto == '') {
                                 $chatInfo->profiel_foto = 'users/profielfoto/Default-Profile.png';
@@ -171,3 +171,29 @@
     </ul>
 
 </nav>
+
+<!-- Chatbox -->
+<div class="container-chatbox" id="chatbox">
+    <div class="chatbox-header">
+        <img src="users/profielfoto/Default-Profile.png" alt="png">
+        <h4><?= "name" ?></h4>
+        <span class="close">&times;</span>
+    </div>
+    <div class="chatbox-content">
+        <?php foreach ($navbarChatInfo as $chatInfo) : ?>
+        <?= $chatInfo->chat_message; ?>
+        <?php endforeach; ?>
+    </div>
+    <div class="chatbox-bericht">
+        <form action="">
+            <div class="form-row">
+                <div class="col-9">
+                    <input type="text" name="bericht" id="bericht" class="form-control">
+                </div>
+                <div class="col">
+                    <input type="submit" class="btn btn-primary" value="&#xf1d8">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -39,7 +39,7 @@
  <script src="templates/js/data/datatables.js"></script>
  <script src="templates/js/request.js"></script>
 
-
+ <script src="templates/js/chatbox.js"></script>
  </body>
 
  </html>

@@ -27,6 +27,8 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] == false) {
     <link href="templates/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <link rel="stylesheet" href="templates/css/chatbox.css" type="text/css">
+
 
 </head>
 
