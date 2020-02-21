@@ -63,8 +63,9 @@ require_once 'inc/klantenModals/toevoegModal.php';
                                                 data-toggle="modal" data-target="#afspraakModal"
                                                 id="<?= $klant->id ?>"><sup class="fa fa-plus fa-sm"></sup></a>
                                             |&nbsp;
-                                            <a href="#" title="Maak factuur" class="fas fa-file-invoice fa-lg factBtn"
-                                                style="color:green;" id="<?= $klant->id; ?>" data-toggle="modal"
+                                            <a href="#" title="Maak factuur"
+                                                class="fas fa-file-invoice fa-lg factBtn prijsBtn" style="color:green;"
+                                                id="<?= $klant->id; ?>" data-toggle="modal"
                                                 data-target="#factuurModal"><sup class="fa fa-plus fa-sm"></sup></a>
                                             |&nbsp;
 

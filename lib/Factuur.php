@@ -24,17 +24,18 @@ class Factuur
             totaalIncBtw,totaalExBtw,datum,betaalOpties)
             VALUES (:vnaam,:anaam,:knummer,:p1,:p2,:p3,:d1,:d2,:d3,:pp1,:pp2,:pp3,:dp1,:dp2,:dp3,:totaalInc,:totaalExBtw,:datum,:btoptie)"
         );
+        // return $data['pp2'][1];
 
         //bind data
         $this->db->bind(':vnaam', $data['vnaam']);
         $this->db->bind(':anaam', $data['anaam']);
         $this->db->bind(':knummer', $data['k_id']);
-        $this->db->bind(':p1', $data['prod1'][0]);
-        $this->db->bind(':p2', $data['prod2'][0]);
-        $this->db->bind(':p3', $data['prod3'][0]);
-        $this->db->bind(':d1', $data['dienst1'][0]);
-        $this->db->bind(':d2', $data['dienst2'][0]);
-        $this->db->bind(':d3', $data['dienst3'][0]);
+        $this->db->bind(':p1', $data['pp1'][0]);
+        $this->db->bind(':p2', $data['pp2'][0]);
+        $this->db->bind(':p3', $data['pp3'][0]);
+        $this->db->bind(':d1', $data['dp1'][0]);
+        $this->db->bind(':d2', $data['dp2'][0]);
+        $this->db->bind(':d3', $data['dp3'][0]);
         $this->db->bind(':pp1', $data['pp1'][1]);
         $this->db->bind(':pp2', $data['pp2'][1]);
         $this->db->bind(':pp3', $data['pp3'][1]);
@@ -60,5 +61,4 @@ class Factuur
 
         return $totaalprijsExBtw;
     }
-
 }

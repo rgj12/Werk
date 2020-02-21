@@ -146,4 +146,29 @@ $(document).ready(function() {
       }
     });
   });
+
+  //prijs versturen naar index
+  $(".prijsBtn").click(function(e) {
+    e.preventDefault();
+    productprijs1 = $("#productprijs1").val();
+    productprijs2 = $("#productprijs2").val();
+    productprijs3 = $("#productprijs3").val();
+
+    console.log(productprijs1);
+    console.log(productprijs2);
+    console.log(productprijs3);
+
+    // $.ajax({
+    //   url: "edit.php",
+    //   method: "POST",
+    //   data: { edit_dienst_id: id },
+    //   success: function(response) {
+    //     data = JSON.parse(response);
+    //     console.log(data);
+    //     $("#editid").val(data.id);
+    //     $("#editdienstnaam").val(data.dienstnaam);
+    //     $("#editdienstprijs").val(data.dienstprijs);
+    //   }
+    // });
+  });
 });

@@ -28,35 +28,37 @@
                         <input type="email" class="form-control" id="email" name="email" disabled>
                     </div> -->
 
+
                     <div class="form-group">
                         <label>product1</label>
 
                         <select class="form-control producten" name="product1" id="product1">
                             <option value="" selected>Selecteer product</option>
-                            <?php foreach ($producten as $product): ?>
-
-                            <option value="<?=$product->productnaam;?> | <?=$product->prijs;?>">
-                                <?=$product->productnaam?>
+                            <?php $count = 1;
+                            foreach ($producten as $product) : ?>
+                            <option value="<?= $product->productnaam; ?>">
+                                <?= $product->productnaam ?>
                             </option>
 
-                            <?php endforeach;?>
+                            <option id="productprijs<?= $count++; ?>" value="<?= $product->prijs ?>" hidden></option>
+                            <?php endforeach; ?>
                         </select>
-
-
-
-
                     </div>
+
+
                     <div class="form-group">
                         <label>product2</label>
 
                         <select class="form-control producten" name="product2" id="product2">
                             <option value="" selected>Selecteer product</option>
-                            <?php foreach ($producten as $product): ?>
+                            <?php $count = 0;
+                            foreach ($producten as $product) : ?>
+                            <option value="<?= $product->productnaam; ?>">
+                                <?= $product->productnaam ?>
+                            </option>
 
-                            <option value="<?=$product->productnaam;?> | <?=$product->prijs;?>">
-                                <?=$product->productnaam?></option>
-
-                            <?php endforeach;?>
+                            <option id="productprijs<?= $count++; ?>" value="<?= $product->prijs ?>" hidden></option>
+                            <?php endforeach; ?>
                         </select>
 
                     </div>
@@ -65,12 +67,14 @@
                         <label>product3</label>
                         <select class="form-control" name="product3" id="product3">
                             <option value="" selected>Selecteer product</option>
-                            <?php foreach ($producten as $product): ?>
+                            <?php $count = 0;
+                            foreach ($producten as $product) : ?>
+                            <option value="<?= $product->productnaam; ?>">
+                                <?= $product->productnaam ?>
+                            </option>
 
-                            <option value="<?=$product->productnaam;?> | <?=$product->prijs;?>">
-                                <?=$product->productnaam?></option>
-
-                            <?php endforeach;?>
+                            <option id="productprijs<?= $count++; ?>" value="<?= $product->prijs ?>" hidden></option>
+                            <?php endforeach; ?>
                         </select>
                     </div>
 
@@ -78,32 +82,45 @@
                         <label>Dienst1</label>
                         <select class="form-control" name="dienst1" id="dienst1">
                             <option value="" selected>Selecteer dienst</option>
-                            <?php foreach ($diensten as $dienst): ?>
-                            <option value="<?=$dienst->dienstnaam?> | <?=$dienst->dienstprijs?>">
-                                <?=$dienst->dienstnaam;?>
+                            <?php $count = 0;
+                            foreach ($diensten as $dienst) : ?>
+                            <option value="<?= $dienst->dienstnaam ?> | <?= $dienst->dienstprijs ?>">
+                                <?= $dienst->dienstnaam; ?>
+                            </option>
+                            <option name="dienstprijs<?= $count++; ?>" value="<?= $dienst->dienstprijs ?>" hidden>
                             </option>
 
-                            <?php endforeach;?>
+                            <?php endforeach; ?>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Dienst2</label>
                         <select class="form-control" name="dienst2" id="dienst2">
                             <option value="" selected>Selecteer dienst</option>
-                            <?php foreach ($diensten as $dienst): ?>
-                            <option value="<?=$dienst->dienstnaam?>| <?=$dienst->dienstprijs?>">
-                                <?=$dienst->dienstnaam;?>
-                                <?php endforeach;?>
+                            <?php $count = 0;
+                            foreach ($diensten as $dienst) : ?>
+                            <option value="<?= $dienst->dienstnaam ?> | <?= $dienst->dienstprijs ?>">
+                                <?= $dienst->dienstnaam; ?>
+                            </option>
+                            <option name="dienstprijs<?= $count++; ?>" value="<?= $dienst->dienstprijs ?>" hidden>
+                            </option>
+
+                            <?php endforeach; ?>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Dienst3</label>
                         <select class="form-control" name="dienst3" id="dienst3">
                             <option value="" selected>Selecteer dienst</option>
-                            <?php foreach ($diensten as $dienst): ?>
-                            <option value="<?=$dienst->dienstnaam?> | <?=$dienst->dienstprijs?>">
-                                <?=$dienst->dienstnaam;?>
-                                <?php endforeach;?>
+                            <?php $count = 0;
+                            foreach ($diensten as $dienst) : ?>
+                            <option value="<?= $dienst->dienstnaam ?> | <?= $dienst->dienstprijs ?>">
+                                <?= $dienst->dienstnaam; ?>
+                            </option>
+                            <option name="dienstprijs<?= $count++; ?>" value="<?= $dienst->dienstprijs ?>" hidden>
+                            </option>
+
+                            <?php endforeach; ?>
                         </select>
 
                     </div>
