@@ -8,15 +8,19 @@
 <BODY>
 
     <div class="noprint">
-        <center><button type="button" class="btn btn-primary" onclick="print();">Printen / Opslaan</button> <a
-                href="<?php echo 'mailto: klant'; ?>"><button type="button" class="btn btn-success">E-mail</button></a>
-            <button onclick="window.history.back();" type="button" class="btn btn-danger">Terug</button></center>
+        <center>
+            <button type="button" class="btn btn-primary" onclick="print();">Printen / Opslaan</button>
+            <a href="<?php echo 'mailto: klant'; ?>">
+                <button type="button" class="btn btn-success">E-mail</button>
+            </a>
+            <button onclick="window.history.back();" type="button" class="btn btn-danger">Terug</button>
+        </center>
     </div>
     <div class="book">
         <div class="page">
             <div class="logo">
-                <img src="img/logo.png" alt="" srcset=""><br>
-                <img id="img2" src="img/image002.jpg" alt="" srcset="">
+                <img src="templates/img/logo.png" alt="" srcset=""><br>
+                <img id="img2" src="templates/img/image002.jpg" alt="" srcset="">
             </div>
             <center>
                 <h2>Factuur</h2>

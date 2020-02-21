@@ -33,7 +33,7 @@ require_once 'inc/klantenModals/toevoegModal.php';
                         <!-- <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal"><i
                                 class="fa fa-plus" aria-hidden="true"> Voeg klant toe </i></button>
                         <!-- <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6> -->
-                    </div> -->
+                    </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
