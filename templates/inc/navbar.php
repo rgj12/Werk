@@ -189,13 +189,15 @@
         <?php endforeach; ?>
     </div>
     <div class="chatbox-bericht">
-        <form action="">
+        <form action="index.php" method="POST">
             <div class="form-row">
                 <div class="col-9">
                     <input type="text" name="bericht" id="bericht" class="form-control">
+                    <input type="hidden" name="receiver" value="<?= $_SESSION['id'] ?>">
+                    <input type="hidden" name="sender" value="<?= $chatInfo->from_user_id ?>">
                 </div>
                 <div class="col">
-                    <input type="submit" class="btn btn-primary" value="&#xf1d8">
+                    <input type="submit" class="btn btn-primary" name="sendMessage" value="&#xf1d8">
                 </div>
             </div>
         </form>

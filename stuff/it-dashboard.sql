@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 14 feb 2020 om 14:23
+-- Gegenereerd op: 21 feb 2020 om 12:07
 -- Serverversie: 10.4.11-MariaDB
 -- PHP-versie: 7.4.1
 
@@ -43,7 +43,7 @@ CREATE TABLE `afspraken` (
 --
 
 INSERT INTO `afspraken` (`id`, `klant_id`, `datum`, `tijd`, `omschrijving`, `datum_afspr_gemaakt`, `afspraak_voltooid`) VALUES
-(31, 51, '2020-02-01', '12:12:00', 'testaaaa', '2020-02-14 09:52:58', 0);
+(32, 51, '2020-02-27', '12:00:00', 'ddfdsfds', '2020-02-18 10:12:12', 1);
 
 -- --------------------------------------------------------
 
@@ -64,9 +64,12 @@ CREATE TABLE `chat_message` (
 --
 
 INSERT INTO `chat_message` (`chat_message_id`, `to_user_id`, `from_user_id`, `chat_message`, `time_stamp`) VALUES
-(1, 2, 1, 'Hi', '2020-02-14 13:02:27'),
-(2, 2, 1, 'hi x2', '2020-02-14 14:01:08'),
-(3, 1, 2, 'ik praat met mezelf', '2020-02-14 14:09:13');
+(4, 2, 1, 'tesmessage', '2020-02-21 10:13:52'),
+(5, 2, 1, 'testmessage', '2020-02-21 10:13:52'),
+(6, 2, 1, 'testmessage', '2020-02-21 10:14:10'),
+(7, 2, 1, 'test', '2020-02-21 11:52:14'),
+(8, 1, 2, 'sdsd', '2020-02-21 12:01:03'),
+(9, 1, 2, 'derp', '2020-02-21 12:01:20');
 
 -- --------------------------------------------------------
 
@@ -85,7 +88,7 @@ CREATE TABLE `diensten` (
 --
 
 INSERT INTO `diensten` (`id`, `dienstnaam`, `dienstprijs`) VALUES
-(1, 'testdienst', 50);
+(1, 'testdiensten', 25);
 
 -- --------------------------------------------------------
 
@@ -98,9 +101,22 @@ CREATE TABLE `facturen` (
   `voornaam` varchar(255) NOT NULL,
   `achternaam` varchar(255) NOT NULL,
   `klantnummer` int(11) NOT NULL,
-  `product` varchar(255) NOT NULL,
-  `dienst` varchar(255) NOT NULL,
-  `totaal` varchar(255) NOT NULL
+  `product1` varchar(255) NOT NULL,
+  `product2` varchar(255) NOT NULL,
+  `product3` varchar(255) NOT NULL,
+  `dienst1` varchar(255) NOT NULL,
+  `dienst2` varchar(255) NOT NULL,
+  `dienst3` varchar(255) NOT NULL,
+  `product_prijs1` varchar(45) NOT NULL,
+  `product_prijs2` varchar(45) NOT NULL,
+  `product_prijs3` varchar(45) NOT NULL,
+  `dienst_prijs1` varchar(45) NOT NULL,
+  `dienst_prijs2` varchar(45) NOT NULL,
+  `dienst_prijs3` varchar(45) NOT NULL,
+  `totaalIncBtw` varchar(255) NOT NULL,
+  `totaalExBtw` varchar(45) NOT NULL,
+  `datum` date NOT NULL,
+  `betaalOpties` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -126,7 +142,9 @@ CREATE TABLE `klanten` (
 --
 
 INSERT INTO `klanten` (`id`, `voornaam`, `achternaam`, `email`, `straatnaam`, `postcode`, `woonplaats`, `telefoonnummer`, `reden_bezoek`) VALUES
-(51, 'Heerik', 'Heerik', 'dvdheerik@hetnet.nl', 'Alphen', 'Alphen', 'Alphen', '0656897412', 'tedt');
+(51, 'Heerikhghaaaaa', 'Heerik', 'dvdheerik@hetnet.nl', '', '', 'Alphen', '0656897412', 'tedt'),
+(52, 'Nieuwehuizen', 'Heerik', 'dvdheerik@hetnet.nl', 'Heerik', 'Heerik', 'Heerik', 'Heerik', 'Heerik'),
+(53, 'test`123', 'test', 'test@test.nl', '', '', 'Rhoon', '12345678', 'sdadff');
 
 -- --------------------------------------------------------
 
@@ -149,7 +167,7 @@ CREATE TABLE `login_details` (
 CREATE TABLE `producten` (
   `id` int(11) NOT NULL,
   `productnaam` varchar(255) NOT NULL,
-  `prijs` int(11) NOT NULL
+  `prijs` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -157,7 +175,8 @@ CREATE TABLE `producten` (
 --
 
 INSERT INTO `producten` (`id`, `productnaam`, `prijs`) VALUES
-(1, 'testprod', 12);
+(1, 'testprod', '12.00'),
+(7, 'testproduct2', '45.00');
 
 -- --------------------------------------------------------
 
@@ -241,19 +260,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT voor een tabel `afspraken`
 --
 ALTER TABLE `afspraken`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT voor een tabel `chat_message`
 --
 ALTER TABLE `chat_message`
-  MODIFY `chat_message_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `chat_message_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT voor een tabel `diensten`
 --
 ALTER TABLE `diensten`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT voor een tabel `facturen`
@@ -265,7 +284,7 @@ ALTER TABLE `facturen`
 -- AUTO_INCREMENT voor een tabel `klanten`
 --
 ALTER TABLE `klanten`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT voor een tabel `login_details`
@@ -277,7 +296,7 @@ ALTER TABLE `login_details`
 -- AUTO_INCREMENT voor een tabel `producten`
 --
 ALTER TABLE `producten`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT voor een tabel `users`

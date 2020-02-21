@@ -23,4 +23,18 @@ class Chat
         $aantalBerichten = $this->db->single();
         return $aantalBerichten['aantalBerichten'];
     }
+
+    public function sendMessage($data)
+    {
+        $this->db->query('INSERT INTO chat_message(to_user_id,from_user_id,chat_message) VALUES(:uid,:fuid,:chat_message)');
+        $this->db->bind(':uid', $data['sender']);
+        $this->db->bind(':fuid', $data['receiver']);
+        $this->db->bind(':chat_message', $data['bericht']);
+
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
