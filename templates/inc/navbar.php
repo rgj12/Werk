@@ -176,7 +176,7 @@
 <div class="container-chatbox" id="chatbox">
     <div class="chatbox-header">
         <img src="users/profielfoto/Default-Profile.png" alt="png">
-        <h4><?= "name" ?></h4>
+        <h4><?= $chatInfo->username ?></h4>
         <span class="close">&times;</span>
     </div>
     <div class="chatbox-content">
@@ -192,12 +192,12 @@
         <form action="index.php" method="POST">
             <div class="form-row">
                 <div class="col-9">
-                    <input type="text" name="bericht" id="bericht" class="form-control">
+                    <input type="text" name="bericht" id="bericht" class="form-control" required>
                     <input type="hidden" name="receiver" value="<?= $_SESSION['id'] ?>">
                     <input type="hidden" name="sender" value="<?= $chatInfo->from_user_id ?>">
                 </div>
                 <div class="col">
-                    <input type="submit" class="btn btn-primary" name="sendMessage" value="&#xf1d8">
+                    <i class="fas fa-paper-plane"><input type="submit" class="btn btn-primary" name="sendMessage" value="&#xf1d8"></i>
                 </div>
             </div>
         </form>

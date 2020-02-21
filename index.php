@@ -9,6 +9,7 @@ $userChatInfo = new Chat;
 $template->navbarChatInfo = $userChatInfo->getMessage($_SESSION['id']);
 $template->aantalBerichten = $userChatInfo->getNumberOfMessages($_SESSION['id']);
 $template->klanten = $klanten->getAllCustomers();
+$template->chatMessage = $userChatInfo->getChat($_SESSION['id'], $_POST['receiver']);
 
 if (isset($_POST['sendMessage'])) {
     $data = array();
@@ -20,6 +21,19 @@ if (isset($_POST['sendMessage'])) {
         redirect('index.php', 'gelukt', 'success');
     } else {
         redirect('index.php', 'er is iets misgegaan', 'danger');
+    }
+}
+
+if (isset($_POST['chatMessage'])){
+    $data = array();
+    $data['receiver'] = $_POST['receiver'];
+    $data['sender'] = $_SESSION['id'];
+    var_dump($_POST['chatMessage']);
+
+    if ($userChatInfo->getChat($data['sender'], $data['receiver'])){
+
+    }else{
+        echo 'error';
     }
 }
 

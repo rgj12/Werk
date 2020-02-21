@@ -1,11 +1,11 @@
 .container-chatbox {
   display: none;
-  width: 15vw;
-  height: 40vh;
+  width: 25vw;
+  height: 50vh;
   position: fixed;
   bottom: 0;
   right: 0;
-  z-index: 1;
+  z-index: 3;
   background-color: white;
   /* padding: 1%; */
 }
@@ -33,10 +33,21 @@
   padding: 3%;
   background-color: rgb(226, 226, 226);
   height: 100%;
+  overflow: scroll;
 }
 
 .chatbox-content .text {
   background-color: white;
+  margin-bottom: 3%;
+  border-radius: 5%;
+  padding: 3%;
+}
+
+.chatbox-content .text .timestamp{
+  font-size: 0.6rem;
+}
+
+.chatbox-content .text .message{
 }
 
 .chatbox-bericht {
@@ -44,7 +55,11 @@
   position: fixed;
   bottom: 0;
   padding: 0.3%;
-  /* width: 60%; */
+  width: 27vw;
+}
+
+.chatbox-bericht form {
+  margin: 0;
 }
 
 .close {
