@@ -31,6 +31,12 @@
 
 .chatbox-content {
   padding: 3%;
+  background-color: rgb(226, 226, 226);
+  height: 100%;
+}
+
+.chatbox-content .text {
+  background-color: white;
 }
 
 .chatbox-bericht {

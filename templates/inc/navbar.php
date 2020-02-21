@@ -181,7 +181,11 @@
     </div>
     <div class="chatbox-content">
         <?php foreach ($navbarChatInfo as $chatInfo) : ?>
-        <?= $chatInfo->chat_message; ?>
+        <div class="text">
+            <?= $chatInfo->chat_message; ?>
+            <br />
+            <?= $chatInfo->time_stamp; ?>
+        </div>
         <?php endforeach; ?>
     </div>
     <div class="chatbox-bericht">
