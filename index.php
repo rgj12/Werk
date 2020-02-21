@@ -9,7 +9,7 @@ $userChatInfo = new Chat;
 $template->navbarChatInfo = $userChatInfo->getMessage($_SESSION['id']);
 $template->aantalBerichten = $userChatInfo->getNumberOfMessages($_SESSION['id']);
 $template->klanten = $klanten->getAllCustomers();
-$template->chatMessage = $userChatInfo->getChat($_SESSION['id'], $_POST['receiver']);
+//$template->chatMessage = $userChatInfo->getChat($_SESSION['id'], $_POST['receiver']);
 
 if (isset($_POST['sendMessage'])) {
     $data = array();
