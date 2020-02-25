@@ -8,7 +8,7 @@ require_once 'inc/klantenModals/toevoegModal.php';
 <div id="wrapper">
 
     <!-- Sidebar -->
-    <?php include 'inc/sidebar.php';?>
+    <?php include 'inc/sidebar.php'; ?>
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
@@ -18,12 +18,12 @@ require_once 'inc/klantenModals/toevoegModal.php';
         <div id="content">
 
             <!-- Topbar -->
-            <?php include 'inc/navbar.php';?>
+            <?php include 'inc/navbar.php'; ?>
             <!-- End of Topbar -->
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
-                <?php displayMessage();?>
+                <?php displayMessage(); ?>
                 <!-- Page Heading -->
                 <h1 class="h3 mb-2 text-gray-800">Facturen</h1>
                 <p class="mb-4">Overzicht facturen</p>
@@ -42,36 +42,38 @@ require_once 'inc/klantenModals/toevoegModal.php';
                                         <th>Voornaam</th>
                                         <th>Achternaam</th>
                                         <th>Totaal</th>
+                                        <th>Datum</th>
                                         <th>actie</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($facturen as $factuur): ?>
+                                    <?php foreach ($facturen as $factuur) : ?>
                                     <tr>
-                                        <td><?=$factuur->voornaam;?></td>
-                                        <td><?=$factuur->achternaam;?></td>
-                                        <td><?=$factuur->totaal;?> €</td>
-                                        <td <a class="fa fa-edit fa-lg editBtn" href="#" data-toggle="modal"
-                                            data-target="#editModal" id="<?=$factuur->id?>" title="Pas factuur aan"
-                                            style="color:orange;">
+                                        <td><?= $factuur->voornaam; ?></td>
+                                        <td><?= $factuur->achternaam; ?></td>
+                                        <td><?= $factuur->totaalIncBtw; ?> €</td>
+                                        <td><?= date_format(new datetime($factuur->datum), 'd/m/Y'); ?></td>
+                                        <td> <a class="fa fa-edit fa-lg editBtn" href="#" data-toggle="modal"
+                                                data-target="#editModal" id="<?= $factuur->factuurnummer ?>"
+                                                title="Pas factuur aan" style="color:orange;">
                                             </a> |&nbsp;
-                                            <a href="delete.php?fact_del_id=<?=$factuur->id?>" title="Verwijder factuur"
-                                                class="fa fa-trash fa-lg" style="color:red;"
+                                            <a href="delete.php?fact_del_id=<?= $factuur->factuurnummer ?>"
+                                                title="Verwijder factuur" class="fa fa-trash fa-lg" style="color:red;"
                                                 onclick="return confirm('Weet je zeker dat je deze factuur wilt verwijderen?')"></a>
                                             |&nbsp;
-                                            <a href="factuur.php?id=<?=$factuur->id?>" class="fa fa-file-pdf-o fa-lg"
-                                                title="Bekijk Factuur"></a>
+                                            <a href="factuur.php?bekijkid=<?= $factuur->factuurnummer ?>"
+                                                class="fa fa-file-pdf-o fa-lg" title="Bekijk Factuur"></a>
 
                                         </td>
                                     </tr>
 
-                                    <?php endforeach;?>
+                                    <?php endforeach; ?>
                                     <!-- Modals-->
                                     <?php
-/* Modal voor editen */
-include 'inc/factuurModals/editModal.php';
+                                    /* Modal voor editen */
+                                    include 'inc/factuurModals/editModal.php';
 
-?>
+                                    ?>
                                 </tbody>
                             </table>
                         </div>
@@ -83,4 +85,4 @@ include 'inc/factuurModals/editModal.php';
 
         </div>
         <!-- End of Main Content -->
-        <?php include './inc/footer.php';?>
+        <?php include './inc/footer.php'; ?>
