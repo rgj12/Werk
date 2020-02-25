@@ -2,7 +2,7 @@
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <form action="factuur.php" method="post">
+            <form action="add.php" method="post">
                 <input type="hidden" name="id">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Maak factuur

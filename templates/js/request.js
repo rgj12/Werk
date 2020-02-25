@@ -147,28 +147,45 @@ $(document).ready(function() {
     });
   });
 
-  //prijs versturen naar index
-  $(".prijsBtn").click(function(e) {
+  //edit form facturen invullen
+  $(".editfactBtn").click(function(e) {
     e.preventDefault();
-    productprijs1 = $("#productprijs1").val();
-    productprijs2 = $("#productprijs2").val();
-    productprijs3 = $("#productprijs3").val();
 
-    console.log(productprijs1);
-    console.log(productprijs2);
-    console.log(productprijs3);
+    id = $(this).attr("id");
 
-    // $.ajax({
-    //   url: "edit.php",
-    //   method: "POST",
-    //   data: { edit_dienst_id: id },
-    //   success: function(response) {
-    //     data = JSON.parse(response);
-    //     console.log(data);
-    //     $("#editid").val(data.id);
-    //     $("#editdienstnaam").val(data.dienstnaam);
-    //     $("#editdienstprijs").val(data.dienstprijs);
-    //   }
-    // });
+    $.ajax({
+      url: "edit.php",
+      method: "POST",
+      data: { edit_factuur_id: id },
+      success: function(response) {
+        data = JSON.parse(response);
+        $("#factuurnummer").val(data[0].factuurnummer);
+        $("#editfactvoornaam").val(data[0].voornaam);
+        $("#editfactachternaam").val(data[0].achternaam);
+
+        $("#editprod1").val(data[0].product1 + "/" + data[0].product_prijs1);
+        $("#editprod1").html(data[0].product1);
+
+        $("#editprod2").val(data[0].product2 + "/" + data[0].product_prijs2);
+        $("#editprod2").html(data[0].product2);
+
+        $("#editprod3").val(data[0].product3 + "/" + data[0].product_prijs3);
+        $("#editprod3").html(data[0].product3);
+
+        $("#editdienst1").val(data[0].dienst1 + "/" + data[0].dienst_prijs1);
+        $("#editdienst1").html(data[0].dienst1);
+
+        $("#editdienst2").val(data[0].dienst2 + "/" + data[0].dienst_prijs2);
+        $("#editdienst2").html(data[0].dienst2);
+
+        $("#editdienst3").val(data[0].dienst3 + "/" + data[0].dienst_prijs3);
+        $("#editdienst3").html(data[0].dienst3);
+
+        $("#editbtOptie").val(data[0].betaalOpties);
+        $("#editbtOptie").html(data[0].betaalOpties);
+
+        console.log(data[0]);
+      }
+    });
   });
 });

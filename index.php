@@ -11,6 +11,7 @@ $template->navbarChatInfo = $userChatInfo->getMessage($_SESSION['id']);
 $template->aantalBerichten = $userChatInfo->getNumberOfMessages($_SESSION['id']);
 $template->klanten = $klanten->getAllCustomers();
 $template->dagOmzet = number_format((float) $index->getDailyEarnings(), 2, '.', '');
+$template->jaarOmzet = number_format((float) $index->getYearlyEarnings(), 2, '.', '');
 $template->aantalAfspraken = $index->getAppointmentsNotComplete();
 $template->aantalAfsprakenComplete = $index->getAppointmentsComplete();
 $template->percentageCompleet = $index->percentageComplete($template->aantalAfsprakenComplete, $template->aantalAfspraken);

@@ -6,6 +6,7 @@ $klanten = new Klant;
 $afspraken = new Afspraken;
 $producten = new Product;
 $diensten = new Dienst;
+$factuur = new Factuur;
 
 //klant verwijderen
 if (isset($_GET['del_id'])) {
@@ -71,5 +72,16 @@ if (isset($_GET['dienst_del_id'])) {
         } else {
             redirect('diensten.php', 'Er is iets misgegaan', 'error');
         }
+    }
+}
+
+//factuur verwijderen
+if (isset($_GET['fact_del_id'])) {
+    $id = $_GET['fact_del_id'];
+
+    if ($factuur->deleteFactuur($id)) {
+        redirect('factuur.php?overzicht', 'factuur verwijderd', 'success');
+    } else {
+        redirect('factuur.php?overzicht', 'Er is iets misgegaan', 'error');
     }
 }

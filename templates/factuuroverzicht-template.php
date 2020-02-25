@@ -53,7 +53,7 @@ require_once 'inc/klantenModals/toevoegModal.php';
                                         <td><?= $factuur->achternaam; ?></td>
                                         <td><?= $factuur->totaalIncBtw; ?> €</td>
                                         <td><?= date_format(new datetime($factuur->datum), 'd/m/Y'); ?></td>
-                                        <td> <a class="fa fa-edit fa-lg editBtn" href="#" data-toggle="modal"
+                                        <td> <a class="fa fa-edit fa-lg editfactBtn" href="#" data-toggle="modal"
                                                 data-target="#editModal" id="<?= $factuur->factuurnummer ?>"
                                                 title="Pas factuur aan" style="color:orange;">
                                             </a> |&nbsp;
@@ -66,14 +66,14 @@ require_once 'inc/klantenModals/toevoegModal.php';
 
                                         </td>
                                     </tr>
-
-                                    <?php endforeach; ?>
                                     <!-- Modals-->
                                     <?php
-                                    /* Modal voor editen */
-                                    include 'inc/factuurModals/editModal.php';
+                                        /* Modal voor editen */
+                                        include 'inc/factuurModals/editModal.php';
 
-                                    ?>
+                                        ?>
+                                    <?php endforeach; ?>
+
                                 </tbody>
                             </table>
                         </div>

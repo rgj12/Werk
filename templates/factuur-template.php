@@ -77,11 +77,11 @@
                             if ($info->product_prijs3 != "0") {
                                 echo "<tr><td>- $info->product3</td><td>&euro;$info->product_prijs3 </td><td>21%</td>";
                             }
-                            if ($info->dienst_prijs3 != "0") {
-                                echo "<tr><td>- $info->dienst3</td><td>&euro;$info->dienst_prijs3 </td><td>21%</td>";
+                            if ($info->dienst_prijs1 != "0") {
+                                echo "<tr><td>- $info->dienst1</td><td>&euro;$info->dienst_prijs1 </td><td>21%</td>";
                             }
-                            if ($info->dienst_prijs3 != "0") {
-                                echo "<tr><td>- $info->dienst3</td><td>&euro;$info->dienst_prijs3 </td><td>21%</td>";
+                            if ($info->dienst_prijs2 != "0") {
+                                echo "<tr><td>- $info->dienst2</td><td>&euro;$info->dienst_prijs2 </td><td>21%</td>";
                             }
                             if ($info->dienst_prijs3 != "0") {
                                 echo "<tr><td>- $info->dienst3</td><td>&euro;$info->dienst_prijs3 </td><td>21%</td>";

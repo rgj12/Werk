@@ -53,9 +53,9 @@
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Earnings
-                                            (Annual)</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Omzet
+                                            (<?= date("Y"); ?>)</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">€ <?= $jaarOmzet ?></div>
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -71,7 +71,9 @@
                             <div class="card-body">
                                 <a href="afspraak.php?overzichtafspraken" class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks</div>
+                                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">afspraken
+                                            voltooid vandaag
+                                        </div>
                                         <div class="row no-gutters align-items-center">
                                             <div class="col-auto">
                                                 <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
@@ -81,7 +83,8 @@
                                                 <div class="progress progress-sm mr-2">
                                                     <div class="progress-bar bg-info" role="progressbar"
                                                         style="width: <?= $percentageCompleet ?>%" aria-valuenow="60"
-                                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                                        aria-valuemin="0" aria-valuemax="100">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -100,9 +103,11 @@
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Aantal
-                                            afspraken</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $aantalAfspraken; ?>
+                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                            Aantal
+                                            afspraken vandaag</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                            <?= $aantalAfspraken; ?>
                                         </div>
                                     </div>
                                     <div class="col-auto">
@@ -302,7 +307,8 @@
                                         src="img/undraw_posting_photo.svg" alt="">
                                 </div>
                                 <p>Add some quality, svg illustrations to your project courtesy of <a target="_blank"
-                                        rel="nofollow" href="https://undraw.co/">unDraw</a>, a constantly updated
+                                        rel="nofollow" href="https://undraw.co/">unDraw</a>, a
+                                    constantly updated
                                     collection of beautiful svg images that you can use completely free and without
                                     attribution!</p>
                                 <a target="_blank" rel="nofollow" href="https://undraw.co/">Browse Illustrations on
@@ -316,7 +322,8 @@
                                 <h6 class="m-0 font-weight-bold text-primary">Development Approach</h6>
                             </div>
                             <div class="card-body">
-                                <p>SB Admin 2 makes extensive use of Bootstrap 4 utility classes in order to reduce CSS
+                                <p>SB Admin 2 makes extensive use of Bootstrap 4 utility classes in order to reduce
+                                    CSS
                                     bloat and poor page performance. Custom CSS classes are used to create custom
                                     components and custom utility classes.</p>
                                 <p class="mb-0">Before working with this theme, you should become familiar with the

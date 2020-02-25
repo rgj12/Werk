@@ -19,25 +19,37 @@ class Index
 
     public function getAppointmentsNotComplete()
     {
-        $this->db->query("SELECT COUNT(id) AS aantalAfspraken FROM afspraken WHERE afspraak_voltooid = 0");
+        $date = date('Y/m/d');
+        $this->db->query("SELECT COUNT(id) AS aantalAfspraken FROM afspraken WHERE afspraak_voltooid = 0 AND datum = '$date'");
 
         $aantalAfspraken = $this->db->single();
         return $aantalAfspraken['aantalAfspraken'];
     }
     public function getAppointmentsComplete()
     {
-        $this->db->query("SELECT COUNT(id) AS aantalAfsprakenVoltooid FROM afspraken WHERE afspraak_voltooid = 1");
+        $date = date('Y/m/d');
+        $this->db->query("SELECT COUNT(id) AS aantalAfsprakenVoltooid FROM afspraken WHERE afspraak_voltooid = 1 AND datum = '$date'");
 
         $aantalAfspraken = $this->db->single();
         return $aantalAfspraken['aantalAfsprakenVoltooid'];
+    }
+
+
+    public function getYearlyEarnings()
+    {
+        $date = date("Y");
+        $this->db->query("SELECT SUM(totaalIncBtw) AS totaalJaar FROM facturen WHERE datum LIKE '%$date%'");
+
+        $totaalJaar = $this->db->single();
+        return $totaalJaar['totaalJaar'];
     }
     public function percentageComplete($complete, $notcomplete)
     {
 
         if ($notcomplete == 0 || $complete == 0) {
-            return "0";
+            return "100";
         } else {
-            $percentage = round($complete / $notcomplete  * 100, 2);
+            $percentage = round(($complete - $notcomplete) / $complete * 100, 2);
             return $percentage;
         }
     }
