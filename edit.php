@@ -74,6 +74,8 @@ if (isset($_POST['editKlant'])) {
     $data['pcode'] = $_POST['editpostcode'];
     $data['wplaats'] = $_POST['editwoonplaats'];
     $data['tel'] = $_POST['edittelefoonnummer'];
+    $data['reden_bezoek'] = $_POST['editredenbezoek'];
+
 
     if ($klanten->editCustomer($data)) {
         redirect('klanten.php', 'Succesvol aangepast', 'success');

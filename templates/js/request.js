@@ -38,6 +38,9 @@ $(document).ready(function() {
         $("#editemail").val(data.email);
         $("#edittelefoonnummer").val(data.telefoonnummer);
         $("#editwoonplaats").val(data.woonplaats);
+        $("#editstraatnaam").val(data.straatnaam);
+        $("#editpostcode").val(data.postcode);
+        $("#editredenbezoek").val(data.reden_bezoek);
       }
     });
   });

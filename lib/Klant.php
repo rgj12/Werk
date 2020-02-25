@@ -6,7 +6,6 @@ class Klant
     public function __construct()
     {
         $this->db = new Database();
-
     }
 
     public function getAllCustomers()
@@ -64,7 +63,7 @@ class Klant
 
     public function editCustomer($data)
     {
-        $this->db->query('UPDATE klanten SET voornaam = :vnaam,achternaam = :anaam,email = :mail,straatnaam = :stnaam,postcode = :pcode,woonplaats = :wplaats,telefoonnummer = :tel WHERE id = :id');
+        $this->db->query('UPDATE klanten SET voornaam = :vnaam,achternaam = :anaam,email = :mail,straatnaam = :stnaam,postcode = :pcode,woonplaats = :wplaats,telefoonnummer = :tel, reden_bezoek = :red WHERE id = :id');
 
         $this->db->bind(':id', $data['id']);
         $this->db->bind(':vnaam', $data['vnaam']);
@@ -74,6 +73,7 @@ class Klant
         $this->db->bind(':pcode', $data['pcode']);
         $this->db->bind(':wplaats', $data['wplaats']);
         $this->db->bind(':tel', $data['tel']);
+        $this->db->bind('red', $data['reden_bezoek']);
 
         if ($this->db->execute()) {
             return true;

@@ -33,9 +33,23 @@
                         <input type="text" class="form-control" name="edittelefoonnummer" id="edittelefoonnummer">
                     </div>
                     <div class="form-group">
+                        <label>Straatnaam</label>
+                        <input type="text" class="form-control" name="editstraatnaam" id="editstraatnaam">
+                    </div>
+                    <div class="form-group">
                         <label>Woonplaats</label>
                         <input type="text" class="form-control" name="editwoonplaats" id="editwoonplaats">
                     </div>
+                    <div class="form-group">
+                        <label>Postcode</label>
+                        <input type="text" class="form-control" name="editpostcode" id="editpostcode">
+                    </div>
+                    <div class="form-group">
+                        <label>Reden bezoek</label>
+                        <textarea class="form-control" name="editredenbezoek" id="editredenbezoek" cols="30"
+                            rows="10"></textarea>
+                    </div>
+
 
 
                 </div>
