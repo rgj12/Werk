@@ -5,10 +5,16 @@ require_once 'helpers/system_helper.php';
 $template = new Template('templates/index-template.php');
 $klanten = new Klant;
 $userChatInfo = new Chat;
+$index = new Index;
 
 $template->navbarChatInfo = $userChatInfo->getMessage($_SESSION['id']);
 $template->aantalBerichten = $userChatInfo->getNumberOfMessages($_SESSION['id']);
 $template->klanten = $klanten->getAllCustomers();
+$template->dagOmzet = number_format((float) $index->getDailyEarnings(), 2, '.', '');
+$template->aantalAfspraken = $index->getAppointmentsNotComplete();
+$template->aantalAfsprakenComplete = $index->getAppointmentsComplete();
+$template->percentageCompleet = $index->percentageComplete($template->aantalAfsprakenComplete, $template->aantalAfspraken);
+
 //$template->chatMessage = $userChatInfo->getChat($_SESSION['id'], $_POST['receiver']);
 
 if (isset($_POST['sendMessage'])) {
@@ -24,15 +30,14 @@ if (isset($_POST['sendMessage'])) {
     }
 }
 
-if (isset($_POST['chatMessage'])){
+if (isset($_POST['chatMessage'])) {
     $data = array();
     $data['receiver'] = $_POST['receiver'];
     $data['sender'] = $_SESSION['id'];
     var_dump($_POST['chatMessage']);
 
-    if ($userChatInfo->getChat($data['sender'], $data['receiver'])){
-
-    }else{
+    if ($userChatInfo->getChat($data['sender'], $data['receiver'])) {
+    } else {
         echo 'error';
     }
 }
