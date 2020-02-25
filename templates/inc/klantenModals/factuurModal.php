@@ -22,11 +22,12 @@
                         <label>Achternaam</label>
                         <input type="text" class="form-control" name="achternaam" id="achternaam">
                     </div>
+                    <input type="hidden" class="form-control" id="email" name="email">
+                    <input type="hidden" id="straatnaam" name="straatnaam">
+                    <input type="hidden" id="postcode" name="postcode">
+                    <input type="hidden" id="woonplaats" name="woonplaats">
+                    <input type="hidden" id="telefoonnummer" name="telefoonnummer">
 
-                    <!-- <div class="form-group">
-                        <label>Email address</label>
-                        <input type="email" class="form-control" id="email" name="email" disabled>
-                    </div> -->
 
 
                     <div class="form-group">

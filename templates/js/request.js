@@ -15,7 +15,10 @@ $(document).ready(function() {
         $("#voornaam").val(data.voornaam);
         $("#achternaam").val(data.achternaam);
         $("#email").val(data.email);
-        $("#achternaam").val(data.achternaam);
+        $("#straatnaam").val(data.straatnaam);
+        $("#woonplaats").val(data.woonplaats);
+        $("#telefoonnummer").val(data.telefoonnummer);
+        $("#postcode").val(data.postcode);
       }
     });
   });
@@ -165,6 +168,11 @@ $(document).ready(function() {
         $("#factuurnummer").val(data[0].factuurnummer);
         $("#editfactvoornaam").val(data[0].voornaam);
         $("#editfactachternaam").val(data[0].achternaam);
+        $("#editfactemail").val(data[0].email);
+        $("#editfactstraatnaam").val(data[0].straatnaam);
+        $("#editfactpostcode").val(data[0].postcode);
+        $("#editfactwoonplaats").val(data[0].woonplaats);
+        $("#editfacttel").val(data[0].telefoonnummer);
 
         $("#editprod1").val(data[0].product1 + "/" + data[0].product_prijs1);
         $("#editprod1").html(data[0].product1);

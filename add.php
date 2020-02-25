@@ -98,6 +98,11 @@ if (isset($_POST['maakFactuur'])) {
     $data = array();
     $data['vnaam'] = $_POST['voornaam'];
     $data['anaam'] = $_POST['achternaam'];
+    $data['email'] = $_POST['email'];
+    $data['straatnaam'] = $_POST['straatnaam'];
+    $data['postcode'] = $_POST['postcode'];
+    $data['woonplaats'] = $_POST['woonplaats'];
+    $data['telefoon'] = $_POST['telefoonnummer'];
     $data['k_id'] = $_POST['id'];
     $data["pp1"] = $_POST['product1'];
     $data["pp2"] = $_POST['product2'];

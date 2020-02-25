@@ -55,7 +55,7 @@
                 <?php
                     echo "<b>Factuurnummer:</b> " . $info->factuurnummer . " </br>";
                     echo "<b>Klantnummer:</b> " . $info->klantnummer . " </br>";
-                    echo "<b>Datum:</b> " . date_format(new DateTime($info->datum), "d/m/Y") . "</br>";
+                    echo "<b>Datum:</b> " . date_format(new DateTime($info->datum), "d-m-Y") . "</br>";
                     // echo "<b>Medewerker:</b></br>";
                     ?>
             </div>

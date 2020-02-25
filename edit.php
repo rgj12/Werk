@@ -152,6 +152,12 @@ if (isset($_POST['editFactuur'])) {
     $data = array();
     $data['vnaam'] = $_POST['editfactvoornaam'];
     $data['anaam'] = $_POST['editfactachternaam'];
+    $data['email'] = $_POST['editfactemail'];
+    $data['straatnaam'] = $_POST['editfactstraatnaam'];
+    $data['postcode'] = $_POST['editfactpostcode'];
+    $data['woonplaats'] = $_POST['editfactwoonplaats'];
+    $data['tel'] = $_POST['editfacttel'];
+
     $data['btoptie'] = $_POST['betaalOpties'];
     $data['factnummer'] = $_POST['factuurnummer'];
     $data["pp1"] = $_POST['product1'];

@@ -23,10 +23,27 @@
                         <input type="text" class="form-control" name="editfactachternaam" id="editfactachternaam">
                     </div>
 
-                    <!-- <div class="form-group">
+                    <div class="form-group">
                         <label>Email address</label>
-                        <input type="email" class="form-control" id="email" name="email" disabled>
-                    </div> -->
+                        <input type="email" class="form-control" id="editfactemail" name="editfactemail">
+                    </div>
+                    <div class="form-group">
+                        <label>straatnaam</label>
+                        <input type="text" class="form-control" name="editfactstraatnaam" id="editfactstraatnaam">
+                    </div>
+                    <div class="form-group">
+                        <label>posctcode</label>
+                        <input type="text" class="form-control" name="editfactpostcode" id="editfactpostcode">
+                    </div>
+                    <div class="form-group">
+                        <label>Woonplaats</label>
+                        <input type="text" class="form-control" name="editfactwoonplaats" id="editfactwoonplaats">
+                    </div>
+                    <div class="form-group">
+                        <label>Telefoonnummer</label>
+                        <input type="text" class="form-control" name="editfacttel" id="editfacttel">
+                    </div>
+
 
 
                     <div class="form-group">
