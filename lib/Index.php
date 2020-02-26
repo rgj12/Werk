@@ -34,7 +34,6 @@ class Index
         return $aantalAfspraken['aantalAfsprakenVoltooid'];
     }
 
-
     public function getYearlyEarnings()
     {
         $date = date("Y");
@@ -53,12 +52,7 @@ class Index
     }
     public function percentageComplete($complete, $notcomplete)
     {
-
-        if ($notcomplete == 0 || $complete == 0) {
-            return "100";
-        } else {
-            $percentage = round($complete / ($complete + $notcomplete) * 100, 2);
-            return $percentage;
-        }
+        $percentage = round($complete / ($complete + $notcomplete) * 100, 1);
+        return $percentage;
     }
 }

@@ -6,10 +6,14 @@ $template = new Template('templates/index-template.php');
 $klanten = new Klant;
 $userChatInfo = new Chat;
 $index = new Index;
+$producten = new Product;
+$diensten = new Dienst;
 
 $template->navbarChatInfo = $userChatInfo->getMessage($_SESSION['id']);
 $template->aantalBerichten = $userChatInfo->getNumberOfMessages($_SESSION['id']);
 $template->klanten = $klanten->getAllCustomers();
+$template->producten = $producten->showAllProducts();
+$template->diensten = $diensten->showAllDiensten();
 
 //omzet tonen
 $template->dagOmzet = number_format((float) $index->getDailyEarnings(), 2, '.', '');
