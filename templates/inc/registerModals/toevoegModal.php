@@ -18,15 +18,13 @@
 
                     <div class="form-group">
                         <label>Password</label>
-                        <input type="text" class="form-control" name="password">
+                        <input type="password" class="form-control" name="password">
                     </div>
 
                     <div class="form-group">
                         <label>Profiel foto</label>
                         <input type="file" class="form-control" name="profiel_foto">
                     </div>
-
-
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluit af</button>

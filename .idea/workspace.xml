@@ -4,11 +4,8 @@
     <list default="true" id="4f51169e-1426-4dbd-8bd3-603d07616d6c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/add.php" beforeDir="false" afterPath="$PROJECT_DIR$/add.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Register.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/css/chatbox.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/css/chatbox.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/inc/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/inc/navbar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index-template.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index-template.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/inc/registerModals/toevoegModal.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/inc/registerModals/toevoegModal.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +43,7 @@
           <entry key="TODO" value="2" />
           <entry key="css" value="4" />
           <entry key="js" value="3" />
-          <entry key="php" value="43" />
+          <entry key="php" value="45" />
           <entry key="sql" value="4" />
         </counts>
       </usages-collector>
@@ -54,7 +51,7 @@
         <counts>
           <entry key="CSS" value="4" />
           <entry key="JavaScript" value="3" />
-          <entry key="PHP" value="43" />
+          <entry key="PHP" value="45" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="SQL" value="3" />
           <entry key="Scratch" value="1" />
@@ -65,7 +62,7 @@
           <entry key="TODO" value="2" />
           <entry key="css" value="523" />
           <entry key="js" value="210" />
-          <entry key="php" value="2030" />
+          <entry key="php" value="2207" />
           <entry key="sql" value="10" />
           <entry key="txt" value="12" />
         </counts>
@@ -74,7 +71,7 @@
         <counts>
           <entry key="CSS" value="523" />
           <entry key="JavaScript" value="210" />
-          <entry key="PHP" value="2030" />
+          <entry key="PHP" value="2207" />
           <entry key="PLAIN_TEXT" value="14" />
           <entry key="SQL" value="10" />
         </counts>
@@ -82,87 +79,61 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.75918764">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/lib/Register.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="265">
-                  <caret line="21" column="47" lean-forward="true" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/inc/registerModals/editModal.php">
-              <provider selected="true" editor-type-id="text-editor" />
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/inc/registerModals/toevoegModal.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="402">
-                  <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-                  <folding>
-                    <element signature="e#546#553#1#HTML" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/add.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="315">
-                  <caret line="107" column="42" lean-forward="true" selection-start-line="107" selection-start-column="42" selection-end-line="107" selection-end-column="42" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/products.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="105">
-                  <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-end-line="8" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/product-template.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="246">
-                  <caret line="32" column="103" selection-start-line="32" selection-start-column="56" selection-end-line="32" selection-end-column="103" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/lib/Product.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="416">
-                  <caret line="60" column="8" selection-start-line="60" selection-start-column="8" selection-end-line="70" selection-end-column="9" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/inc/productModals/toevoegModal.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret selection-end-line="32" selection-end-column="6" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/Register.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="151">
+              <caret line="21" column="47" lean-forward="true" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/inc/registerModals/editModal.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/inc/registerModals/toevoegModal.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="241">
+              <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
+              <folding>
+                <element signature="e#546#553#1#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/add.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="186">
+              <caret line="104" column="8" selection-start-line="104" selection-start-column="8" selection-end-line="104" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/Login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -171,9 +142,9 @@
       <find>h2</find>
       <find>h4</find>
       <find>regis</find>
-      <find>profiel_foto</find>
-      <find>Productnaam</find>
       <find>profi</find>
+      <find>Productnaam</find>
+      <find>profiel_foto</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -203,9 +174,11 @@
         <option value="$PROJECT_DIR$/lib/Product.php" />
         <option value="$PROJECT_DIR$/templates/index-template.php" />
         <option value="$PROJECT_DIR$/templates/inc/navbar.php" />
-        <option value="$PROJECT_DIR$/templates/inc/registerModals/toevoegModal.php" />
         <option value="$PROJECT_DIR$/registeren.php" />
         <option value="$PROJECT_DIR$/lib/Register.php" />
+        <option value="$PROJECT_DIR$/templates/inc/registerModals/toevoegModal.php" />
+        <option value="$PROJECT_DIR$/lib/Login.php" />
+        <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/add.php" />
       </list>
     </option>
@@ -276,6 +249,17 @@
               <item name="inc" type="462c0819:PsiDirectoryNode" />
               <item name="registerModals" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Werk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Werk" type="462c0819:PsiDirectoryNode" />
+              <item name="users" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Werk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Werk" type="462c0819:PsiDirectoryNode" />
+              <item name="users" type="462c0819:PsiDirectoryNode" />
+              <item name="profielfoto" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -317,12 +301,12 @@
       <workItem from="1582286319818" duration="11034000" />
       <workItem from="1582644603136" duration="29000" />
       <workItem from="1582704379463" duration="1301000" />
-      <workItem from="1582707969428" duration="12313000" />
+      <workItem from="1582707969428" duration="13571000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24677000" />
+    <option name="totallyTimeSpent" value="25935000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -350,7 +334,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" weight="0.3287858" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3287858" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3287858" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -462,43 +446,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="5" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="8" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/register-template.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/inc/productModals/toevoegModal.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="32" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/product-template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="32" column="103" selection-start-line="32" selection-start-column="56" selection-end-line="32" selection-end-column="103" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="60" column="8" selection-start-line="60" selection-start-column="8" selection-end-line="70" selection-end-column="9" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/inc/sidebar.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -536,30 +485,65 @@
     <entry file="file://$PROJECT_DIR$/registeren.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/inc/registerModals/editModal.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/product-template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="32" column="103" selection-start-line="32" selection-start-column="56" selection-end-line="32" selection-end-column="103" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="60" column="8" selection-start-line="60" selection-start-column="8" selection-end-line="70" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/inc/productModals/toevoegModal.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="32" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="21" column="47" lean-forward="true" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/inc/registerModals/toevoegModal.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="241">
+          <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
           <folding>
             <element signature="e#546#553#1#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/inc/registerModals/editModal.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Register.php">
+    <entry file="file://$PROJECT_DIR$/lib/Login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="21" column="47" lean-forward="true" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
+        <state relative-caret-position="378">
+          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/add.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="107" column="42" lean-forward="true" selection-start-line="107" selection-start-column="42" selection-end-line="107" selection-end-column="42" />
+        <state relative-caret-position="186">
+          <caret line="104" column="8" selection-start-line="104" selection-start-column="8" selection-end-line="104" selection-end-column="8" />
         </state>
       </provider>
     </entry>

@@ -102,7 +102,7 @@ if (isset($_POST['maakUser'])) {
     if (!empty($_POST['username']) || !empty($_POST['password'])) {
 
         $data['username'] = trim(htmlspecialchars($_POST['username']));
-        $data['password'] = trim(htmlspecialchars($_POST['password']));
+        $data['password'] = trim(htmlspecialchars(password_hash($_POST['password'], PASSWORD_DEFAULT)));
         $data['profiel_foto'] = 'users/profielfoto/' . $_POST['profiel_foto'];
 
         if ($users->registerUser($data)) {
