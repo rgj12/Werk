@@ -1,5 +1,5 @@
 .container-chatbox {
-  display: none;
+  /*display: none;*/
   width: 25vw;
   height: 50vh;
   position: fixed;
@@ -30,16 +30,18 @@
 }
 
 .chatbox-content {
-  padding: 3%;
+  padding: 2%;
   background-color: rgb(226, 226, 226);
-  height: 100%;
+  max-height: 100%;
   overflow: scroll;
+  position: relative;
+  bottom: 0;
 }
 
 .chatbox-content .text {
   background-color: white;
   margin-bottom: 3%;
-  border-radius: 5%;
+  border-radius: 25px;
   padding: 3%;
 }
 
@@ -52,10 +54,11 @@
 
 .chatbox-bericht {
   background-color: #858796;
-  position: fixed;
+  position: absolute;
   bottom: 0;
-  padding: 0.3%;
+  padding: 1%;
   width: 27vw;
+  overflow: scroll;
 }
 
 .chatbox-bericht form {

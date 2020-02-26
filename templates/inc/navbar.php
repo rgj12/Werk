@@ -180,11 +180,11 @@
         <span class="close">&times;</span>
     </div>
     <div class="chatbox-content">
-        <?php foreach ($navbarChatInfo as $chatInfo) : ?>
+        <?php foreach (array_reverse($navbarChatInfo) as $chatInfo) : ?>
         <div class="text">
             <?= $chatInfo->chat_message; ?>
             <br />
-            <?= $chatInfo->time_stamp; ?>
+            <div class="timestamp"><?= $chatInfo->time_stamp; ?></div>
         </div>
         <?php endforeach; ?>
     </div>

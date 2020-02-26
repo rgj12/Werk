@@ -11,7 +11,7 @@ class Chat
 
     public function getMessage($id)
     {
-        $this->db->query("SELECT * FROM chat_message INNER JOIN users ON chat_message.`from_user_id` = users.id WHERE to_user_id = :user_id ORDER BY time_stamp DESC LIMIT 5");
+        $this->db->query("SELECT * FROM chat_message INNER JOIN users ON chat_message.`from_user_id` = users.id WHERE to_user_id = :user_id ORDER BY time_stamp DESC");
         $this->db->bind(':user_id', $id);
         $results = $this->db->resultSet();
         return $results;
