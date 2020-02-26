@@ -33,7 +33,7 @@
 
                     <!-- Earnings (Monthly) Card Example -->
                     <div class="col-xl-3 col-md-6 mb-4">
-                        <a href="omzetoverzicht.php" class="card border-left-primary shadow h-100 py-2">
+                        <div class="card border-left-primary shadow h-100 py-2">
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
@@ -46,7 +46,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
 
                     <!-- Earnings (Monthly) Card Example -->
@@ -101,7 +101,7 @@
 
                     <!-- Pending Requests Card Example -->
                     <div class="col-xl-3 col-md-6 mb-4">
-                        <div class="card border-left-warning shadow h-100 py-2">
+                        <a href="afspraak.php?overzichtafspraken" class="card border-left-warning shadow h-100 py-2">
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
@@ -117,7 +117,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
 
@@ -130,7 +130,7 @@
                         <div class="card shadow mb-4">
                             <!-- Card Header - Dropdown -->
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Maandelijkse Omzet <?= date('Y'); ?></h6>
                                 <div class="dropdown no-arrow">
                                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -149,7 +149,7 @@
                             <!-- Card Body -->
                             <div class="card-body">
                                 <div class="chart-area">
-                                    <canvas id="myAreaChart"></canvas>
+                                    <div id="stacked"></div>
                                 </div>
                             </div>
                         </div>
@@ -160,7 +160,7 @@
                         <div class="card shadow mb-4">
                             <!-- Card Header - Dropdown -->
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Aantal verkochte producten</h6>
                                 <div class="dropdown no-arrow">
                                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -179,9 +179,9 @@
                             <!-- Card Body -->
                             <div class="card-body">
                                 <div class="chart-pie pt-4 pb-2">
-                                    <canvas id="myPieChart"></canvas>
+                                    <div id="pie-chart"></div>
                                 </div>
-                                <div class="mt-4 text-center small">
+                                <!-- <div class="mt-4 text-center small">
                                     <span class="mr-2">
                                         <i class="fas fa-circle text-primary"></i> Direct
                                     </span>
@@ -191,7 +191,7 @@
                                     <span class="mr-2">
                                         <i class="fas fa-circle text-info"></i> Referral
                                     </span>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -338,8 +338,32 @@
 
             </div>
             <!-- /.container-fluid -->
+            <input type="hidden" id="jan" value="<?= $janomzet ?>">
+            <input type="hidden" id="feb" value="<?= $febomzet ?>">
+            <input type="hidden" id="maa" value="<?= $maomzet ?>">
+            <input type="hidden" id="ap" value="<?= $apomzet ?>">
+            <input type="hidden" id="mei" value="<?= $meiomzet ?>">
+            <input type="hidden" id="jun" value="<?= $junomzet ?>">
+            <input type="hidden" id="jul" value="<?= $julomzet ?>">
+            <input type="hidden" id="aug" value="<?= $augomzet ?>">
+            <input type="hidden" id="spt" value="<?= $sepomzet ?>">
+            <input type="hidden" id="ok" value="<?= $okomzet ?>">
+            <input type="hidden" id="nov" value="<?= $novomzet ?>">
+            <input type="hidden" id="dec" value="<?= $decomzet ?>">
 
+            <?php $count = 1;
+            foreach ($producten as $product) : ?>
+            <input type="hidden" id="productnaam<?= $count++ ?>" value="<?= $product->productnaam; ?>">
+            <?php endforeach; ?>
+            <?php $count = 1;
+            foreach ($producten as $product) : ?>
+            <input type="hidden" id="aantalverkocht<?= $count++ ?>" value="<?= $product->aantal_verkocht; ?>">
+            <?php endforeach; ?>
         </div>
         <!-- End of Main Content -->
+        <script src="templates/js/stackedchart.js"></script>
+        <script src="templates/js/piechart.js">
+        </script>
 
+        </script>
         <?php include './inc/footer.php'; ?>

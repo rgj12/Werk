@@ -162,13 +162,6 @@ if (isset($_POST['maakFactuur'])) {
     $data['dp2'] = explode("/", $data['dp2']);
     $data['dp3'] = explode("/", $data['dp3']);
 
-    // echo $data['pp1'][1] . "<br>";
-    // echo $data['pp2'][1] . "<br>";
-    // echo $data['pp3'][1] . "<br>";
-    // echo $data['dp1'][1] . "<br>";
-    // echo $data['dp2'][1] . "<br>";
-    // echo $data['dp3'][1] . "<br>";
-
 
     $data["btoptie"] = $_POST["betaalOpties"];
 
@@ -179,7 +172,25 @@ if (isset($_POST['maakFactuur'])) {
     $data["totaalBTW"] =  number_format($data["totaal"] - $data["totaalexBtw"], 2, '.', '');
 
     if ($facturen->makeInvoice($data)) {
-        // var_dump($facturen->makeInvoice($data));
+        if ($data['pp1'][0] !== " / 0") {
+            $producten->aantalVerkocht($data['pp1'][0]);
+        }
+        if ($data['pp2'][0] !== " / 0") {
+            $producten->aantalVerkocht($data['pp2'][0]);
+        }
+        if ($data['pp3'][0] !== " / 0") {
+            $producten->aantalVerkocht($data['pp3'][0]);
+        }
+        if ($data['dp1'][0] !== " / 0") {
+            $diensten->aantalVerkocht($data['dp1'][0]);
+        }
+        if ($data['dp2'][0] !== " / 0") {
+            $diensten->aantalVerkocht($data['dp2'][0]);
+        }
+        if ($data['dp3'][0] !== " / 0") {
+            $diensten->aantalVerkocht($data['dp3'][0]);
+        }
+
         redirect('klanten.php', 'Factuur aangemaakt', 'success');
     } else {
         redirect('klanten.php', 'Er is iets misgegaan', 'error');

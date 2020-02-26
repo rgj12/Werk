@@ -70,4 +70,16 @@ class Dienst
             return false;
         }
     }
+
+    public function aantalVerkocht($dienst)
+    {
+
+        $this->db->query("UPDATE diensten SET aantal_verkocht =  aantal_verkocht +1 WHERE dienstnaam = '$dienst'");
+
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

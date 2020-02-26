@@ -34,7 +34,6 @@ class Index
         return $aantalAfspraken['aantalAfsprakenVoltooid'];
     }
 
-
     public function getYearlyEarnings()
     {
         $date = date("Y");
@@ -43,14 +42,17 @@ class Index
         $totaalJaar = $this->db->single();
         return $totaalJaar['totaalJaar'];
     }
+
+    public function getMonthlyEarnings($month)
+    {
+        $this->db->query("SELECT SUM(totaalIncBtw) AS totaalMaand FROM facturen WHERE datum LIKE '%$month%'");
+
+        $totaalMaand = $this->db->single();
+        return $totaalMaand['totaalMaand'];
+    }
     public function percentageComplete($complete, $notcomplete)
     {
-
-        if ($notcomplete == 0 || $complete == 0) {
-            return "100";
-        } else {
-            $percentage = round($complete / ($complete + $notcomplete) * 100, 2);
-            return $percentage;
-        }
+        $percentage = round($complete / ($complete + $notcomplete) * 100, 1);
+        return $percentage;
     }
 }

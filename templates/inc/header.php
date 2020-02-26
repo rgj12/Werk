@@ -24,10 +24,13 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] == false) {
 
     <!-- Custom styles for this template-->
     <link href="templates/css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="templates/css/chart.css">
     <link href="templates/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <link rel="stylesheet" href="templates/css/chatbox.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.0/morris.min.js"></script>
 
 
 </head>

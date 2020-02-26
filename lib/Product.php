@@ -70,4 +70,16 @@ class Product
             return false;
         }
     }
+
+    public function aantalVerkocht($product)
+    {
+
+        $this->db->query("UPDATE producten SET aantal_verkocht =  aantal_verkocht +1 WHERE productnaam = '$product'");
+
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

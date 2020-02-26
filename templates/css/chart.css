@@ -1,0 +1,10 @@
+#area-chart,
+#line-chart,
+#bar-chart,
+#stacked {
+  min-height: 250px;
+}
+
+#pie-chart {
+  min-height: 240px;
+}
