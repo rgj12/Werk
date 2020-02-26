@@ -21,9 +21,9 @@
                         <input type="password" class="form-control" name="password">
                     </div>
 
-                    <div class="form-group">
-                        <label>Profiel foto</label>
-                        <input type="file" class="form-control" name="profiel_foto">
+                    <div class="custom-file">
+                        <label class="custom-file-label">Profiel foto</label>
+                        <input type="file" class="custom-file-input" name="profiel_foto" style="cursor: pointer">
                     </div>
                 </div>
                 <div class="modal-footer">
