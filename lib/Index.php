@@ -57,7 +57,7 @@ class Index
         if ($notcomplete == 0 || $complete == 0) {
             return "100";
         } else {
-            $percentage = round(($complete - $notcomplete) / $complete * 100, 2);
+            $percentage = round($complete / ($complete + $notcomplete) * 100, 2);
             return $percentage;
         }
     }
