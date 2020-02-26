@@ -1,7 +1,7 @@
 <?php
-if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] == false) {
-    header('location: login.php');
-}
+// if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] == false) {
+//     header('location: login.php');
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">

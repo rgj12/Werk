@@ -11,22 +11,10 @@ if (isset($_POST['login'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    if (!empty($username) && !empty($password)) {
-        $username = trim(htmlspecialchars($username));
-        $password = trim(htmlspecialchars($password));
-
-        if ($login->checkCredentials($username, $password)) {
-            $loggedUser = $login->userInfo($username, $password);
-            foreach ($loggedUser as $logged) {
-                $_SESSION['username'] = $logged->username;
-                $_SESSION['profielfoto'] = $logged->profiel_foto;
-                $_SESSION['id'] = $logged->id;
-                $_SESSION['loggedIn'] = true;
-            }
-            header('Location:index.php');
-        } else {
-            header('Location:login.php');
-        }
+    $userInfo = $login->dehashPass($username);
+    foreach ($userInfo as $info) {
+        $hashedPass = $info->password;
+        echo $hashedPass;
     }
 }
 echo $template;
