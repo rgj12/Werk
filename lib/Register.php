@@ -11,20 +11,25 @@ class Register
 
     public function registerUser($data)
     {
-        $this->db->query(
-            "INSERT INTO users (username, password, profiel_foto)
-            VALUES (:username, :password, :profiel_foto)"
-        );
-
-        //bind data
-        $this->db->bind(':username', $data['username']);
-        $this->db->bind(':password', $data['password']);
-        $this->db->bind(':profiel_foto', $data['profiel_foto']);
-
-        if ($this->db->execute()) {
-            return true;
-        } else {
+        $this->db->query("SELECT * FROM users WHERE username = '" . $_POST['username'] . "'");
+        if ($this->db->rowcount() > 0) {
             return false;
+        }else{
+            $this->db->query(
+                "INSERT INTO users (username, password, profiel_foto)
+            VALUES (:username, :password, :profiel_foto)"
+            );
+
+            //bind data
+            $this->db->bind(':username', $data['username']);
+            $this->db->bind(':password', $data['password']);
+            $this->db->bind(':profiel_foto', $data['profiel_foto']);
+
+            if ($this->db->execute()) {
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 
