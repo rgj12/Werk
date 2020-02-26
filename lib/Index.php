@@ -43,6 +43,14 @@ class Index
         $totaalJaar = $this->db->single();
         return $totaalJaar['totaalJaar'];
     }
+
+    public function getMonthlyEarnings($month)
+    {
+        $this->db->query("SELECT SUM(totaalIncBtw) AS totaalMaand FROM facturen WHERE datum LIKE '%$month%'");
+
+        $totaalMaand = $this->db->single();
+        return $totaalMaand['totaalMaand'];
+    }
     public function percentageComplete($complete, $notcomplete)
     {
 

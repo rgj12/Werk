@@ -10,8 +10,24 @@ $index = new Index;
 $template->navbarChatInfo = $userChatInfo->getMessage($_SESSION['id']);
 $template->aantalBerichten = $userChatInfo->getNumberOfMessages($_SESSION['id']);
 $template->klanten = $klanten->getAllCustomers();
+
+//omzet tonen
 $template->dagOmzet = number_format((float) $index->getDailyEarnings(), 2, '.', '');
 $template->jaarOmzet = number_format((float) $index->getYearlyEarnings(), 2, '.', '');
+
+$template->janomzet = $index->getMonthlyEarnings(date("Y") . "-01");
+$template->febomzet = $index->getMonthlyEarnings(date("Y") . "-02");
+$template->maomzet = $index->getMonthlyEarnings(date("Y") . "-03");
+$template->apomzet = $index->getMonthlyEarnings(date("Y") . "-04");
+$template->meiomzet = $index->getMonthlyEarnings(date("Y") . "-05");
+$template->junomzet = $index->getMonthlyEarnings(date("Y") . "-06");
+$template->julomzet = $index->getMonthlyEarnings(date("Y") . "-07");
+$template->augomzet = $index->getMonthlyEarnings(date("Y") . "-08");
+$template->sepomzet = $index->getMonthlyEarnings(date("Y") . "-09");
+$template->okomzet = $index->getMonthlyEarnings(date("Y") . "-10");
+$template->novomzet = $index->getMonthlyEarnings(date("Y") . "-11");
+$template->decomzet = $index->getMonthlyEarnings(date("Y") . "-12");
+//afspraken info tonen
 $template->aantalAfspraken = $index->getAppointmentsNotComplete();
 $template->aantalAfsprakenComplete = $index->getAppointmentsComplete();
 $template->percentageCompleet = $index->percentageComplete($template->aantalAfsprakenComplete, $template->aantalAfspraken);

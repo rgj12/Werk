@@ -31,7 +31,7 @@
 
                     <!-- Earnings (Monthly) Card Example -->
                     <div class="col-xl-3 col-md-6 mb-4">
-                        <a href="omzetoverzicht.php" class="card border-left-primary shadow h-100 py-2">
+                        <div class="card border-left-primary shadow h-100 py-2">
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
@@ -44,7 +44,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
 
                     <!-- Earnings (Monthly) Card Example -->
@@ -99,7 +99,7 @@
 
                     <!-- Pending Requests Card Example -->
                     <div class="col-xl-3 col-md-6 mb-4">
-                        <div class="card border-left-warning shadow h-100 py-2">
+                        <a href="afspraak.php?overzichtafspraken" class="card border-left-warning shadow h-100 py-2">
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
@@ -115,7 +115,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
 
@@ -128,7 +128,7 @@
                         <div class="card shadow mb-4">
                             <!-- Card Header - Dropdown -->
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Maandelijkse Omzet <?= date('Y'); ?></h6>
                                 <div class="dropdown no-arrow">
                                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -147,7 +147,7 @@
                             <!-- Card Body -->
                             <div class="card-body">
                                 <div class="chart-area">
-                                    <canvas id="myAreaChart"></canvas>
+                                    <div id="bar-chart"></div>
                                 </div>
                             </div>
                         </div>
@@ -336,8 +336,140 @@
 
             </div>
             <!-- /.container-fluid -->
+            <input type="hidden" id="jan" value="<?= $janomzet ?>">
+            <input type="hidden" id="feb" value="<?= $febomzet ?>">
+            <input type="hidden" id="maa" value="<?= $maomzet ?>">
+            <input type="hidden" id="ap" value="<?= $apomzet ?>">
+            <input type="hidden" id="mei" value="<?= $meiomzet ?>">
+            <input type="hidden" id="jun" value="<?= $junomzet ?>">
+            <input type="hidden" id="jul" value="<?= $julomzet ?>">
+            <input type="hidden" id="aug" value="<?= $augomzet ?>">
+            <input type="hidden" id="spt" value="<?= $sepomzet ?>">
+            <input type="hidden" id="ok" value="<?= $okomzet ?>">
+            <input type="hidden" id="nov" value="<?= $novomzet ?>">
+            <input type="hidden" id="dec" value="<?= $decomzet ?>">
+
 
         </div>
         <!-- End of Main Content -->
+        <script>
+        januari = $('#jan').val();
+        februari = $('#feb').val();
+        maart = $('#maa').val();
+        april = $('#ap').val();
+        mei = $('#mei').val();
+        juni = $('#jun').val();
+        juli = $('#jul').val();
+        augustus = $('#aug').val();
+        september = $('#spt').val();
+        oktober = $('#nov').val();
+        november = $('#ok').val();
+        december = $('#december').val();
 
+        if (januari == '') {
+            januari = 0;
+        }
+        if (februari == '') {
+            februari = 0;
+        }
+        if (maart == '') {
+            maart = 0;
+        }
+        if (april == '') {
+            april = 0;
+        }
+        if (mei == '') {
+            mei = 0;
+        }
+        if (juni == '') {
+            juni = 0;
+        }
+        if (juli == '') {
+            juli = 0;
+        }
+        if (augustus == '') {
+            augustus = 0;
+        }
+        if (september == '') {
+            september = 0;
+        }
+        if (oktober == '') {
+            oktober = 0;
+        }
+        if (november == '') {
+            november = 0;
+        }
+        if (december == '') {
+            december = 0;
+        }
+
+        console.log(juni)
+
+        var data = [{
+                    y: "Januari",
+                    a: januari
+                },
+
+                {
+                    y: "Februari",
+                    a: februari
+                },
+                {
+                    y: "Maart",
+                    a: maart
+                },
+                {
+                    y: "April",
+                    a: april
+                },
+                {
+                    y: "Mei",
+                    a: mei
+                },
+                {
+                    y: "Juni",
+                    a: juni
+                },
+                {
+                    y: "Juli",
+                    a: juli
+                },
+                {
+                    y: "Augustus",
+                    a: augustus
+                },
+                {
+                    y: "September",
+                    a: september
+                },
+                {
+                    y: "Oktober",
+                    a: oktober
+                },
+                {
+                    y: "November",
+                    a: november
+                },
+                {
+                    y: "December",
+                    a: december
+                }
+            ],
+            config = {
+                data: data,
+                xkey: "y",
+                ykeys: ["a"],
+                labels: ["Totaal inkomen"],
+                fillOpacity: 0.6,
+                hideHover: "auto",
+                behaveLikeLine: true,
+                resize: true,
+                pointFillColors: ["#ffffff"],
+                pointStrokeColors: ["black"],
+                lineColors: ["gray"]
+            };
+
+        config.element = "bar-chart";
+        Morris.Bar(config);
+        </script>
         <?php include './inc/footer.php'; ?>
