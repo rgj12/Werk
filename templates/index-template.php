@@ -13,7 +13,9 @@
         <div id="content">
 
             <!-- Topbar -->
-            <?php include 'inc/navbar.php'; ?>
+            <?php include 'inc/navbar.php';
+            include 'inc/registerModals/toevoegModal.php';
+            ?>
             <!-- End of Topbar -->
 
             <!-- Begin Page Content -->

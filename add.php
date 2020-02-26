@@ -7,6 +7,7 @@ $afspraken = new Afspraken;
 $producten = new Product;
 $diensten = new Dienst;
 $facturen = new Factuur;
+$users = new Register;
 
 //klanten toevoegen
 if (isset($_POST['toevoegen'])) {
@@ -91,6 +92,26 @@ if (isset($_POST['maakDienst'])) {
         }
     } else {
         redirect('diensten.php', 'Vul alle velden in!', 'error');
+    }
+}
+
+// user toevoegen
+if (isset($_POST['maakUser'])) {
+    $data = array();
+
+    if (!empty($_POST['username']) || !empty($_POST['password'])) {
+
+        $data['username'] = trim(htmlspecialchars($_POST['username']));
+        $data['password'] = trim(htmlspecialchars($_POST['password']));
+        $data['profiel_foto'] = 'users/profielfoto/' . $_POST['profiel_foto'];
+
+        if ($users->registerUser($data)) {
+            redirect('index.php', 'Succesvol toegevoegd', 'success');
+        } else {
+            redirect('index.php', 'Er is iets misgegaan', 'error');
+        }
+    } else {
+        redirect('index.php', 'Vul alle velden in!', 'error');
     }
 }
 

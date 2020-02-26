@@ -152,6 +152,10 @@
                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                     Profile
                 </a>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#registerModal">
+                    <i class="fas fa-user-edit fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Register new user
+                </a>
                 <a class="dropdown-item" href="#">
                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                     Settings
@@ -180,11 +184,11 @@
         <span class="close">&times;</span>
     </div>
     <div class="chatbox-content">
-        <?php foreach ($navbarChatInfo as $chatInfo) : ?>
+        <?php foreach (array_reverse($navbarChatInfo) as $chatInfo) : ?>
         <div class="text">
             <?= $chatInfo->chat_message; ?>
             <br />
-            <?= $chatInfo->time_stamp; ?>
+            <div class="timestamp"><?= $chatInfo->time_stamp; ?></div>
         </div>
         <?php endforeach; ?>
     </div>
