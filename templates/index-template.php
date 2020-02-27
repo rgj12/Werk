@@ -148,8 +148,8 @@
                             </div>
                             <!-- Card Body -->
                             <div class="card-body">
-                                <div class="chart-area">
-                                    <div id="stacked"></div>
+                                <div id="stacked" class="chart-area">
+
                                 </div>
                             </div>
                         </div>
@@ -178,8 +178,8 @@
                             </div>
                             <!-- Card Body -->
                             <div class="card-body">
-                                <div class="chart-pie pt-4 pb-2">
-                                    <div id="pie-chart"></div>
+                                <div id="pie-chart" class="chart-pie pt-4 pb-2">
+
                                 </div>
                                 <!-- <div class="mt-4 text-center small">
                                     <span class="mr-2">
