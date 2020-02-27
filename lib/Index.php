@@ -52,7 +52,12 @@ class Index
     }
     public function percentageComplete($complete, $notcomplete)
     {
-        $percentage = round($complete / ($complete + $notcomplete) * 100, 1);
-        return $percentage;
+        $totaal = $complete + $notcomplete;
+        if ($totaal = "0") {
+            return "100";
+        } else {
+            $percentage = round($complete / ($complete + $notcomplete) * 100, 1);
+            return $percentage;
+        }
     }
 }

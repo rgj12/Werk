@@ -351,13 +351,22 @@
             <input type="hidden" id="nov" value="<?= $novomzet ?>">
             <input type="hidden" id="dec" value="<?= $decomzet ?>">
 
-            <?php $count = 1;
+            <?php
             foreach ($producten as $product) : ?>
-            <input type="hidden" id="productnaam<?= $count++ ?>" value="<?= $product->productnaam; ?>">
+            <input type="hidden" class="productnaam" value="<?= $product->productnaam; ?>">
             <?php endforeach; ?>
             <?php $count = 1;
             foreach ($producten as $product) : ?>
-            <input type="hidden" id="aantalverkocht<?= $count++ ?>" value="<?= $product->aantal_verkocht; ?>">
+            <input type="hidden" class="aantalverkocht" value="<?= $product->aantal_verkocht; ?>">
+            <?php endforeach; ?>
+
+            <?php $count = 1;
+            foreach ($diensten as $dienst) : ?>
+            <input type="hidden" class="dienstnaam" value="<?= $dienst->dienstnaam; ?>">
+            <?php endforeach; ?>
+            <?php $count = 1;
+            foreach ($diensten as $dienst) : ?>
+            <input type="hidden" class="aantalverkochtd" value="<?= $dienst->aantal_verkocht; ?>">
             <?php endforeach; ?>
         </div>
         <!-- End of Main Content -->
