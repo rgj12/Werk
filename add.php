@@ -57,7 +57,7 @@ if (isset($_POST['maakAfspraak'])) {
     }
 }
 
-// product toevoegen 
+// product toevoegen
 if (isset($_POST['maakProduct'])) {
     $data = array();
 
@@ -76,7 +76,7 @@ if (isset($_POST['maakProduct'])) {
     }
 }
 
-// dienst toevoegen 
+// dienst toevoegen
 if (isset($_POST['maakDienst'])) {
     $data = array();
 
@@ -103,12 +103,21 @@ if (isset($_POST['maakUser'])) {
 
         $data['username'] = trim(htmlspecialchars($_POST['username']));
         $data['password'] = trim(htmlspecialchars(password_hash($_POST['password'], PASSWORD_DEFAULT)));
-        $data['profiel_foto'] = 'users/profielfoto/' . $_POST['profiel_foto'];
 
-        if ($users->registerUser($data)) {
-            redirect('index.php', 'Succesvol toegevoegd', 'success');
+        if (empty($_POST['profiel_foto'])) {
+            $data['profiel_foto'] = '';
         } else {
-            redirect('index.php', 'Er is iets misgegaan', 'error');
+            $data['profiel_foto'] = 'users/profielfoto/' . $_POST['profiel_foto'];
+        }
+
+        if ($users->checkUsername($data['username']) > 0) {
+            redirect('index.php', 'Gebruikersnaam al in bezit!', 'error');
+        } else {
+            if ($users->registerUser($data)) {
+                redirect('index.php', 'Gebruiker aan gemaakt!', 'success');
+            } else {
+                redirect('index.php', 'Er is iets misgegaan', 'error');
+            }
         }
     } else {
         redirect('index.php', 'Vul alle velden in!', 'error');
@@ -162,14 +171,13 @@ if (isset($_POST['maakFactuur'])) {
     $data['dp2'] = explode("/", $data['dp2']);
     $data['dp3'] = explode("/", $data['dp3']);
 
-
     $data["btoptie"] = $_POST["betaalOpties"];
 
     $data["datum"] = date("Y/m/d");
     $data["totaal"] = number_format((float) $data["pp1"][1] + $data["pp2"][1] + $data["pp3"][1] + $data["dp1"][1] + $data["dp2"][1] + $data["dp3"][1], 2, '.', '');
 
     $data["totaalexBtw"] = number_format((float) $facturen->VAT($data), 2, '.', '');
-    $data["totaalBTW"] =  number_format($data["totaal"] - $data["totaalexBtw"], 2, '.', '');
+    $data["totaalBTW"] = number_format($data["totaal"] - $data["totaalexBtw"], 2, '.', '');
 
     if ($facturen->makeInvoice($data)) {
         if ($data['pp1'][0] !== " / 0") {
