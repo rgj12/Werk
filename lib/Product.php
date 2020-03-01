@@ -82,4 +82,10 @@ class Product
             return false;
         }
     }
+
+    public function totaalVerkocht(){
+        $this->db->query("SELECT SUM(aantal_verkocht) as totaalverkocht from producten");
+        $totaalVerkocht= $this->db->single();
+        return $totaalVerkocht['totaalverkocht'];
+    }
 }

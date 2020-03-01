@@ -148,8 +148,8 @@
                             </div>
                             <!-- Card Body -->
                             <div class="card-body">
-                                <div id="stacked" class="chart-area">
-
+                                <div class="chart-area">
+                                    <div id="stacked" ></div>
                                 </div>
                             </div>
                         </div>
@@ -160,7 +160,7 @@
                         <div class="card shadow mb-4">
                             <!-- Card Header - Dropdown -->
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary">Aantal verkochte producten</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Aantal verkochte producten & diensten</h6>
                                 <div class="dropdown no-arrow">
                                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -181,17 +181,17 @@
                                 <div id="pie-chart" class="chart-pie pt-4 pb-2">
 
                                 </div>
-                                <!-- <div class="mt-4 text-center small">
-                                    <span class="mr-2">
+                                <div class="mt-4 text-center small">
+                                    <!-- <span class="mr-2">
                                         <i class="fas fa-circle text-primary"></i> Direct
-                                    </span>
+                                    </span> -->
                                     <span class="mr-2">
-                                        <i class="fas fa-circle text-success"></i> Social
+                                        <i class="fas fa-circle text-success"></i> <?=$totaalverkochtediensten + $totaalverkochteproducten;?> Totaal 
                                     </span>
-                                    <span class="mr-2">
+                                    <!-- <span class="mr-2">
                                         <i class="fas fa-circle text-info"></i> Referral
-                                    </span>
-                                </div> -->
+                                    </span> -->
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -352,26 +352,29 @@
             <input type="hidden" id="dec" value="<?= $decomzet ?>">
 
             <?php
-            foreach ($producten as $product) : ?>
-            <input type="hidden" class="productnaam" value="<?= $product->productnaam; ?>">
-            <?php endforeach; ?>
-            <?php $count = 1;
-            foreach ($producten as $product) : ?>
-            <input type="hidden" class="aantalverkocht" value="<?= $product->aantal_verkocht; ?>">
-            <?php endforeach; ?>
-
-            <?php $count = 1;
-            foreach ($diensten as $dienst) : ?>
-            <input type="hidden" class="dienstnaam" value="<?= $dienst->dienstnaam; ?>">
-            <?php endforeach; ?>
-            <?php $count = 1;
-            foreach ($diensten as $dienst) : ?>
-            <input type="hidden" class="aantalverkochtd" value="<?= $dienst->aantal_verkocht; ?>">
-            <?php endforeach; ?>
+            $data = ''; 
+            foreach ($producten as $product){
+$data .= '{ label: "'.$product->productnaam.'", value:"'.$product->aantal_verkocht.'"},';
+            }
+            foreach ($diensten as $dienst) {
+                $data .= '{ label: "'.$dienst->dienstnaam.'", value:"'.$dienst->aantal_verkocht.'"},';
+            }
+            $data = substr($data,0,-1);
+            var_dump($data);
+            ?>
+      
         </div>
+
+        <script>
+Morris.Donut({
+  element: "pie-chart",
+  data: [<?php echo $data;?>]
+ 
+ 
+});
+</script>
         <!-- End of Main Content -->
         <script src="templates/js/stackedchart.js"></script>
-        <script src="templates/js/piechart.js">
         </script>
 
         </script>

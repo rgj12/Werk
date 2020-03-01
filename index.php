@@ -18,6 +18,8 @@ $template->diensten = $diensten->showAllDiensten();
 //omzet tonen
 $template->dagOmzet = number_format((float) $index->getDailyEarnings(), 2, '.', '');
 $template->jaarOmzet = number_format((float) $index->getYearlyEarnings(), 2, '.', '');
+$template->totaalverkochteproducten = $producten->totaalVerkocht();
+$template->totaalverkochtediensten = $diensten->totaalVerkocht();
 
 $template->janomzet = $index->getMonthlyEarnings(date("Y") . "-01");
 $template->febomzet = $index->getMonthlyEarnings(date("Y") . "-02");

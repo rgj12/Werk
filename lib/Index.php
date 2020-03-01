@@ -53,7 +53,7 @@ class Index
     public function percentageComplete($complete, $notcomplete)
     {
         $totaal = $complete + $notcomplete;
-        if ($totaal = "0") {
+        if ($totaal == "0") {
             return "100";
         } else {
             $percentage = round($complete / ($complete + $notcomplete) * 100, 1);
