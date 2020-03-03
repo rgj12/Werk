@@ -16,7 +16,7 @@ if (isset($_POST['fk_id'])) {
 
 if (isset($_GET['overzicht'])) {
     $template = new Template('templates/factuuroverzicht-template.php');
-    $template->navbarChatInfo = $userChatInfo->getMessage($_SESSION['id']);
+    $template->navbarChatInfo = $userChatInfo->getMessages($_SESSION['id']);
     $template->aantalBerichten = $userChatInfo->getNumberOfMessages($_SESSION['id']);
     $template->producten = $producten->showAllProducts();
     $template->diensten = $diensten->showAllDiensten();

@@ -8,7 +8,7 @@ require_once 'inc/klantenModals/toevoegModal.php';
 <div id="wrapper">
 
     <!-- Sidebar -->
-    <?php include 'inc/sidebar.php'; ?>
+    <?php include 'inc/sidebar.php';?>
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
@@ -18,12 +18,12 @@ require_once 'inc/klantenModals/toevoegModal.php';
         <div id="content">
 
             <!-- Topbar -->
-            <?php include 'inc/navbar.php'; ?>
+            <?php include 'inc/navbar.php';?>
             <!-- End of Topbar -->
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
-                <?php displayMessage(); ?>
+                <?php displayMessage();?>
                 <!-- Page Heading -->
                 <h1 class="h3 mb-2 text-gray-800">Klanten</h1>
                 <p class="mb-4">Overzicht klanten</p>
@@ -49,23 +49,23 @@ require_once 'inc/klantenModals/toevoegModal.php';
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($klanten as $klant) : ?>
+                                    <?php foreach ($klanten as $klant): ?>
                                     <tr>
-                                        <td><?= $klant->voornaam; ?></td>
-                                        <td><?= $klant->achternaam; ?></td>
-                                        <td><?= $klant->email; ?></td>
-                                        <td><?= $klant->telefoonnummer; ?></td>
-                                        <td><?= $klant->woonplaats; ?></td>
-                                        <td><?= $klant->reden_bezoek; ?></td>
+                                        <td><?=$klant->voornaam;?></td>
+                                        <td><?=$klant->achternaam;?></td>
+                                        <td><?=$klant->email;?></td>
+                                        <td><?=$klant->telefoonnummer;?></td>
+                                        <td><?=$klant->woonplaats;?></td>
+                                        <td><?=$klant->reden_bezoek;?></td>
                                         <td>
                                             <a href="#" title="Maak een afspraak"
                                                 class="fas fa-calendar-check fa-lg afsp_btn" style="color:green;"
                                                 data-toggle="modal" data-target="#afspraakModal"
-                                                id="<?= $klant->id ?>"><sup class="fa fa-plus fa-sm"></sup></a>
+                                                id="<?=$klant->id?>"><sup class="fa fa-plus fa-sm"></sup></a>
                                             |&nbsp;
                                             <a href="#" title="Maak factuur"
                                                 class="fas fa-file-invoice fa-lg factBtn prijsBtn" style="color:green;"
-                                                id="<?= $klant->id; ?>" data-toggle="modal"
+                                                id="<?=$klant->id;?>" data-toggle="modal"
                                                 data-target="#factuurModal"><sup class="fa fa-plus fa-sm"></sup></a>
                                             |&nbsp;
 
@@ -73,27 +73,27 @@ require_once 'inc/klantenModals/toevoegModal.php';
                                                 style="color:black;"><sup class="fas fa-eye fa-sm"></a> |&nbsp;
 
                                             <a class="fa fa-edit fa-lg editBtn" href="#" data-toggle="modal"
-                                                data-target="#editModal" id="<?= $klant->id ?>" title="Pas klant aan"
+                                                data-target="#editModal" id="<?=$klant->id?>" title="Pas klant aan"
                                                 style="color:orange;">
                                             </a> |&nbsp;
-                                            <a href="delete.php?del_id=<?= $klant->id ?>" title="Verwijder klant"
+                                            <a href="delete.php?del_id=<?=$klant->id?>" title="Verwijder klant"
                                                 class="fa fa-trash fa-lg" style="color:red;"
                                                 onclick="return confirm('Weet je zeker dat je deze klant wilt verwijderen?')"></a>
                                             |&nbsp;
-                                            <a href="pdf.php?id=<?= $klant->id ?>" class="fa fa-file-pdf-o fa-lg"
-                                                title="Bekijk afspraak"></a>
+                                            <!-- <a href="pdf.php?id=<?=$klant->id?>" class="fa fa-file-pdf-o fa-lg"
+                                                title="Bekijk afspraak"></a> -->
 
                                         </td>
                                     </tr>
 
-                                    <?php endforeach; ?>
+                                    <?php endforeach;?>
                                     <!-- Modals-->
                                     <?php include 'inc/klantenModals/factuurModal.php';
-                                    /* Modal voor editen */
-                                    include 'inc/klantenModals/editModal.php';
-                                    /* Modal voor voor afspraak maken */
-                                    include 'inc/klantenModals/afspraakModal.php';
-                                    ?>
+/* Modal voor editen */
+include 'inc/klantenModals/editModal.php';
+/* Modal voor voor afspraak maken */
+include 'inc/klantenModals/afspraakModal.php';
+?>
                                 </tbody>
                             </table>
                         </div>
@@ -105,4 +105,4 @@ require_once 'inc/klantenModals/toevoegModal.php';
 
         </div>
         <!-- End of Main Content -->
-        <?php include './inc/footer.php'; ?>
+        <?php include './inc/footer.php';?>

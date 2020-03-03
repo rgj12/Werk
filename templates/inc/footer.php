@@ -40,6 +40,7 @@
  <script src="templates/js/request.js"></script>
 
  <script src="templates/js/chatbox.js"></script>
+ <script src="templates/js/message_board.js"></script>
  </body>
 
  </html>

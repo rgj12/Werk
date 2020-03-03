@@ -102,11 +102,9 @@
                 aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-envelope fa-fw"></i>
                 <!-- Counter - Messages -->
-                <?php if ($aantalBerichten == 0) {?>
-                <span class="badge badge-danger badge-counter"></span>
-                <?php } else {?>
-                <span class="badge badge-danger badge-counter"><?=$aantalBerichten;?></span>
-                <?php }?>
+
+                <span class="badge badge-danger badge-counter">0</span>
+
             </a>
             <!-- Dropdown - Messages -->
             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -114,23 +112,21 @@
                 <h6 class="dropdown-header">
                     Message Center
                 </h6>
-                <?php foreach ($navbarChatInfo as $chatInfo): ?>
+
                 <a class="dropdown-item d-flex align-items-center" href="#" id="openchat">
                     <div class="dropdown-list-image mr-3">
-                        <?php if ($chatInfo->profiel_foto == '') {
-    $chatInfo->profiel_foto = 'users/profielfoto/Default-Profile.png';
-}?>
-                        <img class="rounded-circle" src="<?=$chatInfo->profiel_foto?>" alt="">
+
+                        <img class="rounded-circle" src="" alt="">
                         <div class="status-indicator bg-success"></div>
                     </div>
                     <div class="font-weight-bold">
-                        <div class="text-truncate"><?=$chatInfo->chat_message;?></div>
-                        <div class="small text-gray-500"><?=$chatInfo->username;?></div>
+                        <div class="text-truncate">test</div>
+                        <div class="small text-gray-500">test</div>
                     </div>
                 </a>
-                <?php endforeach;?>
 
-                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+
+                <a class="dropdown-item text-center small text-gray-500" href="message_board.php">Read More Messages</a>
 
             </div>
         </li>
@@ -183,25 +179,24 @@
 <div class="container-chatbox" id="chatbox">
     <div class="chatbox-header">
         <img src="users/profielfoto/Default-Profile.png" alt="png">
-        <h4><?=$chatInfo->username?></h4>
+        <h4>test</h4>
         <span class="close">&times;</span>
     </div>
     <div class="chatbox-content">
-        <?php foreach (array_reverse($navbarChatInfo) as $chatInfo): ?>
+
         <div class="text">
-            <?=$chatInfo->chat_message;?>
+            test
             <br />
-            <div class="timestamp"><?=$chatInfo->time_stamp;?></div>
+            <div class="timestamp">test</div>
         </div>
-        <?php endforeach;?>
+
     </div>
     <div class="chatbox-bericht">
         <form action="index.php" method="POST">
             <div class="form-row">
                 <div class="col-9">
                     <input type="text" name="bericht" id="bericht" class="form-control" required>
-                    <input type="hidden" name="receiver" value="<?=$_SESSION['id']?>">
-                    <input type="hidden" name="sender" value="<?=$chatInfo->from_user_id?>">
+
                 </div>
                 <div class="col">
                     <i class="fas fa-paper-plane"><input type="submit" class="btn btn-primary" name="sendMessage"
