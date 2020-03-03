@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 26 feb 2020 om 10:25
--- Serverversie: 10.4.11-MariaDB
--- PHP-versie: 7.4.1
+-- Gegenereerd op: 03 mrt 2020 om 11:28
+-- Serverversie: 10.4.8-MariaDB
+-- PHP-versie: 7.1.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -47,7 +47,8 @@ INSERT INTO `afspraken` (`id`, `klant_id`, `datum`, `tijd`, `omschrijving`, `dat
 (40, 2, '2020-02-25', '12:12:00', 'test', '2020-02-25', 1),
 (41, 2, '2020-02-25', '12:12:00', 'tesdt', '2020-02-25', 1),
 (42, 2, '2020-02-25', '12:12:00', 'th', '2020-02-25', 0),
-(43, 2, '2020-02-20', '12:42:00', 'test', '2020-02-25', 0);
+(43, 2, '2020-02-20', '12:42:00', 'test', '2020-02-25', 0),
+(44, 2, '2020-03-03', '12:30:00', 'test', '2020-03-03', 0);
 
 -- --------------------------------------------------------
 
@@ -85,16 +86,17 @@ INSERT INTO `chat_message` (`chat_message_id`, `to_user_id`, `from_user_id`, `ch
 CREATE TABLE `diensten` (
   `id` int(11) NOT NULL,
   `dienstnaam` varchar(255) NOT NULL,
-  `dienstprijs` varchar(45) NOT NULL
+  `dienstprijs` varchar(45) NOT NULL,
+  `aantal_verkocht` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `diensten`
 --
 
-INSERT INTO `diensten` (`id`, `dienstnaam`, `dienstprijs`) VALUES
-(1, 'testdiensten', '7.50'),
-(5, 'opschonen', '125.00');
+INSERT INTO `diensten` (`id`, `dienstnaam`, `dienstprijs`, `aantal_verkocht`) VALUES
+(1, 'testdiensten', '7.50', 2),
+(5, 'opschonen', '125.00', 0);
 
 -- --------------------------------------------------------
 
@@ -138,7 +140,8 @@ CREATE TABLE `facturen` (
 INSERT INTO `facturen` (`factuurnummer`, `voornaam`, `achternaam`, `email`, `straatnaam`, `postcode`, `woonplaats`, `telefoonnummer`, `klantnummer`, `product1`, `product2`, `product3`, `dienst1`, `dienst2`, `dienst3`, `product_prijs1`, `product_prijs2`, `product_prijs3`, `dienst_prijs1`, `dienst_prijs2`, `dienst_prijs3`, `totaalIncBtw`, `totaalExBtw`, `totaalBTW`, `datum`, `betaalOpties`) VALUES
 (9, 'Gerritax', 'van de waalx', 'w@wx.nl', 'koekstraatx', '3192JWx', 'Rotterdamx', '', 2, 'tesprod3 ', ' ', ' ', 'opschonen ', ' ', ' ', ' 8.50', ' 0', ' 0', ' 125.00', ' 0', ' 0', '133.50', '110.33', '23.17', '2020-02-25', '14 dagen'),
 (10, 'Gerrit', 'van de waal', 'w@w.nl', 'koekstraat', '3192JW', 'Rotterdam', '064559621', 2, 'harde schijf ', 'opvouwbare kut ', ' ', ' ', ' ', ' ', ' 25.00', ' 25.95', ' 0', ' 0', ' 0', ' 0', '50.95', '42.11', '8.84', '2020-02-26', 'pin'),
-(11, 'Gerrit', 'van de waal', 'w@w.nl', 'koekstraat', '3192JW', 'Rotterdam', '064559621', 2, 'pc ', 'pc ', ' ', ' ', ' ', ' ', ' 424.68', ' 424.68', ' 0', ' 0', ' 0', ' 0', '849.36', '701.95', '147.41', '2020-02-26', 'IDEAL');
+(11, 'Gerrit', 'van de waal', 'w@w.nl', 'koekstraat', '3192JW', 'Rotterdam', '064559621', 2, 'pc ', 'pc ', ' ', ' ', ' ', ' ', ' 424.68', ' 424.68', ' 0', ' 0', ' 0', ' 0', '849.36', '701.95', '147.41', '2020-02-26', 'IDEAL'),
+(12, 'Gerrit', 'van de waal', 'w@w.nl', 'koekstraat', '3192JW', 'Rotterdam', '', 2, 'pc ', ' ', ' ', ' ', ' ', ' ', ' 424.68', ' 0', ' 0', ' 0', ' 0', ' 0', '424.68', '350.98', '73.70', '2020-03-03', '14 dagen');
 
 -- --------------------------------------------------------
 
@@ -186,18 +189,18 @@ CREATE TABLE `login_details` (
 CREATE TABLE `producten` (
   `id` int(11) NOT NULL,
   `productnaam` varchar(255) NOT NULL,
-  `prijs` varchar(45) NOT NULL
+  `prijs` varchar(45) NOT NULL,
+  `aantal_verkocht` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `producten`
 --
 
-INSERT INTO `producten` (`id`, `productnaam`, `prijs`) VALUES
-(7, 'pc', '424.68'),
-(8, 'tesprod3', '8.50'),
-(9, 'harde schijf', '25.00'),
-(10, 'opvouwbare kut', '25.95');
+INSERT INTO `producten` (`id`, `productnaam`, `prijs`, `aantal_verkocht`) VALUES
+(7, 'pc', '424.68', 1),
+(8, 'tesprod3', '8.50', 0),
+(9, 'harde schijf', '25.00', 0);
 
 -- --------------------------------------------------------
 
@@ -209,16 +212,17 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `profiel_foto` varchar(255) NOT NULL
+  `profiel_foto` varchar(255) NOT NULL,
+  `level` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `profiel_foto`) VALUES
-(1, 'Renato', 'testPass', 'users/profielfoto/renato_pf.jpg'),
-(2, 'admin', 'test', '');
+INSERT INTO `users` (`id`, `username`, `password`, `profiel_foto`, `level`) VALUES
+(1, 'admin', '$2y$10$vh23JnfmKbTjna54e19.2eJUG1B5N4HOXVVpj8FxFfNYsnzPJ7jfe', 'users/profielfoto/logo.png', 1),
+(2, 'renato', '$2y$10$XL2zEeuWhOdumFrJTj5gBufT3t1gvWXmqgtlNHTu02OrdoRUWzKAe', '', 0);
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -281,7 +285,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT voor een tabel `afspraken`
 --
 ALTER TABLE `afspraken`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT voor een tabel `chat_message`
@@ -299,7 +303,7 @@ ALTER TABLE `diensten`
 -- AUTO_INCREMENT voor een tabel `facturen`
 --
 ALTER TABLE `facturen`
-  MODIFY `factuurnummer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `factuurnummer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT voor een tabel `klanten`
@@ -323,7 +327,7 @@ ALTER TABLE `producten`
 -- AUTO_INCREMENT voor een tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

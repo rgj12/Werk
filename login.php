@@ -2,19 +2,33 @@
 
 include_once 'config/init.php';
 require_once 'helpers/system_helper.php';
-
 $_SESSION['loggedIn'] = false;
 $template = new Template('templates/login_temp.php');
 $login = new Login;
 
 if (isset($_POST['login'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    if (!empty($_POST['username']) && !empty($_POST['password'])) {
 
-    $userInfo = $login->dehashPass($username);
-    foreach ($userInfo as $info) {
-        $hashedPass = $info->password;
-        echo $hashedPass;
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        $userInfo = $login->getPass($username);
+        foreach ($userInfo as $info) {
+            $hashedPass = $info->password;
+
+            if (password_verify($password, $hashedPass)) {
+                $_SESSION['loggedIn'] = true;
+                $_SESSION['id'] = $info->id;
+                $_SESSION['username'] = $info->username;
+                $_SESSION['profiel_foto'] = $info->profiel_foto;
+                $_SESSION['level'] = $info->level;
+                redirect('index.php', 'Hallo,' . $_SESSION['username'], 'success');
+            } else {
+                redirect('login.php', 'Onjuiste gegevens', 'error');
+            }
+        }
+    } else {
+        redirect('login.php', 'Vul alle velden in', 'error');
     }
 }
 echo $template;

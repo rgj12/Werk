@@ -1,7 +1,7 @@
 <?php
-// if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] == false) {
-//     header('location: login.php');
-// }
+if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] == false) {
+    header('location: login.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +14,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title><?= SITE_TITLE; ?></title>
+    <title><?=SITE_TITLE;?></title>
 
     <!-- Custom fonts for this template-->
     <link href="templates/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -36,4 +36,4 @@
 </head>
 
 <body id="page-top">
-    <?php displayMessage(); ?>
+    <?php displayMessage();?>

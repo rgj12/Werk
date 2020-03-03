@@ -100,24 +100,31 @@ if (isset($_POST['maakUser'])) {
     $data = array();
 
     if (!empty($_POST['username']) || !empty($_POST['password'])) {
-
-        $data['username'] = trim(htmlspecialchars($_POST['username']));
-        $data['password'] = trim(htmlspecialchars(password_hash($_POST['password'], PASSWORD_DEFAULT)));
-
-        if (empty($_POST['profiel_foto'])) {
-            $data['profiel_foto'] = '';
+//gebruikersnaam mag alleen letters en cijfers bevatten en een underscore
+        if (!preg_match('/^[a-zA-Z0-9]*_?[a-zA-Z0-9]*$/', $_POST['username'])) {
+            redirect('index.php', 'Er is iets misgegaan met de genruiker toevoegen', 'error');
         } else {
-            $data['profiel_foto'] = 'users/profielfoto/' . $_POST['profiel_foto'];
-        }
 
-        if ($users->checkUsername($data['username']) > 0) {
-            redirect('index.php', 'Gebruikersnaam al in bezit!', 'error');
-        } else {
-            if ($users->registerUser($data)) {
-                redirect('index.php', 'Gebruiker aan gemaakt!', 'success');
+            $data['username'] = trim(htmlspecialchars($_POST['username']));
+
+            $data['password'] = trim(htmlspecialchars(password_hash($_POST['password'], PASSWORD_DEFAULT)));
+
+            if (empty($_POST['profiel_foto'])) {
+                $data['profiel_foto'] = '';
             } else {
-                redirect('index.php', 'Er is iets misgegaan', 'error');
+                $data['profiel_foto'] = 'users/profielfoto/' . $_POST['profiel_foto'];
             }
+
+            if ($users->checkUsername($data['username']) > 0) {
+                redirect('index.php', 'Gebruikersnaam al in bezit!', 'error');
+            } else {
+                if ($users->registerUser($data)) {
+                    redirect('index.php', 'Gebruiker aan gemaakt!', 'success');
+                } else {
+                    redirect('index.php', 'Er is iets misgegaan', 'error');
+                }
+            }
+
         }
     } else {
         redirect('index.php', 'Vul alle velden in!', 'error');

@@ -9,7 +9,7 @@ class Login
         $this->db = new Database;
     }
 
-    public function dehashPass($username)
+    public function getPass($username)
     {
         $this->db->query("SELECT * FROM users WHERE username = :user");
         $this->db->bind(":user", $username);

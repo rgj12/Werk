@@ -7,8 +7,8 @@ $klanten = new Klant;
 $afspraken = new Afspraken;
 $userChatInfo = new Chat;
 
-// $template->navbarChatInfo = $userChatInfo->getMessage($_SESSION['id']);
-// $template->aantalBerichten = $userChatInfo->getNumberOfMessages($_SESSION['id']);
+$template->navbarChatInfo = $userChatInfo->getMessage($_SESSION['id']);
+$template->aantalBerichten = $userChatInfo->getNumberOfMessages($_SESSION['id']);
 
 //klant gegevens ophalen en naar js versturen
 if (isset($_POST['af_id'])) {

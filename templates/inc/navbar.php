@@ -1,4 +1,4 @@
-<?php   include 'inc/registerModals/toevoegModal.php'; ?>
+<?php include 'inc/registerModals/toevoegModal.php';?>
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
     <!-- Sidebar Toggle (Topbar) -->
@@ -7,7 +7,7 @@
     </button>
 
     <!-- Topbar Search -->
-    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+    <!-- <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
         <div class="input-group">
             <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
                 aria-label="Search" aria-describedby="basic-addon2">
@@ -17,7 +17,7 @@
                 </button>
             </div>
         </div>
-    </form>
+    </form> -->
 
     <!-- Topbar Navbar -->
     <ul class="navbar-nav ml-auto">
@@ -102,11 +102,11 @@
                 aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-envelope fa-fw"></i>
                 <!-- Counter - Messages -->
-                <?php if ($aantalBerichten == 0) { ?>
+                <?php if ($aantalBerichten == 0) {?>
                 <span class="badge badge-danger badge-counter"></span>
-                <?php } else { ?>
-                <span class="badge badge-danger badge-counter"><?= $aantalBerichten; ?></span>
-                <?php } ?>
+                <?php } else {?>
+                <span class="badge badge-danger badge-counter"><?=$aantalBerichten;?></span>
+                <?php }?>
             </a>
             <!-- Dropdown - Messages -->
             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -114,21 +114,21 @@
                 <h6 class="dropdown-header">
                     Message Center
                 </h6>
-                <?php foreach ($navbarChatInfo as $chatInfo) : ?>
+                <?php foreach ($navbarChatInfo as $chatInfo): ?>
                 <a class="dropdown-item d-flex align-items-center" href="#" id="openchat">
                     <div class="dropdown-list-image mr-3">
                         <?php if ($chatInfo->profiel_foto == '') {
-                                $chatInfo->profiel_foto = 'users/profielfoto/Default-Profile.png';
-                            } ?>
-                        <img class="rounded-circle" src="<?= $chatInfo->profiel_foto ?>" alt="">
+    $chatInfo->profiel_foto = 'users/profielfoto/Default-Profile.png';
+}?>
+                        <img class="rounded-circle" src="<?=$chatInfo->profiel_foto?>" alt="">
                         <div class="status-indicator bg-success"></div>
                     </div>
                     <div class="font-weight-bold">
-                        <div class="text-truncate"><?= $chatInfo->chat_message; ?></div>
-                        <div class="small text-gray-500"><?= $chatInfo->username; ?></div>
+                        <div class="text-truncate"><?=$chatInfo->chat_message;?></div>
+                        <div class="small text-gray-500"><?=$chatInfo->username;?></div>
                     </div>
                 </a>
-                <?php endforeach; ?>
+                <?php endforeach;?>
 
                 <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
 
@@ -141,11 +141,11 @@
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $_SESSION['username']; ?></span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?=$_SESSION['username'];?></span>
                 <?php if ($_SESSION['profielfoto'] == '') {
-                    $_SESSION['profielfoto'] = 'users/profielfoto/Default-Profile.png';
-                } ?>
-                <img class="img-profile rounded-circle" src="<?= $_SESSION['profielfoto']; ?>">
+    $_SESSION['profielfoto'] = 'users/profielfoto/Default-Profile.png';
+}?>
+                <img class="img-profile rounded-circle" src="<?=$_SESSION['profielfoto'];?>">
             </a>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -153,7 +153,7 @@
                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                     Profile
                 </a>
-                <?php if(isset($_SESSION['id']) || $_SESSION['admin'] = 1){?>
+                <?php if ($_SESSION['level'] == 1) {?>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#registerModal">
                     <i class="fas fa-user-edit fa-sm fa-fw mr-2 text-gray-400"></i>
                     Register new user
@@ -183,28 +183,29 @@
 <div class="container-chatbox" id="chatbox">
     <div class="chatbox-header">
         <img src="users/profielfoto/Default-Profile.png" alt="png">
-        <h4><?= $chatInfo->username ?></h4>
+        <h4><?=$chatInfo->username?></h4>
         <span class="close">&times;</span>
     </div>
     <div class="chatbox-content">
-        <?php foreach (array_reverse($navbarChatInfo) as $chatInfo) : ?>
+        <?php foreach (array_reverse($navbarChatInfo) as $chatInfo): ?>
         <div class="text">
-            <?= $chatInfo->chat_message; ?>
+            <?=$chatInfo->chat_message;?>
             <br />
-            <div class="timestamp"><?= $chatInfo->time_stamp; ?></div>
+            <div class="timestamp"><?=$chatInfo->time_stamp;?></div>
         </div>
-        <?php endforeach; ?>
+        <?php endforeach;?>
     </div>
     <div class="chatbox-bericht">
         <form action="index.php" method="POST">
             <div class="form-row">
                 <div class="col-9">
                     <input type="text" name="bericht" id="bericht" class="form-control" required>
-                    <input type="hidden" name="receiver" value="<?= $_SESSION['id'] ?>">
-                    <input type="hidden" name="sender" value="<?= $chatInfo->from_user_id ?>">
+                    <input type="hidden" name="receiver" value="<?=$_SESSION['id']?>">
+                    <input type="hidden" name="sender" value="<?=$chatInfo->from_user_id?>">
                 </div>
                 <div class="col">
-                    <i class="fas fa-paper-plane"><input type="submit" class="btn btn-primary" name="sendMessage" value="&#xf1d8"></i>
+                    <i class="fas fa-paper-plane"><input type="submit" class="btn btn-primary" name="sendMessage"
+                            value="&#xf1d8"></i>
                 </div>
             </div>
         </form>
