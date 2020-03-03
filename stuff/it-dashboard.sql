@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 03 mrt 2020 om 11:28
+-- Gegenereerd op: 03 mrt 2020 om 15:42
 -- Serverversie: 10.4.8-MariaDB
 -- PHP-versie: 7.1.33
 
@@ -46,9 +46,11 @@ INSERT INTO `afspraken` (`id`, `klant_id`, `datum`, `tijd`, `omschrijving`, `dat
 (39, 2, '2020-02-26', '12:20:00', '', '2020-02-25', 1),
 (40, 2, '2020-02-25', '12:12:00', 'test', '2020-02-25', 1),
 (41, 2, '2020-02-25', '12:12:00', 'tesdt', '2020-02-25', 1),
-(42, 2, '2020-02-25', '12:12:00', 'th', '2020-02-25', 0),
+(42, 2, '2020-02-25', '12:12:00', 'th', '2020-02-25', 1),
 (43, 2, '2020-02-20', '12:42:00', 'test', '2020-02-25', 0),
-(44, 2, '2020-03-03', '12:30:00', 'test', '2020-03-03', 0);
+(44, 2, '2020-03-03', '12:30:00', 'test', '2020-03-03', 0),
+(45, 3, '2020-03-25', '12:30:00', 'test\r\n', '2020-03-03', 0),
+(46, 4, '2020-03-03', '12:12:00', 'test', '2020-03-03', 1);
 
 -- --------------------------------------------------------
 
@@ -61,21 +63,16 @@ CREATE TABLE `chat_message` (
   `to_user_id` int(11) NOT NULL,
   `from_user_id` int(11) NOT NULL,
   `chat_message` varchar(255) NOT NULL,
-  `time_stamp` datetime NOT NULL DEFAULT current_timestamp()
+  `time_stamp` datetime NOT NULL DEFAULT current_timestamp(),
+  `urgentie` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `chat_message`
 --
 
-INSERT INTO `chat_message` (`chat_message_id`, `to_user_id`, `from_user_id`, `chat_message`, `time_stamp`) VALUES
-(4, 2, 1, 'tesmessage', '2020-02-21 10:13:52'),
-(5, 2, 1, 'testmessage', '2020-02-21 10:13:52'),
-(6, 2, 1, 'testmessage', '2020-02-21 10:14:10'),
-(7, 2, 1, 'test', '2020-02-21 11:52:14'),
-(8, 1, 2, 'sdsd', '2020-02-21 12:01:03'),
-(9, 1, 2, 'derp', '2020-02-21 12:01:20'),
-(10, 1, 2, 'derpx2', '2020-02-21 12:49:02');
+INSERT INTO `chat_message` (`chat_message_id`, `to_user_id`, `from_user_id`, `chat_message`, `time_stamp`, `urgentie`) VALUES
+(4, 2, 1, 'tesmessage', '2020-02-21 10:13:52', 0);
 
 -- --------------------------------------------------------
 
@@ -95,7 +92,7 @@ CREATE TABLE `diensten` (
 --
 
 INSERT INTO `diensten` (`id`, `dienstnaam`, `dienstprijs`, `aantal_verkocht`) VALUES
-(1, 'testdiensten', '7.50', 2),
+(1, 'testdiensten', '7.80', 2),
 (5, 'opschonen', '125.00', 0);
 
 -- --------------------------------------------------------
@@ -141,7 +138,8 @@ INSERT INTO `facturen` (`factuurnummer`, `voornaam`, `achternaam`, `email`, `str
 (9, 'Gerritax', 'van de waalx', 'w@wx.nl', 'koekstraatx', '3192JWx', 'Rotterdamx', '', 2, 'tesprod3 ', ' ', ' ', 'opschonen ', ' ', ' ', ' 8.50', ' 0', ' 0', ' 125.00', ' 0', ' 0', '133.50', '110.33', '23.17', '2020-02-25', '14 dagen'),
 (10, 'Gerrit', 'van de waal', 'w@w.nl', 'koekstraat', '3192JW', 'Rotterdam', '064559621', 2, 'harde schijf ', 'opvouwbare kut ', ' ', ' ', ' ', ' ', ' 25.00', ' 25.95', ' 0', ' 0', ' 0', ' 0', '50.95', '42.11', '8.84', '2020-02-26', 'pin'),
 (11, 'Gerrit', 'van de waal', 'w@w.nl', 'koekstraat', '3192JW', 'Rotterdam', '064559621', 2, 'pc ', 'pc ', ' ', ' ', ' ', ' ', ' 424.68', ' 424.68', ' 0', ' 0', ' 0', ' 0', '849.36', '701.95', '147.41', '2020-02-26', 'IDEAL'),
-(12, 'Gerrit', 'van de waal', 'w@w.nl', 'koekstraat', '3192JW', 'Rotterdam', '', 2, 'pc ', ' ', ' ', ' ', ' ', ' ', ' 424.68', ' 0', ' 0', ' 0', ' 0', ' 0', '424.68', '350.98', '73.70', '2020-03-03', '14 dagen');
+(12, 'Gerrit', 'van de waal', 'w@w.nl', 'koekstraat', '3192JW', 'Rotterdam', '', 2, 'pc ', ' ', ' ', ' ', ' ', ' ', ' 424.68', ' 0', ' 0', ' 0', ' 0', ' 0', '424.68', '350.98', '73.70', '2020-03-03', '14 dagen'),
+(13, 'derp', 'test', 'administratie@it-skills.nl', 'test', 'test', 'test', 'test', 4, 'SSD 250 GB Samsung ', ' ', ' ', ' ', ' ', ' ', ' 110.00', ' 0', ' 0', ' 0', ' 0', ' 0', '110.00', '90.91', '19.09', '2020-03-03', 'pin');
 
 -- --------------------------------------------------------
 
@@ -166,7 +164,8 @@ CREATE TABLE `klanten` (
 --
 
 INSERT INTO `klanten` (`id`, `voornaam`, `achternaam`, `email`, `straatnaam`, `postcode`, `woonplaats`, `telefoonnummer`, `reden_bezoek`) VALUES
-(2, 'Gerrit', 'van de waal', 'w@w.nl', 'koekstraat', '3192JW', 'Rotterdam', '064559621', 'laptop inlveren om gerepareerd');
+(2, 'Gerrit', 'van de waal', 'w@w.nl', 'koekstraat', '3192JW', 'Rotterdam', '064559621', 'laptop inlveren om gerepareerd'),
+(4, 'derp', 'test', 'administratie@it-skills.nl', 'test', 'test', 'test', 'test', 'testdfdfdffdfdfdf');
 
 -- --------------------------------------------------------
 
@@ -200,7 +199,8 @@ CREATE TABLE `producten` (
 INSERT INTO `producten` (`id`, `productnaam`, `prijs`, `aantal_verkocht`) VALUES
 (7, 'pc', '424.68', 1),
 (8, 'tesprod3', '8.50', 0),
-(9, 'harde schijf', '25.00', 0);
+(9, 'harde schijf', '25.00', 0),
+(11, 'SSD 250 GB Samsung', '110.00', 1);
 
 -- --------------------------------------------------------
 
@@ -221,8 +221,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `profiel_foto`, `level`) VALUES
-(1, 'admin', '$2y$10$vh23JnfmKbTjna54e19.2eJUG1B5N4HOXVVpj8FxFfNYsnzPJ7jfe', 'users/profielfoto/logo.png', 1),
-(2, 'renato', '$2y$10$XL2zEeuWhOdumFrJTj5gBufT3t1gvWXmqgtlNHTu02OrdoRUWzKAe', '', 0);
+(1, 'admin', '$2y$10$vh23JnfmKbTjna54e19.2eJUG1B5N4HOXVVpj8FxFfNYsnzPJ7jfe', 'users/profielfoto/renato_pf.jpg', 1),
+(2, 'renato', '$2y$10$XL2zEeuWhOdumFrJTj5gBufT3t1gvWXmqgtlNHTu02OrdoRUWzKAe', 'users/profielfoto/Default-Profile.png', 0);
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -285,13 +285,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT voor een tabel `afspraken`
 --
 ALTER TABLE `afspraken`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT voor een tabel `chat_message`
 --
 ALTER TABLE `chat_message`
-  MODIFY `chat_message_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `chat_message_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT voor een tabel `diensten`
@@ -303,13 +303,13 @@ ALTER TABLE `diensten`
 -- AUTO_INCREMENT voor een tabel `facturen`
 --
 ALTER TABLE `facturen`
-  MODIFY `factuurnummer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `factuurnummer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT voor een tabel `klanten`
 --
 ALTER TABLE `klanten`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT voor een tabel `login_details`
@@ -321,7 +321,7 @@ ALTER TABLE `login_details`
 -- AUTO_INCREMENT voor een tabel `producten`
 --
 ALTER TABLE `producten`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT voor een tabel `users`
