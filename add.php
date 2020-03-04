@@ -99,8 +99,13 @@ if (isset($_POST['maakDienst'])) {
 if (isset($_POST['maakUser'])) {
     $data = array();
 
+<<<<<<< HEAD
     if (!empty($_POST['username']) || !empty($_POST['password']) ||!empty($_POST['email']) ) {
 //gebruikersnaam mag alleen letters en cijfers bevatten en een underscore
+=======
+    if (!empty($_POST['username']) || !empty($_POST['password']) || !empty($_POST['email'])) {
+        //gebruikersnaam mag alleen letters en cijfers bevatten en een underscore
+>>>>>>> 9bd39f544432bed8316e6e34c4c268cc982f2280
         if (!preg_match('/^[a-zA-Z0-9]*_?[a-zA-Z0-9]*$/', $_POST['username'])) {
             redirect('index.php', 'Er is iets misgegaan met de gebruiker toevoegen', 'error');
         } else {
@@ -108,17 +113,28 @@ if (isset($_POST['maakUser'])) {
             $data['username'] = trim(htmlspecialchars($_POST['username']));
             $data['email'] = $_POST['email'];
             $data['password'] = trim(htmlspecialchars(password_hash($_POST['password'], PASSWORD_DEFAULT)));
+<<<<<<< HEAD
 //email checken op juiste format
             if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
                 redirect('index.php', 'Er is iets misgegaan met gebruiker toevoegen', 'error');
               }
+=======
+            //email checken op juiste format
+            if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+                redirect('index.php', 'Er is iets misgegaan met gebruiker toevoegen', 'error');
+            }
+>>>>>>> 9bd39f544432bed8316e6e34c4c268cc982f2280
 
             if (empty($_POST['profiel_foto'])) {
-                $data['profiel_foto'] = '';
+                $data['profiel_foto'] = 'users/profielfoto/Default-Profile.png';
             } else {
                 $data['profiel_foto'] = 'users/profielfoto/' . $_POST['profiel_foto'];
             }
+<<<<<<< HEAD
 //check of gebruikersnaam uniek is
+=======
+            //check of gebruikersnaam uniek is
+>>>>>>> 9bd39f544432bed8316e6e34c4c268cc982f2280
             if ($users->checkUsername($data['username']) > 0) {
                 redirect('index.php', 'Gebruikersnaam al in bezit!', 'error');
             } else {
@@ -128,7 +144,6 @@ if (isset($_POST['maakUser'])) {
                     redirect('index.php', 'Er is iets misgegaan', 'error');
                 }
             }
-
         }
     } else {
         redirect('index.php', 'Vul alle velden in!', 'error');

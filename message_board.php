@@ -15,6 +15,11 @@ if (isset($_POST['sendMessage'])) {
     $data['to'] = $_POST['to'];
     $data['bericht'] = $_POST['bericht'];
     $data['urgentie'] = $_POST['urgentie'];
-    var_dump($_POST);
+
+    if ($userChatInfo->sendMessage($data)) {
+        redirect('message_board.php', 'bericht verstuurd', 'success');
+    } else {
+        redirect('message_board.php', 'er is iets misgegaan', 'error');
+    }
 }
 echo $template;
