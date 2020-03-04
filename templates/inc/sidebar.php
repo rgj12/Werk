@@ -67,7 +67,7 @@
 
     <!-- Heading -->
     <div class="sidebar-heading">
-        Addons
+        Abbonees
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
@@ -81,12 +81,14 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Andere applicaties:</h6>
                 <a class="collapse-item" href="../antivirus-alert/index.php">Antivirus alert</a>
-                <!-- <a class="collapse-item" href="templates/register.html">Register</a>
-                <a class="collapse-item" href="templates/forgot-password.html">Forgot Password</a> -->
-                <div class="collapse-divider"></div>
+                <a class="collapse-item" href="#">Hosting</a>
+                <a class="collapse-item" href="#">IDEAL</a>
+                <a class="collapse-item" href="#">Chat</a>
+                <a class="collapse-item" href="#">Webshop</a>
+                <!-- <div class="collapse-divider"></div>
                 <h6 class="collapse-header">Other Pages:</h6>
                 <a class="collapse-item" href="templates/404.html">404 Page</a>
-                <a class="collapse-item" href="templates/blank.html">Blank Page</a>
+                <a class="collapse-item" href="templates/blank.html">Blank Page</a> -->
             </div>
         </div>
     </li>

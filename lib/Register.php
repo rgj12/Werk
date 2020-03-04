@@ -21,12 +21,13 @@ class Register
     public function registerUser($data)
     {
         $this->db->query(
-            "INSERT INTO users (username, password, profiel_foto)
-            VALUES (:username, :password, :profiel_foto)"
+            "INSERT INTO users (username,email,password, profiel_foto)
+            VALUES (:username,:email, :password, :profiel_foto)"
         );
 
         //bind data
         $this->db->bind(':username', $data['username']);
+        $this->db->bind(':email', $data['email']);
         $this->db->bind(':password', $data['password']);
         $this->db->bind(':profiel_foto', $data['profiel_foto']);
 

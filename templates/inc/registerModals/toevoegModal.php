@@ -4,7 +4,7 @@
         <div class="modal-content">
             <form action="add.php" method="post">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Voeg een product toe</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Voeg een gebruiker toe</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -13,12 +13,17 @@
 
                     <div class="form-group">
                         <label>Username</label>
-                        <input type="text" class="form-control" name="username">
+                        <input type="text" class="form-control" name="username" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" class="form-control" name="email" required>
                     </div>
 
                     <div class="form-group">
                         <label>Password</label>
-                        <input type="password" class="form-control" name="password">
+                        <input type="password" class="form-control" name="password" required>
                     </div>
 
                     <div class="custom-file">
