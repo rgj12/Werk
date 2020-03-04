@@ -1,8 +1,8 @@
 <style>
-    .bg-gradient-primary{
-        background-color: black !important;
-        background-image: linear-gradient(180deg, #03a9f4 10%, #6a73da 100%) !important;
-    }
+.bg-gradient-primary {
+    background-color: black !important;
+    background-image: linear-gradient(180deg, #03a9f4 10%, #6a73da 100%) !important;
+}
 </style>
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -46,6 +46,7 @@
                 <a class="collapse-item" href="factuur.php?overzicht">Facturen</a>
                 <a class="collapse-item" href="products.php">Producten</a>
                 <a class="collapse-item" href="diensten.php">Diensten</a>
+                <a class="collapse-item" href="message_board.php">message center</a>
             </div>
         </div>
     </li>
