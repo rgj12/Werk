@@ -4,7 +4,7 @@
   padding: 0 20px;
 } */
 
-.container {
+.berichtbox {
   border: 2px solid #dedede;
   background-color: #f1f1f1;
   border-radius: 5px;
@@ -17,13 +17,13 @@
   background-color: #ddd;
 }
 
-.container::after {
+.berichtbox::after {
   content: "";
   clear: both;
   display: table;
 }
 
-.container img {
+.berichtbox img {
   float: left;
   max-width: 60px;
   width: 100%;
@@ -31,7 +31,7 @@
   border-radius: 50%;
 }
 
-.container img.right {
+.berichtbox img.right {
   float: right;
   margin-left: 20px;
   margin-right: 0;

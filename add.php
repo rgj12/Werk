@@ -99,22 +99,26 @@ if (isset($_POST['maakDienst'])) {
 if (isset($_POST['maakUser'])) {
     $data = array();
 
-    if (!empty($_POST['username']) || !empty($_POST['password'])) {
+    if (!empty($_POST['username']) || !empty($_POST['password']) ||!empty($_POST['email']) ) {
 //gebruikersnaam mag alleen letters en cijfers bevatten en een underscore
         if (!preg_match('/^[a-zA-Z0-9]*_?[a-zA-Z0-9]*$/', $_POST['username'])) {
-            redirect('index.php', 'Er is iets misgegaan met de genruiker toevoegen', 'error');
+            redirect('index.php', 'Er is iets misgegaan met de gebruiker toevoegen', 'error');
         } else {
 
             $data['username'] = trim(htmlspecialchars($_POST['username']));
-
+            $data['email'] = $_POST['email'];
             $data['password'] = trim(htmlspecialchars(password_hash($_POST['password'], PASSWORD_DEFAULT)));
+//email checken op juiste format
+            if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+                redirect('index.php', 'Er is iets misgegaan met gebruiker toevoegen', 'error');
+              }
 
             if (empty($_POST['profiel_foto'])) {
                 $data['profiel_foto'] = '';
             } else {
                 $data['profiel_foto'] = 'users/profielfoto/' . $_POST['profiel_foto'];
             }
-
+//check of gebruikersnaam uniek is
             if ($users->checkUsername($data['username']) > 0) {
                 redirect('index.php', 'Gebruikersnaam al in bezit!', 'error');
             } else {

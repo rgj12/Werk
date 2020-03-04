@@ -28,7 +28,7 @@ require_once 'inc/klantenModals/toevoegModal.php';
                 <h1 class="h3 mb-2 text-gray-800">Berichten</h1>
                 <p class="mb-4">Overzicht berichten</p>
                 <?php foreach ($berichten as $bericht): ?>
-                <div class="container">
+                <div class=" container berichtbox">
                     <img src="<?=$bericht->profiel_foto;?>" alt="<?=$bericht->username;?>" style="width:100%;">
                     <p><?=$bericht->chat_message;?></p>
                     <span class="time-right"><?=$bericht->time_stamp;?></span>
@@ -43,7 +43,7 @@ require_once 'inc/klantenModals/toevoegModal.php';
         </div>
         <div class="content">
             <div class="container-fluid">
-                <div class="container">
+                <div class="container berichtbox">
                     <form action="message_board.php" method="POST">
                         <input type="hidden" name="from" id="from" value="<?=$_SESSION['id'];?>">
                         <div class="input-group">

@@ -42,7 +42,7 @@
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">€ <?= $dagOmzet; ?></div>
                                     </div>
                                     <div class="col-auto">
-                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        <i class="fas fa-euro-sign fa-2x text-gray-300"></i>
                                     </div>
                                 </div>
                             </div>
@@ -60,7 +60,7 @@
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">€ <?= $jaarOmzet ?></div>
                                     </div>
                                     <div class="col-auto">
-                                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                        <i class="fas fa-chart-line fa-2x text-gray-300"></i>
                                     </div>
                                 </div>
                             </div>
@@ -84,7 +84,7 @@
                                             <div class="col">
                                                 <div class="progress progress-sm mr-2">
                                                     <div class="progress-bar bg-info" role="progressbar"
-                                                        style="width: <?= $percentageCompleet ?>%" aria-valuenow="60"
+                                                        style="width: <?= $percentageCompleet; ?>%" aria-valuenow="60"
                                                         aria-valuemin="0" aria-valuemax="100">
                                                     </div>
                                                 </div>
@@ -92,7 +92,7 @@
                                         </div>
                                     </div>
                                     <div class="col-auto">
-                                        <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                        <i class="fas fa-check fa-2x text-gray-300"></i>
                                     </div>
                                 </a>
                             </div>
@@ -113,7 +113,7 @@
                                         </div>
                                     </div>
                                     <div class="col-auto">
-                                        <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                        <i class="fas fa-calendar-alt fa-2x text-gray-300"></i>
                                     </div>
                                 </div>
                             </div>
@@ -149,7 +149,7 @@
                             <!-- Card Body -->
                             <div class="card-body">
                                 <div class="chart-area">
-                                    <div id="stacked" ></div>
+                                    <div id="stacked"></div>
                                 </div>
                             </div>
                         </div>
@@ -186,7 +186,8 @@
                                         <i class="fas fa-circle text-primary"></i> Direct
                                     </span> -->
                                     <span class="mr-2">
-                                        <i class="fas fa-circle text-success"></i> <?=$totaalverkochtediensten + $totaalverkochteproducten;?> Totaal 
+                                        <i class="fas fa-circle text-success"></i>
+                                        <?= $totaalverkochtediensten + $totaalverkochteproducten; ?> Totaal
                                     </span>
                                     <!-- <span class="mr-2">
                                         <i class="fas fa-circle text-info"></i> Referral
@@ -197,7 +198,7 @@
                     </div>
                 </div>
 
-         
+
                 <!-- <div class="row">
 
                     <div class="col-lg-6 mb-4">
@@ -351,27 +352,27 @@
             <input type="hidden" id="dec" value="<?= $decomzet ?>">
 
             <?php
-            $data = ''; 
-            foreach ($producten as $product){
-                $data .= '{ label: "'.$product->productnaam.'", value:"'.$product->aantal_verkocht.'"},';
+            $data = '';
+            foreach ($producten as $product) {
+                $data .= '{ label: "' . $product->productnaam . '", value:"' . $product->aantal_verkocht . '"},';
             }
             foreach ($diensten as $dienst) {
-                $data .= '{ label: "'.$dienst->dienstnaam.'", value:"'.$dienst->aantal_verkocht.'"},';
+                $data .= '{ label: "' . $dienst->dienstnaam . '", value:"' . $dienst->aantal_verkocht . '"},';
             }
-            $data = substr($data,0,-1);
-         
+            $data = substr($data, 0, -1);
+
             ?>
-      
+
         </div>
 
         <script>
-Morris.Donut({
-  element: "pie-chart",
-  data: [<?php echo $data;?>]
- 
- 
-});
-</script>
+        Morris.Donut({
+            element: "pie-chart",
+            data: [ <?php echo $data; ?> ]
+
+
+        });
+        </script>
         <!-- End of Main Content -->
         <script src="templates/js/stackedchart.js"></script>
         </script>
