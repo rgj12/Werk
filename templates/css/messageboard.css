@@ -10,6 +10,7 @@
   border-radius: 5px;
   padding: 10px;
   margin: 10px 0;
+  max-height: 50%;
 }
 
 .darker {
@@ -45,4 +46,20 @@
 .time-left {
   float: left;
   color: #999;
+}
+
+.gemiddeld {
+  background-color: orange;
+  color: white;
+}
+.hoog {
+  background-color: red;
+  color: white;
+}
+
+.chatarea {
+  max-height: 600px;
+  width: 72%;
+  min-height: 50vh;
+  overflow: scroll;
 }
