@@ -30,27 +30,27 @@ require_once 'inc/klantenModals/toevoegModal.php';
                 } else { ?>
                 <h1 class="h3 mb-2 text-gray-800">Berichten</h1>
                 <p class="mb-4">Overzicht berichten</p>
-<<<<<<< HEAD
-                <?php foreach ($berichten as $bericht): ?>
-                <div class=" container berichtbox">
-                    <img src="<?=$bericht->profiel_foto;?>" alt="<?=$bericht->username;?>" style="width:100%;">
-                    <p><?=$bericht->chat_message;?></p>
-                    <span class="time-right"><?=$bericht->time_stamp;?></span>
-                </div>
-                <?php endforeach;?>
 
-=======
                 <div class="chatarea">
                     <?php foreach (array_reverse($berichten) as $bericht) : ?>
->>>>>>> 9bd39f544432bed8316e6e34c4c268cc982f2280
-
+                    <?php
+                            if ($bericht->gelezen == 'niet') {
+                            ?>
                     <div class="container berichtbox <?= $bericht->urgentie; ?>">
-                        <img src="<?= $bericht->profiel_foto; ?>" alt="<?= $bericht->username; ?>"
-                            style="width:100%;"><sup><?= $bericht->username; ?> (<?= $bericht->urgentie; ?>
+                        <img src="<?= $bericht->profiel_foto; ?>" alt="<?= $bericht->username; ?>" style="width:100%;">
+
+                        <?php if ($bericht->from_user_id == $_SESSION['id']) {
+                                        $bericht->username = 'Ik';
+                                    } ?>
+
+                        <sup><?= $bericht->username; ?> (<?= $bericht->urgentie; ?>
                             urgentie)</sup>
+                        <a href="message_board.php?read=<?= $bericht->chat_message_id; ?>"
+                            class="check fas fa-check"></a>
                         <p><b><?= $bericht->bericht; ?></b></p>
                         <span class="time-right"><b><?= $bericht->time_stamp; ?></b></span>
                     </div>
+                    <?php } ?>
                     <?php endforeach; ?>
 
                     <?php } ?>
@@ -61,11 +61,7 @@ require_once 'inc/klantenModals/toevoegModal.php';
         </div>
         <div class="content">
             <div class="container-fluid">
-<<<<<<< HEAD
                 <div class="container berichtbox">
-=======
-                <div class="container berichtbox" class="submitArea">
->>>>>>> 9bd39f544432bed8316e6e34c4c268cc982f2280
                     <form action="message_board.php" method="POST">
                         <input type="hidden" name="from" id="from" value="<?= $_SESSION['id']; ?>">
                         <div class="input-group">

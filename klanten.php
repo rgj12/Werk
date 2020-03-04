@@ -12,4 +12,6 @@ $diensten = new Dienst;
 $template->klanten = $klanten->getAllCustomers();
 $template->producten = $producten->showAllProducts();
 $template->diensten = $diensten->showAllDiensten();
+$template->aantalBerichten = $userChatInfo->getNumberOfMessages($_SESSION['id']);
+$template->berichtenInDropdown = $userChatInfo->getMessagesInDropdown($_SESSION['id']);
 echo $template;

@@ -12,6 +12,8 @@ $diensten = new Dienst;
 $template->klanten = $klanten->getAllCustomers();
 $template->producten = $producten->showAllProducts();
 $template->diensten = $diensten->showAllDiensten();
+$template->aantalBerichten = $userChatInfo->getNumberOfMessages($_SESSION['id']);
+$template->berichtenInDropdown = $userChatInfo->getMessagesInDropdown($_SESSION['id']);
 
 //omzet tonen
 $template->dagOmzet = number_format((float) $index->getDailyEarnings(), 2, '.', '');
@@ -51,16 +53,16 @@ if (isset($_POST['sendMessage'])) {
     }
 }
 
-if (isset($_POST['chatMessage'])) {
-    $data = array();
-    $data['receiver'] = $_POST['receiver'];
-    $data['sender'] = $_SESSION['id'];
-    var_dump($_POST['chatMessage']);
+// if (isset($_POST['chatMessage'])) {
+//     $data = array();
+//     $data['receiver'] = $_POST['receiver'];
+//     $data['sender'] = $_SESSION['id'];
+//     var_dump($_POST['chatMessage']);
 
-    if ($userChatInfo->getChat($data['sender'], $data['receiver'])) {
-    } else {
-        echo 'error';
-    }
-}
+//     if ($userChatInfo->getChat($data['sender'], $data['receiver'])) {
+//     } else {
+//         echo 'error';
+//     }
+// }
 
 echo $template;

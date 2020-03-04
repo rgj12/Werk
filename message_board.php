@@ -7,19 +7,30 @@ $userChatInfo = new Chat;
 
 $template->berichten = $userChatInfo->getMessages($_SESSION['id']);
 $template->aantalBerichten = $userChatInfo->getNumberOfMessages($_SESSION['id']);
+$template->berichtenInDropdown = $userChatInfo->getMessagesInDropdown($_SESSION['id']);
 $template->users = $userChatInfo->getUsers();
 
 if (isset($_POST['sendMessage'])) {
     $data = array();
+    $data['gelezen'] = 'niet';
     $data['from'] = $_POST['from'];
     $data['to'] = $_POST['to'];
-    $data['bericht'] = $_POST['bericht'];
+    $data['bericht'] = strip_tags($_POST['bericht']);
     $data['urgentie'] = $_POST['urgentie'];
 
     if ($userChatInfo->sendMessage($data)) {
         redirect('message_board.php', 'bericht verstuurd', 'success');
     } else {
         redirect('message_board.php', 'er is iets misgegaan', 'error');
+    }
+}
+
+if (isset($_GET['read'])) {
+    $id = $_GET['read'];
+    if ($userChatInfo->updateMessage($id)) {
+        redirect('message_board.php', 'success', 'success');
+    } else {
+        redirect('message_board.php', 'er is iets missgegaan', 'error');
     }
 }
 echo $template;

@@ -63,3 +63,8 @@
   min-height: 50vh;
   overflow: scroll;
 }
+
+.check {
+  float: right;
+  color: green;
+}

@@ -103,7 +103,7 @@
                 <i class="fas fa-envelope fa-fw"></i>
                 <!-- Counter - Messages -->
 
-                <span class="badge badge-danger badge-counter">0</span>
+                <span class="badge badge-danger badge-counter"><?= $aantalBerichten ?></span>
 
             </a>
             <!-- Dropdown - Messages -->
@@ -112,18 +112,22 @@
                 <h6 class="dropdown-header">
                     Message Center
                 </h6>
-
+                <?php foreach ($berichtenInDropdown as $bericht) : ?>
+                <?php if ($bericht->gelezen == "niet") { ?>
                 <a class="dropdown-item d-flex align-items-center" href="#" id="openchat">
+
                     <div class="dropdown-list-image mr-3">
 
-                        <img class="rounded-circle" src="" alt="">
+                        <img class="rounded-circle" src="<?= $bericht->profiel_foto ?>" alt="">
                         <div class="status-indicator bg-success"></div>
                     </div>
                     <div class="font-weight-bold">
-                        <div class="text-truncate">test</div>
-                        <div class="small text-gray-500">test</div>
+                        <div class="text-truncate"><?= $bericht->username; ?></div>
+                        <div class="small text-gray-500"><?= $bericht->bericht; ?></div>
                     </div>
                 </a>
+                <?php } ?>
+                <?php endforeach; ?>
 
 
                 <a class="dropdown-item text-center small text-gray-500" href="message_board.php">Read More Messages</a>
