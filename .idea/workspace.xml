@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f51169e-1426-4dbd-8bd3-603d07616d6c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5aa7978a-fdf8-433a-b9f6-2ff18f16bc9a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5aa7978a-fdf8-433a-b9f6-2ff18f16bc9a.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Register.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/inc/registerModals/toevoegModal.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/inc/registerModals/toevoegModal.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/css/factuur.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/css/factuur.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/factuur-template.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/factuur-template.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/inc/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/inc/sidebar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index-template.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index-template.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +26,12 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="it-dashboard@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="FUSProjectUsageTrigger">
@@ -33,25 +41,28 @@
           <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="TODO" value="2" />
-          <entry key="css" value="4" />
-          <entry key="js" value="3" />
-          <entry key="php" value="55" />
+          <entry key="css" value="11" />
+          <entry key="js" value="4" />
+          <entry key="php" value="60" />
+          <entry key="scss" value="5" />
           <entry key="sql" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="4" />
-          <entry key="JavaScript" value="3" />
-          <entry key="PHP" value="55" />
+          <entry key="CSS" value="11" />
+          <entry key="JavaScript" value="4" />
+          <entry key="PHP" value="60" />
           <entry key="PLAIN_TEXT" value="2" />
+          <entry key="SCSS" value="5" />
           <entry key="SQL" value="3" />
           <entry key="Scratch" value="1" />
         </counts>
@@ -59,18 +70,18 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="TODO" value="2" />
-          <entry key="css" value="523" />
+          <entry key="css" value="707" />
           <entry key="js" value="210" />
-          <entry key="php" value="2490" />
+          <entry key="php" value="3216" />
           <entry key="sql" value="10" />
           <entry key="txt" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="523" />
+          <entry key="CSS" value="707" />
           <entry key="JavaScript" value="210" />
-          <entry key="PHP" value="2490" />
+          <entry key="PHP" value="3216" />
           <entry key="PLAIN_TEXT" value="14" />
           <entry key="SQL" value="10" />
         </counts>
@@ -79,61 +90,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/inc/registerModals/editModal.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="54" column="20" lean-forward="true" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/Register.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="29" column="20" lean-forward="true" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/add.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="99" column="20" lean-forward="true" selection-start-line="99" selection-start-column="20" selection-end-line="99" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/Login.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/inc/registerModals/toevoegModal.php">
+        <entry file="file://$PROJECT_DIR$/templates/factuur-template.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="25" column="67" selection-start-line="25" selection-start-column="67" selection-end-line="25" selection-end-column="67" />
+            <state relative-caret-position="-830">
+              <caret line="60" column="25" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
+              <folding>
+                <element signature="e#37#43#0" expanded="true" />
+                <element signature="e#37#43#0" expanded="true" />
+                <element signature="e#37#43#0" expanded="true" />
+                <element signature="e#36#42#0" expanded="true" />
+                <element signature="e#36#42#0" expanded="true" />
+                <element signature="e#36#42#0" expanded="true" />
+                <element signature="e#42#48#0" expanded="true" />
+                <element signature="e#36#42#0" expanded="true" />
+                <element signature="e#42#48#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/inc/sidebar.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="60" selection-start-line="3" selection-start-column="60" selection-end-line="3" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/index-template.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5370">
+              <caret line="358" column="7" selection-start-line="358" selection-start-column="7" selection-end-line="358" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/css/factuur.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1845">
+              <caret line="123" selection-start-line="123" selection-end-line="123" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -145,12 +156,18 @@
       <find>Productnaam</find>
       <find>profiel_foto</find>
       <find>profi</find>
+      <find>side</find>
+      <find>primary</find>
+      <find>prima</find>
     </findStrings>
     <replaceStrings>
       <replace />
       <replace>DATETIME</replace>
       <replace>Username</replace>
     </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -162,8 +179,6 @@
         <option value="$PROJECT_DIR$/templates/dienst-template.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/stuff/TODO" />
-        <option value="$PROJECT_DIR$/templates/factuur-template.php" />
-        <option value="$PROJECT_DIR$/templates/css/factuur.css" />
         <option value="$PROJECT_DIR$/lib/Index.php" />
         <option value="$PROJECT_DIR$/lib/Chat.php" />
         <option value="$PROJECT_DIR$/templates/js/chatbox.js" />
@@ -172,7 +187,6 @@
         <option value="$PROJECT_DIR$/products.php" />
         <option value="$PROJECT_DIR$/register.php" />
         <option value="$PROJECT_DIR$/lib/Product.php" />
-        <option value="$PROJECT_DIR$/templates/index-template.php" />
         <option value="$PROJECT_DIR$/templates/inc/navbar.php" />
         <option value="$PROJECT_DIR$/registeren.php" />
         <option value="$PROJECT_DIR$/lib/Login.php" />
@@ -182,6 +196,13 @@
         <option value="$PROJECT_DIR$/lib/Register.php" />
         <option value="$PROJECT_DIR$/templates/inc/productModals/toevoegModal.php" />
         <option value="$PROJECT_DIR$/templates/inc/registerModals/toevoegModal.php" />
+        <option value="$PROJECT_DIR$/templates/index-template.php" />
+        <option value="$PROJECT_DIR$/templates/css/sb-admin-2.css" />
+        <option value="$PROJECT_DIR$/templates/css/color.css" />
+        <option value="$PROJECT_DIR$/templates/inc/header.php" />
+        <option value="$PROJECT_DIR$/templates/inc/sidebar.php" />
+        <option value="$PROJECT_DIR$/templates/factuur-template.php" />
+        <option value="$PROJECT_DIR$/templates/css/factuur.css" />
       </list>
     </option>
   </component>
@@ -224,11 +245,6 @@
             <path>
               <item name="Werk" type="b2602c69:ProjectViewProjectNode" />
               <item name="Werk" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Werk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Werk" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -236,24 +252,6 @@
               <item name="Werk" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="inc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Werk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Werk" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="inc" type="462c0819:PsiDirectoryNode" />
-              <item name="registerModals" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Werk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Werk" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Werk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Werk" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
-              <item name="profielfoto" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -267,6 +265,7 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
@@ -297,11 +296,12 @@
       <workItem from="1582644603136" duration="29000" />
       <workItem from="1582704379463" duration="1301000" />
       <workItem from="1582707969428" duration="15905000" />
+      <workItem from="1583312165349" duration="7054000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28269000" />
+    <option name="totallyTimeSpent" value="35323000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -314,9 +314,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="825" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26037195" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2639485" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -329,7 +328,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" weight="0.3287858" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3287858" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3287858" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -345,9 +344,6 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/5aa7978a-fdf8-433a-b9f6-2ff18f16bc9a/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/inc/header.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/factuuroverzicht-template.php">
@@ -371,31 +367,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/css/factuur.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-63">
-          <caret line="67" column="27" selection-start-line="67" selection-start-column="27" selection-end-line="67" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/factuur-template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="16" lean-forward="true" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="22" />
-          <folding>
-            <element signature="e#37#43#0" expanded="true" />
-            <element signature="e#37#43#0" expanded="true" />
-            <element signature="e#37#43#0" expanded="true" />
-            <element signature="e#36#42#0" expanded="true" />
-            <element signature="e#36#42#0" expanded="true" />
-            <element signature="e#36#42#0" expanded="true" />
-            <element signature="e#42#48#0" expanded="true" />
-            <element signature="e#36#42#0" expanded="true" />
-            <element signature="e#42#48#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -434,25 +405,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/register-template.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/inc/sidebar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-413" />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/register-template.php" />
     <entry file="file://$PROJECT_DIR$/templates/inc/navbar.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
           <caret line="159" column="78" lean-forward="true" selection-start-line="159" selection-start-column="78" selection-end-line="159" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index-template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -463,9 +420,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/registeren.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/registeren.php" />
     <entry file="file://$PROJECT_DIR$/templates/product-template.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="246">
@@ -490,13 +445,6 @@
     <entry file="file://$PROJECT_DIR$/afspraak.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/inc/registerModals/editModal.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/Database.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-815" />
@@ -509,27 +457,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="54" column="20" lean-forward="true" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/add.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="99" column="20" lean-forward="true" selection-start-line="99" selection-start-column="20" selection-end-line="99" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="29" column="20" lean-forward="true" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/inc/productModals/toevoegModal.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -537,10 +464,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/inc/registerModals/editModal.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="54" column="20" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="16" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/add.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1485">
+          <caret line="99" column="20" selection-start-line="99" selection-start-column="20" selection-end-line="99" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/Login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+        <state relative-caret-position="135">
+          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -548,6 +503,107 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
           <caret line="25" column="67" selection-start-line="25" selection-start-column="67" selection-end-line="25" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/vendor/bootstrap/scss/bootstrap.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/vendor/bootstrap/js/bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1875">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/vendor/bootstrap/scss/bootstrap-grid.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/vendor/bootstrap/scss/_nav.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1445" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/vendor/bootstrap/scss/_navbar.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4055" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/vendor/bootstrap/scss/_custom-forms.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2422" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/css/sb-admin-2.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-19089" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/css/chart.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/css/messageboard.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/css/sb-admin-2.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/css/color.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/inc/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="30" column="81" lean-forward="true" selection-start-line="30" selection-start-column="81" selection-end-line="30" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/css/factuur.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1845">
+          <caret line="123" selection-start-line="123" selection-end-line="123" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/inc/sidebar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="60" selection-start-line="3" selection-start-column="60" selection-end-line="3" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index-template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5370">
+          <caret line="358" column="7" selection-start-line="358" selection-start-column="7" selection-end-line="358" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/factuur-template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-830">
+          <caret line="60" column="25" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
+          <folding>
+            <element signature="e#37#43#0" expanded="true" />
+            <element signature="e#37#43#0" expanded="true" />
+            <element signature="e#37#43#0" expanded="true" />
+            <element signature="e#36#42#0" expanded="true" />
+            <element signature="e#36#42#0" expanded="true" />
+            <element signature="e#36#42#0" expanded="true" />
+            <element signature="e#42#48#0" expanded="true" />
+            <element signature="e#36#42#0" expanded="true" />
+            <element signature="e#42#48#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

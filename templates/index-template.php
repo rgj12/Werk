@@ -378,3 +378,4 @@ Morris.Donut({
 
         </script>
         <?php include './inc/footer.php'; ?>
+    </div>

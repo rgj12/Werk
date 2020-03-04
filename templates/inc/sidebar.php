@@ -1,3 +1,9 @@
+<style>
+    .bg-gradient-primary{
+        background-color: black !important;
+        background-image: linear-gradient(180deg, #03a9f4 10%, #6a73da 100%) !important;
+    }
+</style>
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->

@@ -99,25 +99,31 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    flex: 4;
 }
 
-.klantgegevens {
+.bedrijfgegevens .adres{
+    display: flex;
 }
 
-.bedrijfgegevens {
+.rhoon{
+    margin-right: 10%;
 }
 
-.algemenegegevens {
-}
-
-.bedragen {
+.bedrijfgegevens{
+    flex: 6;
 }
 
 .totaalprijs {
     margin-bottom: 10%;
 }
 
-hr{
+address{
+    font-style: normal;
+}
+
+.bordered {
+    border-bottom: 1px solid #000;
 }
 
 .footer {

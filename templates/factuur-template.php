@@ -22,7 +22,6 @@
                 <h2>Factuur</h2>
                 <div class="logo">
                     <img src="templates/img/logo.png" alt="" srcset="">
-                    <img id="img2" src="templates/img/image002.jpg" alt="" srcset="">
                 </div>
             </div>
             <div class="gegevens">
@@ -45,11 +44,21 @@
                     </div>
                 </div>
                 <div class="bedrijfgegevens">
+                    <div class="adres">
+                        <address class="rhoon">
+                            IT-SKILLS<br>
+                            Julianstraat 41B<br>
+                            3161AJ Rhoon<br>
+                            Nederland<br><br>
+                        </address>
+                        <address>
+                            IT-SKILLS<br>
+                            Burghse Ring 1<br>
+                            4328 LK te Burgh-Haamstede<br>
+                            Nederland<br><br>
+                        </address>
+                    </div>
                     <?php
-                    echo "IT-SKILLS</br>";
-                    echo "Julianastraat 41B</br>";
-                    echo "3161AJ Rhoon</br>";
-                    echo "Nederland</br></br>";
                     echo "<b>Tel:</b> 010 501 32 22</br>";
                     echo "<b>E-mail:</b> info@it-skills.nl</br>";
                     echo "<b>Website:</b> www.it-skills.nl</br></br>";
@@ -61,6 +70,7 @@
                     ?>
                 </div>
             </div>
+            <!--OUD-->
             <div class="bedragen">
                 <table border="0" width="450">
                     <tr>
@@ -104,7 +114,6 @@
                     ?>
                 </table>
             </div>
-
             <div class="footer">
                 <?php
                 // $text = "Deze factuur is per " . $betalingsoptie . " betaling voldaan";
