@@ -103,7 +103,7 @@
                 <i class="fas fa-envelope fa-fw"></i>
                 <!-- Counter - Messages -->
 
-                <span class="badge badge-danger badge-counter">0</span>
+                <span class="badge badge-danger badge-counter" id="messageCount"></span>
 
             </a>
             <!-- Dropdown - Messages -->

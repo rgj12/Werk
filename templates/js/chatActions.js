@@ -1,7 +1,22 @@
 $(document).ready(function() {
+  messageCount();
   showData();
   showMessageBoard();
 
+  function messageCount() {
+    $.ajax({
+      cache: false,
+      url: "chatActions.php",
+      type: "POST",
+      data: { action: "viewMessageNumber" },
+      success: function(response) {
+        $("#messageCount").html(response);
+      },
+      complete: function() {
+        setTimeout(messageCount, "3000");
+      }
+    });
+  }
   function showData() {
     $.ajax({
       cache: false,
