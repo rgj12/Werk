@@ -7,7 +7,7 @@ $userChatInfo = new Chat;
 
 $template->berichten = $userChatInfo->getMessages($_SESSION['id']);
 $template->aantalBerichten = $userChatInfo->getNumberOfMessages($_SESSION['id']);
-$template->berichtenInDropdown = $userChatInfo->getMessagesInDropdown($_SESSION['id']);
+// $template->berichtenInDropdown = $userChatInfo->getMessagesInDropdown($_SESSION['id']);
 $template->users = $userChatInfo->getUsers();
 
 if (isset($_POST['sendMessage'])) {
@@ -33,4 +33,5 @@ if (isset($_GET['read'])) {
         redirect('message_board.php', 'er is iets missgegaan', 'error');
     }
 }
+
 echo $template;

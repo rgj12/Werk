@@ -194,8 +194,6 @@ $(document).ready(function() {
 
         $("#editbtOptie").val(data[0].betaalOpties);
         $("#editbtOptie").html(data[0].betaalOpties);
-
-        console.log(data[0]);
       }
     });
   });

@@ -1,4 +1,4 @@
-<?php include 'inc/registerModals/toevoegModal.php'; ?>
+<?php include 'inc/registerModals/toevoegModal.php';?>
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
     <!-- Sidebar Toggle (Topbar) -->
@@ -103,7 +103,7 @@
                 <i class="fas fa-envelope fa-fw"></i>
                 <!-- Counter - Messages -->
 
-                <span class="badge badge-danger badge-counter"><?= $aantalBerichten ?></span>
+                <span class="badge badge-danger badge-counter"><?=$aantalBerichten?></span>
 
             </a>
             <!-- Dropdown - Messages -->
@@ -112,24 +112,18 @@
                 <h6 class="dropdown-header">
                     Message Center
                 </h6>
-                <?php foreach ($berichtenInDropdown as $bericht) : ?>
-                <?php if ($bericht->gelezen == "niet") { ?>
-                <a class="dropdown-item d-flex align-items-center" href="#" id="openchat">
-
-                    <div class="dropdown-list-image mr-3">
-
-                        <img class="rounded-circle" src="<?= $bericht->profiel_foto ?>" alt="">
-                        <div class="status-indicator bg-success"></div>
-                    </div>
-                    <div class="font-weight-bold">
-                        <div class="text-truncate"><?= $bericht->username; ?></div>
-                        <div class="small text-gray-500"><?= $bericht->bericht; ?></div>
-                    </div>
-                </a>
-                <?php } ?>
-                <?php endforeach; ?>
-
-
+                <div id="dropmssages">
+                    <a class="dropdown-item d-flex align-items-center" href="#" id="openchat">
+                        <div class="dropdown-list-image mr-3">
+                            <img class="rounded-circle" src="" alt="">
+                            <div class="status-indicator bg-success"></div>
+                        </div>
+                        <div class="font-weight-bold">
+                            <div class="text-truncate">test</div>
+                            <div class="small text-gray-500">test</div>
+                        </div>
+                    </a>
+                </div>
                 <a class="dropdown-item text-center small text-gray-500" href="message_board.php">Read More Messages</a>
 
             </div>
@@ -141,11 +135,11 @@
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $_SESSION['username']; ?></span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?=$_SESSION['username'];?></span>
                 <?php if ($_SESSION['profiel_foto'] == '') {
-                    $_SESSION['profiel_foto'] = 'users/profielfoto/Default-Profile.png';
-                } ?>
-                <img class="img-profile rounded-circle" src="<?= $_SESSION['profiel_foto']; ?>">
+    $_SESSION['profiel_foto'] = 'users/profielfoto/Default-Profile.png';
+}?>
+                <img class="img-profile rounded-circle" src="<?=$_SESSION['profiel_foto'];?>">
             </a>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -153,12 +147,12 @@
                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                     Profile
                 </a>
-                <?php if ($_SESSION['level'] == 1) { ?>
+                <?php if ($_SESSION['level'] == 1) {?>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#registerModal">
                     <i class="fas fa-user-edit fa-sm fa-fw mr-2 text-gray-400"></i>
                     Register new user
                 </a>
-                <?php } ?>
+                <?php }?>
                 <a class="dropdown-item" href="#">
                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                     Settings
