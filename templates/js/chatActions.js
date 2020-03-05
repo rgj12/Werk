@@ -9,9 +9,9 @@ $(document).ready(function() {
       type: "POST",
       data: { action: "viewChatmessages" },
       success: function(response) {
-        // console.log(response);
+        console.log(response);
         $("#dropmssages").html(response);
-        if (response !== '<p class="text-center">Geen berichten</p>') {
+        if (response !== "") {
           toastr.error("ongelezen berichten");
         }
       },

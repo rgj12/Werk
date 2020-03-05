@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 03 mrt 2020 om 15:42
+-- Gegenereerd op: 05 mrt 2020 om 15:49
 -- Serverversie: 10.4.8-MariaDB
 -- PHP-versie: 7.1.33
 
@@ -62,17 +62,21 @@ CREATE TABLE `chat_message` (
   `chat_message_id` int(11) NOT NULL,
   `to_user_id` int(11) NOT NULL,
   `from_user_id` int(11) NOT NULL,
-  `chat_message` varchar(255) NOT NULL,
+  `bericht` varchar(255) NOT NULL,
   `time_stamp` datetime NOT NULL DEFAULT current_timestamp(),
-  `urgentie` int(11) NOT NULL
+  `urgentie` varchar(45) NOT NULL,
+  `gelezen` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `chat_message`
 --
 
-INSERT INTO `chat_message` (`chat_message_id`, `to_user_id`, `from_user_id`, `chat_message`, `time_stamp`, `urgentie`) VALUES
-(4, 2, 1, 'tesmessage', '2020-02-21 10:13:52', 0);
+INSERT INTO `chat_message` (`chat_message_id`, `to_user_id`, `from_user_id`, `bericht`, `time_stamp`, `urgentie`, `gelezen`) VALUES
+(46, 2, 1, 'test', '2020-03-05 15:01:41', 'laag', 'wel'),
+(47, 2, 1, 'test', '2020-03-05 15:34:25', 'hoog', 'wel'),
+(48, 1, 2, 'dit werkt', '2020-03-05 15:34:43', 'gemiddeld', 'wel'),
+(49, 2, 1, 'Hey! Renato Goed werk verricht!', '2020-03-05 15:44:52', 'laag', 'niet');
 
 -- --------------------------------------------------------
 
@@ -138,7 +142,6 @@ INSERT INTO `facturen` (`factuurnummer`, `voornaam`, `achternaam`, `email`, `str
 (9, 'Gerritax', 'van de waalx', 'w@wx.nl', 'koekstraatx', '3192JWx', 'Rotterdamx', '', 2, 'tesprod3 ', ' ', ' ', 'opschonen ', ' ', ' ', ' 8.50', ' 0', ' 0', ' 125.00', ' 0', ' 0', '133.50', '110.33', '23.17', '2020-02-25', '14 dagen'),
 (10, 'Gerrit', 'van de waal', 'w@w.nl', 'koekstraat', '3192JW', 'Rotterdam', '064559621', 2, 'harde schijf ', 'opvouwbare kut ', ' ', ' ', ' ', ' ', ' 25.00', ' 25.95', ' 0', ' 0', ' 0', ' 0', '50.95', '42.11', '8.84', '2020-02-26', 'pin'),
 (11, 'Gerrit', 'van de waal', 'w@w.nl', 'koekstraat', '3192JW', 'Rotterdam', '064559621', 2, 'pc ', 'pc ', ' ', ' ', ' ', ' ', ' 424.68', ' 424.68', ' 0', ' 0', ' 0', ' 0', '849.36', '701.95', '147.41', '2020-02-26', 'IDEAL'),
-(12, 'Gerrit', 'van de waal', 'w@w.nl', 'koekstraat', '3192JW', 'Rotterdam', '', 2, 'pc ', ' ', ' ', ' ', ' ', ' ', ' 424.68', ' 0', ' 0', ' 0', ' 0', ' 0', '424.68', '350.98', '73.70', '2020-03-03', '14 dagen'),
 (13, 'derp', 'test', 'administratie@it-skills.nl', 'test', 'test', 'test', 'test', 4, 'SSD 250 GB Samsung ', ' ', ' ', ' ', ' ', ' ', ' 110.00', ' 0', ' 0', ' 0', ' 0', ' 0', '110.00', '90.91', '19.09', '2020-03-03', 'pin');
 
 -- --------------------------------------------------------
@@ -197,7 +200,7 @@ CREATE TABLE `producten` (
 --
 
 INSERT INTO `producten` (`id`, `productnaam`, `prijs`, `aantal_verkocht`) VALUES
-(7, 'pc', '424.68', 1),
+(7, 'pc', '424.68', 2),
 (8, 'tesprod3', '8.50', 0),
 (9, 'harde schijf', '25.00', 0),
 (11, 'SSD 250 GB Samsung', '110.00', 1);
@@ -291,7 +294,7 @@ ALTER TABLE `afspraken`
 -- AUTO_INCREMENT voor een tabel `chat_message`
 --
 ALTER TABLE `chat_message`
-  MODIFY `chat_message_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `chat_message_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT voor een tabel `diensten`
@@ -303,7 +306,7 @@ ALTER TABLE `diensten`
 -- AUTO_INCREMENT voor een tabel `facturen`
 --
 ALTER TABLE `facturen`
-  MODIFY `factuurnummer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `factuurnummer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT voor een tabel `klanten`
