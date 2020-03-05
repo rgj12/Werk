@@ -25,9 +25,6 @@ require_once 'inc/klantenModals/toevoegModal.php';
             <div class="container-fluid">
                 <?php displayMessage();?>
                 <!-- Page Heading -->
-                <?php if (empty($berichten)) {
-    echo '<div class="chatarea"><div class="container berichtbox text-center">Geen berichten</div></div>';
-} else {?>
                 <h1 class="h3 mb-2 text-gray-800">Berichten</h1>
                 <p class="mb-4">Overzicht berichten</p>
 
@@ -86,7 +83,7 @@ if ($_SESSION['level'] == 1) {
                         </div>
                     </form>
                 </div>
-                <?php }?>
+
             </div>
 
         </div>
