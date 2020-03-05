@@ -134,7 +134,8 @@ var data = [
     resize: true,
     pointFillColors: ["#ffffff"],
     pointStrokeColors: ["black"],
-    lineColors: ["gray"]
+    lineColors: ["gray"],
+      barColors: ["#1cc88a", "red"]
   };
 
 config.element = "stacked";

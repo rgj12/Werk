@@ -368,7 +368,8 @@
         <script>
         Morris.Donut({
             element: "pie-chart",
-            data: [ <?php echo $data; ?> ]
+            data: [ <?php echo $data; ?> ],
+            colors:["#03a9f4", "#0393d4", "#037EB5"]
 
 
         });

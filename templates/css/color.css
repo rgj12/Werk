@@ -1,0 +1,47 @@
+.bg-gradient-primary {
+    background-image: none !important;
+    background-color: #03a9f4 !important;
+}
+
+#wrapper #content-wrapper {
+    background-color: #f5fafd !important;
+}
+
+.sidebar-heading {
+    color: rgba(255, 255, 255, .7) !important;
+}
+
+.sidebar-dark .nav-item .nav-link i {
+    color: rgba(255, 255, 255, .7) !important;
+}
+
+.sidebar-dark .nav-item .nav-link:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+.border-left-primary {
+    border-left: .25rem solid #03a9f4 !important;
+}
+
+.text-primary {
+    color: #03a9f4 !important;
+}
+
+.btn-primary{
+    background-color: #03a9f4 !important;
+    border-color: #03a9f4 !important;
+}
+
+.btn-primary:hover{
+    background-color: #0393d4 !important;
+}
+
+.page-item.active .page-link{
+    background-color: #03a9f4 !important;
+    border-color: #03a9f4 !important;
+}
+
+.topbar .dropdown-list .dropdown-header{
+    background-color: #03a9f4 !important;
+    border-color: #03a9f4 !important;
+}
