@@ -61,8 +61,7 @@ class Chat
 
     public function getMessagesInDropdown($id)
     {
-        $this->db->query("SELECT * FROM chat_message INNER JOIN users ON chat_message.`from_user_id` = users.id WHERE chat_message.to_user_id = :user_id OR chat_message.to_user_id = 0
-        ORDER BY time_stamp DESC LIMIT 10");
+        $this->db->query("SELECT * FROM chat_message INNER JOIN users ON chat_message.`from_user_id` = users.id WHERE chat_message.to_user_id = :user_id AND chat_message.gelezen = 'niet' ORDER BY time_stamp DESC LIMIT 10");
         $this->db->bind(':user_id', $id);
         $results = $this->db->resultSet();
         return $results;

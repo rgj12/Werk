@@ -29,25 +29,7 @@ require_once 'inc/klantenModals/toevoegModal.php';
                 <p class="mb-4">Overzicht berichten</p>
 
                 <div class="chatarea">
-                    <?php foreach (array_reverse($berichten) as $bericht): ?>
-                    <?php
-if ($bericht->gelezen == 'niet') {
-    ?>
-                    <div class="container berichtbox <?=$bericht->urgentie;?>">
-                        <img src="<?=$bericht->profiel_foto;?>" alt="<?=$bericht->username;?>" style="width:100%;">
 
-                        <?php if ($bericht->from_user_id == $_SESSION['id']) {
-        $bericht->username = 'Ik';
-    }?>
-
-                        <sup><?=$bericht->username;?> (<?=$bericht->urgentie;?>
-                            urgentie)</sup>
-                        <a href="message_board.php?read=<?=$bericht->chat_message_id;?>" class="check fas fa-check"></a>
-                        <p><b><?=$bericht->bericht;?></b></p>
-                        <span class="time-right"><b><?=$bericht->time_stamp;?></b></span>
-                    </div>
-                    <?php }?>
-                    <?php endforeach;?>
 
 
                 </div>

@@ -34,13 +34,13 @@
  <!-- Page level plugins -->
  <script src="templates/vendor/datatables/jquery.dataTables.min.js"></script>
  <script src="templates/vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
  <!-- Page level custom scripts -->
  <script src="templates/js/data/datatables.js"></script>
  <script src="templates/js/request.js"></script>
 
  <script src="templates/js/chatbox.js"></script>
- <script src="templates/js/navbar.js"></script>
+ <script src="templates/js/chatActions.js"></script>
  </body>
 
  </html>
