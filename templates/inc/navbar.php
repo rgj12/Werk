@@ -145,7 +145,7 @@
                 <?php if ($_SESSION['profiel_foto'] == '') {
                     $_SESSION['profiel_foto'] = 'users/profielfoto/Default-Profile.png';
                 } ?>
-                <img class="img-profile rounded-circle" src="<?= $_SESSION['profiel_foto']; ?>">
+                <img class="img-profile rounded-circle" src="<?= $_SESSION['profiel_foto']; ?>" id="profiel_foto" onerror="standby()">
             </a>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -210,3 +210,8 @@
         </form>
     </div>
 </div>
+<script>
+    function standby() {
+        document.getElementById('profiel_foto').src = '../users/profielfoto/Default-Profile.png'
+    }
+</script>
