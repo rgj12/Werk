@@ -31,4 +31,14 @@ if (isset($_GET['read'])) {
     }
 }
 
+if (isset($_GET['delete'])) {
+    $id = $_GET['delete'];
+    if ($userChatInfo->deleteMessage($id)) {
+        redirect('message_board.php', 'verwijdert', 'success');
+    } else {
+        redirect('message_board.php', 'er is iets misgegaan', 'error');
+    }
+
+}
+
 echo $template;

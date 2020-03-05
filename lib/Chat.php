@@ -59,6 +59,17 @@ class Chat
         }
     }
 
+    public function deleteMessage($id)
+    {
+        $this->db->query("DELETE FROM chat_message WHERE chat_message_id = :id");
+        $this->db->bind(":id", $id);
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public function getMessagesInDropdown($id)
     {
         $this->db->query("SELECT * FROM chat_message INNER JOIN users ON chat_message.`from_user_id` = users.id WHERE chat_message.to_user_id = :user_id AND chat_message.gelezen = 'niet' ORDER BY time_stamp DESC LIMIT 10");
