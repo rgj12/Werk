@@ -53,3 +53,7 @@
 .fa-plus:before{
     font: normal normal normal 14px/1 FontAwesome !important;
 }
+
+.fa-trash:before, .fa-edit:before, .fa-pencil-square-o:before{
+    font: normal normal normal 21px/1 FontAwesome !important;
+}
