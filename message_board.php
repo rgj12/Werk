@@ -16,27 +16,27 @@ if (isset($_POST['sendMessage'])) {
     $data['urgentie'] = $_POST['urgentie'];
 
     if ($userChatInfo->sendMessage($data)) {
-        redirect('message_board.php', 'bericht verstuurd', 'success');
+        redirect('berichten', 'bericht verstuurd', 'success');
     } else {
-        redirect('message_board.php', 'er is iets misgegaan', 'error');
+        redirect('berichten', 'er is iets misgegaan', 'error');
     }
 }
 
 if (isset($_GET['read'])) {
     $id = $_GET['read'];
     if ($userChatInfo->updateMessage($id)) {
-        redirect('message_board.php', 'success', 'success');
+        redirect('berichten', 'success', 'success');
     } else {
-        redirect('message_board.php', 'er is iets missgegaan', 'error');
+        redirect('berichten', 'er is iets missgegaan', 'error');
     }
 }
 
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
     if ($userChatInfo->deleteMessage($id)) {
-        redirect('message_board.php', 'verwijdert', 'success');
+        redirect('berichten', 'verwijdert', 'success');
     } else {
-        redirect('message_board.php', 'er is iets misgegaan', 'error');
+        redirect('berichten', 'er is iets misgegaan', 'error');
     }
 
 }

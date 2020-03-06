@@ -14,13 +14,13 @@ if (isset($_GET['del_id'])) {
 
     //check of het id numeriek is
     if (!checkId($id)) {
-        redirect('klanten.php', 'Er is iets misgegaan', 'error');
+        redirect('klanten', 'Er is iets misgegaan', 'error');
     } else {
 
         if ($klanten->deleteCustomer($id)) {
-            redirect('klanten.php', 'Succesvol verwijderd', 'error');
+            redirect('klanten', 'Succesvol verwijderd', 'error');
         } else {
-            redirect('klanten.php', 'Er is iets misgegaan', 'error');
+            redirect('klanten', 'Er is iets misgegaan', 'error');
         }
     }
 }
@@ -31,12 +31,12 @@ if (isset($_GET['afspr_del_id'])) {
 
     //check of het id numeriek is
     if (!checkId($id)) {
-        redirect('klanten.php', 'Er is iets misgegaan', 'error');
+        redirect('klanten', 'Er is iets misgegaan', 'error');
     } else {
         if ($afspraken->deleteAppointment($id)) {
-            redirect('afspraak.php?overzichtafspraken', 'Afspraak verwijdert', 'success');
+            redirect('afspraken', 'Afspraak verwijdert', 'success');
         } else {
-            redirect('afspraak.php?overzichtafspraken', 'Er is iets misgegaan', 'error');
+            redirect('afspraken', 'Er is iets misgegaan', 'error');
         }
     }
 }
@@ -47,13 +47,13 @@ if (isset($_GET['product_del_id'])) {
 
     //check of het id numeriek is
     if (!checkId($id)) {
-        redirect('products.php', 'Er is iets misgegaan', 'error');
+        redirect('producten', 'Er is iets misgegaan', 'error');
     } else {
 
         if ($producten->deleteProduct($id)) {
-            redirect('products.php', 'Succesvol verwijderd', 'error');
+            redirect('producten', 'Succesvol verwijderd', 'error');
         } else {
-            redirect('products.php', 'Er is iets misgegaan', 'error');
+            redirect('producten', 'Er is iets misgegaan', 'error');
         }
     }
 }
@@ -64,13 +64,13 @@ if (isset($_GET['dienst_del_id'])) {
 
     //check of het id numeriek is
     if (!checkId($id)) {
-        redirect('diensten.php', 'Er is iets misgegaan', 'error');
+        redirect('diensten', 'Er is iets misgegaan', 'error');
     } else {
 
         if ($diensten->deleteDienst($id)) {
-            redirect('diensten.php', 'Succesvol verwijderd', 'error');
+            redirect('diensten', 'Succesvol verwijderd', 'error');
         } else {
-            redirect('diensten.php', 'Er is iets misgegaan', 'error');
+            redirect('diensten', 'Er is iets misgegaan', 'error');
         }
     }
 }
@@ -80,8 +80,8 @@ if (isset($_GET['fact_del_id'])) {
     $id = $_GET['fact_del_id'];
 
     if ($factuur->deleteFactuur($id)) {
-        redirect('factuur.php?overzicht', 'factuur verwijderd', 'success');
+        redirect('facturen', 'factuur verwijderd', 'success');
     } else {
-        redirect('factuur.php?overzicht', 'Er is iets misgegaan', 'error');
+        redirect('facturen', 'Er is iets misgegaan', 'error');
     }
 }

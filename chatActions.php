@@ -10,7 +10,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'viewChatmessages') {
     $output = '';
 
     foreach ($berichtenInDropdown as $bericht) {
-        $output .= '<a class="dropdown-item d-flex align-items-center" href="message_board.php" id="openchat">
+        $output .= '<a class="dropdown-item d-flex align-items-center" href="berichten" id="openchat">
         <div class="dropdown-list-image mr-3">
             <img class="rounded-circle" src="' . $bericht->profiel_foto . '" alt="">
             <div class="status-indicator bg-success"></div>

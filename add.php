@@ -30,16 +30,16 @@ if (isset($_POST['toevoegen'])) {
         $data['mail'] = filter_var($data['mail'], FILTER_VALIDATE_EMAIL);
 
         if ($data['mail'] == false) {
-            redirect('klanten.php', 'Vul een juiste email in', 'error');
+            redirect('klanten', 'Vul een juiste email in', 'error');
         }
 
         if ($klanten->addCustomer($data)) {
-            redirect('klanten.php', 'Succesvol toegevoegd', 'success');
+            redirect('klanten', 'Succesvol toegevoegd', 'success');
         } else {
-            redirect('klanten.php', 'Er is iets misgegaan', 'error');
+            redirect('klanten', 'Er is iets misgegaan', 'error');
         }
     } else {
-        redirect('klanten.php', 'Vul alle velden in!', 'error');
+        redirect('klanten', 'Vul alle velden in!', 'error');
     }
 }
 
@@ -51,9 +51,9 @@ if (isset($_POST['maakAfspraak'])) {
     $data['tijd'] = $_POST['af_tijd'];
     $data['omschr'] = $_POST['af_omschrijving'];
     if ($klanten->makeAppointment($data)) {
-        redirect('klanten.php', 'afspraak aangemaakt', 'success');
+        redirect('klanten', 'afspraak aangemaakt', 'success');
     } else {
-        redirect('klanten.php', 'er is iets misgegaan', 'error');
+        redirect('klanten', 'er is iets misgegaan', 'error');
     }
 }
 
@@ -67,12 +67,12 @@ if (isset($_POST['maakProduct'])) {
         $data['pprijs'] = number_format((float) $_POST['prijs'], 2, '.', '');
 
         if ($producten->addProduct($data)) {
-            redirect('products.php', 'Succesvol toegevoegd', 'success');
+            redirect('producten', 'Succesvol toegevoegd', 'success');
         } else {
-            redirect('products.php', 'Er is iets misgegaan', 'error');
+            redirect('producten', 'Er is iets misgegaan', 'error');
         }
     } else {
-        redirect('products.php', 'Vul alle velden in!', 'error');
+        redirect('producten', 'Vul alle velden in!', 'error');
     }
 }
 
@@ -86,12 +86,12 @@ if (isset($_POST['maakDienst'])) {
         $data['dprijs'] = number_format((float) $_POST['dienstprijs'], 2, '.', '');
 
         if ($diensten->addDienst($data)) {
-            redirect('diensten.php', 'Succesvol toegevoegd', 'success');
+            redirect('diensten', 'Succesvol toegevoegd', 'success');
         } else {
-            redirect('diensten.php', 'Er is iets misgegaan', 'error');
+            redirect('diensten', 'Er is iets misgegaan', 'error');
         }
     } else {
-        redirect('diensten.php', 'Vul alle velden in!', 'error');
+        redirect('diensten', 'Vul alle velden in!', 'error');
     }
 }
 
@@ -102,7 +102,7 @@ if (isset($_POST['maakUser'])) {
     if (!empty($_POST['username']) || !empty($_POST['password']) || !empty($_POST['email'])) {
         //gebruikersnaam mag alleen letters en cijfers bevatten en een underscore
         if (!preg_match('/^[a-zA-Z0-9]*_?[a-zA-Z0-9]*$/', $_POST['username'])) {
-            redirect('index.php', 'Er is iets misgegaan met de gebruiker toevoegen', 'error');
+            redirect('home', 'Er is iets misgegaan met de gebruiker toevoegen', 'error');
         } else {
 
             $data['username'] = trim(htmlspecialchars($_POST['username']));
@@ -110,7 +110,7 @@ if (isset($_POST['maakUser'])) {
             $data['password'] = trim(htmlspecialchars(password_hash($_POST['password'], PASSWORD_DEFAULT)));
             //email checken op juiste format
             if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
-                redirect('index.php', 'Er is iets misgegaan met gebruiker toevoegen', 'error');
+                redirect('home', 'Er is iets misgegaan met gebruiker toevoegen', 'error');
             }
 
             if (empty($_POST['profiel_foto'])) {
@@ -120,17 +120,17 @@ if (isset($_POST['maakUser'])) {
             }
             //check of gebruikersnaam uniek is
             if ($users->checkUsername($data['username']) > 0) {
-                redirect('index.php', 'Gebruikersnaam al in bezit!', 'error');
+                redirect('home', 'Gebruikersnaam al in bezit!', 'error');
             } else {
                 if ($users->registerUser($data)) {
-                    redirect('index.php', 'Gebruiker aan gemaakt!', 'success');
+                    redirect('home', 'Gebruiker aan gemaakt!', 'success');
                 } else {
-                    redirect('index.php', 'Er is iets misgegaan', 'error');
+                    redirect('home', 'Er is iets misgegaan', 'error');
                 }
             }
         }
     } else {
-        redirect('index.php', 'Vul alle velden in!', 'error');
+        redirect('home', 'Vul alle velden in!', 'error');
     }
 }
 //facturen aanmaken
@@ -209,8 +209,8 @@ if (isset($_POST['maakFactuur'])) {
             $diensten->aantalVerkocht($data['dp3'][0]);
         }
 
-        redirect('klanten.php', 'Factuur aangemaakt', 'success');
+        redirect('klanten', 'Factuur aangemaakt', 'success');
     } else {
-        redirect('klanten.php', 'Er is iets misgegaan', 'error');
+        redirect('klanten', 'Er is iets misgegaan', 'error');
     }
 }

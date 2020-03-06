@@ -14,7 +14,7 @@ if (isset($_POST['edit_id'])) {
 
     //check of het id numeriek is
     if (!checkId($id)) {
-        redirect('klanten.php', 'Er is iets misgegaan', 'error');
+        redirect('klanten', 'Er is iets misgegaan', 'error');
     } else {
         $klant = $klanten->getCustomerInfo($id);
         echo json_encode($klant);
@@ -27,7 +27,7 @@ if (isset($_POST['edit_afspr_id'])) {
 
     //check of het id numeriek is
     if (!checkId($id)) {
-        redirect('klanten.php', 'Er is iets misgegaan', 'error');
+        redirect('klanten', 'Er is iets misgegaan', 'error');
     } else {
         $appointment = $afspraak->getAppointmentInfo($id);
         echo json_encode($appointment);
@@ -41,7 +41,7 @@ if (isset($_POST['edit_product_id'])) {
 
     //check of het id numeriek is
     if (!checkId($id)) {
-        redirect('products.php', 'Er is iets misgegaan', 'error');
+        redirect('producten', 'Er is iets misgegaan', 'error');
     } else {
         $product = $producten->getProductInfo($id);
         echo json_encode($product);
@@ -55,7 +55,7 @@ if (isset($_POST['edit_dienst_id'])) {
 
     //check of het id numeriek is
     if (!checkId($id)) {
-        redirect('diensten.php', 'Er is iets misgegaan', 'error');
+        redirect('diensten', 'Er is iets misgegaan', 'error');
     } else {
         $dienst = $diensten->getDienstInfo($id);
         echo json_encode($dienst);
@@ -76,11 +76,10 @@ if (isset($_POST['editKlant'])) {
     $data['tel'] = $_POST['edittelefoonnummer'];
     $data['reden_bezoek'] = $_POST['editredenbezoek'];
 
-
     if ($klanten->editCustomer($data)) {
-        redirect('klanten.php', 'Succesvol aangepast', 'success');
+        redirect('klanten', 'Succesvol aangepast', 'success');
     } else {
-        redirect('klanten.php', 'er is iets misgegaan', 'error');
+        redirect('klanten', 'er is iets misgegaan', 'error');
     }
 }
 
@@ -112,9 +111,9 @@ if (isset($_POST['editProduct'])) {
     $data['pprijs'] = $_POST['editprijs'];
 
     if ($producten->editProduct($data)) {
-        redirect('products.php', 'Succesvol aangepast', 'success');
+        redirect('producten', 'Succesvol aangepast', 'success');
     } else {
-        redirect('products.php', 'er is iets misgegaan', 'error');
+        redirect('producten', 'er is iets misgegaan', 'error');
     }
 }
 
@@ -127,9 +126,9 @@ if (isset($_POST['editDienst'])) {
     $data['dprijs'] = $_POST['editdienstprijs'];
 
     if ($diensten->editDienst($data)) {
-        redirect('diensten.php', 'Succesvol aangepast', 'success');
+        redirect('diensten', 'Succesvol aangepast', 'success');
     } else {
-        redirect('diensten.php', 'er is iets misgegaan', 'error');
+        redirect('diensten', 'er is iets misgegaan', 'error');
     }
 }
 
@@ -139,7 +138,7 @@ if (isset($_POST['edit_factuur_id'])) {
 
     //check of het id numeriek is
     if (!checkId($id)) {
-        redirect('factuur.php?overzicht', 'Er is iets misgegaan', 'error');
+        redirect('facturen', 'Er is iets misgegaan', 'error');
     } else {
         $factuurInfo = $facturen->getCustomerInvoice($id);
         echo json_encode($factuurInfo);
@@ -205,21 +204,19 @@ if (isset($_POST['editFactuur'])) {
     // echo $data['dp3'][0] . "<br>";
     // echo $data['btoptie'] . "<br>";
 
-
-
     $data["datum"] = date("Y/m/d");
     $data["totaal"] = number_format((float) $data["pp1"][1] + $data["pp2"][1] + $data["pp3"][1] + $data["dp1"][1] + $data["dp2"][1] + $data["dp3"][1], 2, '.', '');
 
     $data["totaalexBtw"] = number_format((float) $facturen->VAT($data), 2, '.', '');
-    $data["totaalBTW"] =  number_format($data["totaal"] - $data["totaalexBtw"], 2, '.', '');
+    $data["totaalBTW"] = number_format($data["totaal"] - $data["totaalexBtw"], 2, '.', '');
 
     // echo $data['totaal'] . "<br>";
     // echo $data['totaalexBtw'] . "<br>";
     // echo $data['totaalBTW'] . "<br>";
 
     if ($facturen->editInvoice($data)) {
-        redirect('factuur.php?overzicht', 'Succesvol aangepast', 'success');
+        redirect('facturen', 'Succesvol aangepast', 'success');
     } else {
-        redirect('factuur.php?overzicht', 'er is iets misgegaan', 'error');
+        redirect('facturen', 'er is iets misgegaan', 'error');
     }
 }

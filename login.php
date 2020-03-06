@@ -22,13 +22,13 @@ if (isset($_POST['login'])) {
                 $_SESSION['username'] = $info->username;
                 $_SESSION['profiel_foto'] = $info->profiel_foto;
                 $_SESSION['level'] = $info->level;
-                redirect('index.php', 'Hallo,' . $_SESSION['username'], 'success');
+                redirect('home', 'Hallo,' . $_SESSION['username'], 'success');
             } else {
-                redirect('login.php', 'Onjuiste gegevens', 'error');
+                redirect('login', 'Onjuiste gegevens', 'error');
             }
         }
     } else {
-        redirect('login.php', 'Vul alle velden in', 'error');
+        redirect('login', 'Vul alle velden in', 'error');
     }
 }
 echo $template;
