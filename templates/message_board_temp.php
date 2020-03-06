@@ -71,4 +71,4 @@ if ($_SESSION['level'] == 1) {
         </div>
 
         <!-- End of Main Content -->
-        <!-- <?php include './inc/footer.php';?> -->
+        <?php include './inc/footer.php';?>
