@@ -1,0 +1,11 @@
+RewriteEngine on
+
+RewriteRule ^home index.php [NC,L]
+RewriteRule ^klanten klanten.php [NC,L]
+RewriteRule ^facturen factuur.php?overzicht [NC,L]
+RewriteRule ^afspraken afspraak.php?overzichtafspraken [NC,L]
+RewriteRule ^producten products.php [NC,L]
+RewriteRule ^diensten diensten.php [NC,L]
+RewriteRule ^berichten message_board.php [NC,L]
+RewriteRule ^login login.php [NC,L]
+RewriteRule ^bekijk_facturen([a-zA-Z0-9\-=&_@\.\,\)\(]*)$ factuur.php?bekijk_facturen=$1 [NC,L]
