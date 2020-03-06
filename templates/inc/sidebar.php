@@ -36,11 +36,11 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Overzicht:</h6>
-                <a class="collapse-item" href="afspraak.php?overzichtafspraken">Afspraken</a>
-                <a class="collapse-item" href="factuur.php?overzicht">Facturen</a>
-                <a class="collapse-item" href="products.php">Producten</a>
-                <a class="collapse-item" href="diensten.php">Diensten</a>
-                <a class="collapse-item" href="message_board.php">message center</a>
+                <a class="collapse-item" href="afspraken">Afspraken</a>
+                <a class="collapse-item" href="factuur">Facturen</a>
+                <a class="collapse-item" href="producten">Producten</a>
+                <a class="collapse-item" href="diensten">Diensten</a>
+                <a class="collapse-item" href="berichten">message center</a>
             </div>
         </div>
     </li>
@@ -103,7 +103,7 @@
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="klanten.php">
+        <a class="nav-link" href="klanten">
             <i class="fas fa-fw fa-table"></i>
             <span>Klanten</span></a>
     </li>
