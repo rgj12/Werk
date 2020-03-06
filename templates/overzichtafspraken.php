@@ -53,7 +53,7 @@ include 'inc/header.php';
 
                                         <td><?=$afspraak->voornaam;?></td>
                                         <td><?=$afspraak->achternaam;?></td>
-                                        <td><?=date_format(new dateTime($afspraak->datum), "d/m/Y");?></td>
+                                        <td><?=date_format(new dateTime($afspraak->datum), "d-m-Y");?></td>
                                         <td><?=date("H:i", strtotime($afspraak->tijd));?> uur</td>
                                         <td><?=$afspraak->omschrijving;?></td>
                                         <td>
@@ -61,7 +61,7 @@ include 'inc/header.php';
                                                 href="afspraak.php?afspr_voltooid=<?=$afspraak->id?>"
                                                 class="fa fa-check fa-lg"></a> |&nbsp;
                                             <a class="fa fa-edit fa-lg edit_afspr_Btn" href="#" data-toggle="modal"
-                                                data-target="#editModal" id="<?=$afspraak->klant_id?>"
+                                                data-target="#editModal" id="<?=$afspraak->id?>"
                                                 title="Pas afspraak aan" style="color:orange;">
                                             </a> |&nbsp;
                                             <a href="delete.php?afspr_del_id=<?=$afspraak->id?>"

@@ -63,7 +63,7 @@ class Afspraken
 
     public function getAppointmentInfo($id)
     {
-        $this->db->query("SELECT * FROM afspraken WHERE klant_id = :id");
+        $this->db->query("SELECT * FROM afspraken WHERE id = :id");
         $this->db->bind(':id', $id);
 
         $info = $this->db->single();
