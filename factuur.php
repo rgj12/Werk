@@ -9,8 +9,6 @@ $producten = new Product;
 $diensten = new Dienst;
 $userChatInfo = new Chat;
 
-
-
 if (isset($_POST['fk_id'])) {
     $id = $_POST['fk_id'];
     $klant = $klanten->getCustomerInfo($id);
@@ -29,8 +27,15 @@ if (isset($_GET['overzicht'])) {
 }
 
 if (isset($_GET['bekijkid'])) {
-    $factuur_id = $_GET['bekijkid'];
     $template = new Template('templates/factuur-template.php');
+    $factuur_id = $_GET['bekijkid'];
     $template->factuurInfo = $facturen->getCustomerInvoice($factuur_id);
+    echo $template;
+}
+
+if (isset($_GET['bekijk_facturen'])) {
+    $template = new Template('templates/factuuroverzicht-template.php');
+    $id = $_GET['bekijk_facturen'];
+    $template->facturen = $facturen->getAllInvoices($id);
     echo $template;
 }

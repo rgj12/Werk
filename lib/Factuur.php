@@ -8,10 +8,14 @@ class Factuur
         $this->db = new Database;
     }
 
-    public function getAllInvoices()
+    public function getAllInvoices($id = "")
     {
-        $this->db->query("SELECT * FROM facturen ORDER BY factuurnummer DESC");
-
+        if (!empty($id)) {
+            $this->db->query("SELECT * FROM facturen WHERE klantnummer = :id ORDER BY factuurnummer DESC");
+            $this->db->bind(":id", $id);
+        } else {
+            $this->db->query("SELECT * FROM facturen ORDER BY factuurnummer DESC");
+        }
         $results = $this->db->resultSet();
         return $results;
     }
@@ -111,7 +115,6 @@ class Factuur
         $this->db->bind(':totaalExBtw', $data['totaalexBtw']);
         $this->db->bind(':totaalBTW', $data['totaalBTW']);
         $this->db->bind(':btoptie', $data['btoptie']);
-
 
         if ($this->db->execute()) {
             return true;
