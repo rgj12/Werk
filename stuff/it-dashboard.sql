@@ -34,7 +34,7 @@ CREATE TABLE `afspraken` (
   `datum` date NOT NULL,
   `tijd` time NOT NULL,
   `omschrijving` varchar(255) NOT NULL,
-  `datum_afspr_gemaakt` date NOT NULL DEFAULT current_timestamp(),
+  `datum_afspr_gemaakt` datetime NOT NULL DEFAULT current_timestamp(),
   `afspraak_voltooid` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
