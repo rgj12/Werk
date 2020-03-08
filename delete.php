@@ -77,9 +77,8 @@ if (isset($_GET['dienst_del_id'])) {
 
 //factuur verwijderen
 if (isset($_GET['fact_del_id'])) {
-    $id = $_GET['fact_del_id'];
 
-    if ($factuur->deleteFactuur($id)) {
+    if ($factuur->deleteFactuur(decryptId())) {
         redirect('facturen', 'factuur verwijderd', 'success');
     } else {
         redirect('facturen', 'Er is iets misgegaan', 'error');

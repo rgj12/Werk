@@ -35,7 +35,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'viewMessageBoard') {
                 $output .= '<div id="bericht_box" class="container berichtbox ' . $bericht->urgentie . '">
                 <img src="' . $bericht->profiel_foto . '" alt="' . $bericht->profiel_foto . '" style="width:100%;">
                 <sup>' . $bericht->username . ' (' . $bericht->urgentie . ' urgentie)</sup>
-                <a href="message_board.php?delete=' . $bericht->chat_message_id . '"style="color:white;" class="check fas fa-trash-alt"></a>
+                <a href="message_board.php?delete=' . encryptId($bericht->chat_message_id) . '"style="color:white;" class="check fas fa-trash-alt"></a>
                 <p><b>' . $bericht->bericht . '</b></p>
                 <span class="time-right"><b>' . $bericht->time_stamp . '</b></span>
     </div>';
@@ -43,7 +43,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'viewMessageBoard') {
                 $output .= '<div id="bericht_box" class="container berichtbox ' . $bericht->urgentie . '">
             <img src="' . $bericht->profiel_foto . '" alt="' . $bericht->profiel_foto . '" style="width:100%;">
             <sup>' . $bericht->username . ' (' . $bericht->urgentie . ' urgentie)</sup>
-            <a href="message_board.php?read=' . $bericht->chat_message_id . '" class="check fas fa-check"></a>
+            <a href="message_board.php?read=' . encryptId($bericht->chat_message_id) . '" class="check fas fa-check"></a>
             <p><b>' . $bericht->bericht . '</b></p>
             <span class="time-right"><b>' . $bericht->time_stamp . '</b></span>
 </div>';

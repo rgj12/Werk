@@ -8,7 +8,7 @@ require_once 'inc/klantenModals/toevoegModal.php';
 <div id="wrapper">
 
     <!-- Sidebar -->
-    <?php include 'inc/sidebar.php'; ?>
+    <?php include 'inc/sidebar.php';?>
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
@@ -18,12 +18,12 @@ require_once 'inc/klantenModals/toevoegModal.php';
         <div id="content">
 
             <!-- Topbar -->
-            <?php include 'inc/navbar.php'; ?>
+            <?php include 'inc/navbar.php';?>
             <!-- End of Topbar -->
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
-                <?php displayMessage(); ?>
+                <?php displayMessage();?>
                 <!-- Page Heading -->
                 <h1 class="h3 mb-2 text-gray-800">Facturen</h1>
                 <p class="mb-4">Overzicht facturen</p>
@@ -47,32 +47,32 @@ require_once 'inc/klantenModals/toevoegModal.php';
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($facturen as $factuur) : ?>
+                                    <?php foreach ($facturen as $factuur): ?>
                                     <tr>
-                                        <td><?= $factuur->voornaam; ?></td>
-                                        <td><?= $factuur->achternaam; ?></td>
-                                        <td><?= $factuur->totaalIncBtw; ?> €</td>
-                                        <td><?= date_format(new datetime($factuur->datum), 'd/m/Y'); ?></td>
+                                        <td><?=$factuur->voornaam;?></td>
+                                        <td><?=$factuur->achternaam;?></td>
+                                        <td><?=$factuur->totaalIncBtw;?> €</td>
+                                        <td><?=date_format(new datetime($factuur->datum), 'd/m/Y');?></td>
                                         <td> <a class="fa fa-edit fa-lg editfactBtn" href="#" data-toggle="modal"
-                                                data-target="#editModal" id="<?= $factuur->factuurnummer ?>"
+                                                data-target="#editModal" id="<?=$factuur->factuurnummer?>"
                                                 title="Pas factuur aan" style="color:orange;">
                                             </a> |&nbsp;
-                                            <a href="delete.php?fact_del_id=<?= $factuur->factuurnummer ?>"
+                                            <a href="delete.php?fact_del_id=<?=encryptId($factuur->factuurnummer)?>"
                                                 title="Verwijder factuur" class="fa fa-trash fa-lg" style="color:red;"
                                                 onclick="return confirm('Weet je zeker dat je deze factuur wilt verwijderen?')"></a>
                                             |&nbsp;
-                                            <a href="factuur.php?bekijkid=<?= $factuur->factuurnummer ?>"
+                                            <a href="bekijk_factuur=<?=encryptId($factuur->factuurnummer)?>"
                                                 class="fa fa-file-pdf-o fa-lg" title="Bekijk Factuur"></a>
 
                                         </td>
                                     </tr>
                                     <!-- Modals-->
                                     <?php
-                                        /* Modal voor editen */
-                                        include 'inc/factuurModals/editModal.php';
+/* Modal voor editen */
+include 'inc/factuurModals/editModal.php';
 
-                                        ?>
-                                    <?php endforeach; ?>
+?>
+                                    <?php endforeach;?>
 
                                 </tbody>
                             </table>
@@ -85,4 +85,4 @@ require_once 'inc/klantenModals/toevoegModal.php';
 
         </div>
         <!-- End of Main Content -->
-        <?php include './inc/footer.php'; ?>
+        <?php include './inc/footer.php';?>

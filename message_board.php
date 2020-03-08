@@ -23,8 +23,7 @@ if (isset($_POST['sendMessage'])) {
 }
 
 if (isset($_GET['read'])) {
-    $id = $_GET['read'];
-    if ($userChatInfo->updateMessage($id)) {
+    if ($userChatInfo->updateMessage(decryptId())) {
         redirect('berichten', 'success', 'success');
     } else {
         redirect('berichten', 'er is iets missgegaan', 'error');
@@ -32,8 +31,7 @@ if (isset($_GET['read'])) {
 }
 
 if (isset($_GET['delete'])) {
-    $id = $_GET['delete'];
-    if ($userChatInfo->deleteMessage($id)) {
+    if ($userChatInfo->deleteMessage(decryptId())) {
         redirect('berichten', 'verwijdert', 'success');
     } else {
         redirect('berichten', 'er is iets misgegaan', 'error');
