@@ -41,6 +41,7 @@ require_once 'inc/klantenModals/toevoegModal.php';
                                     <tr>
                                         <th>Voornaam</th>
                                         <th>Achternaam</th>
+                                        <th>Tussenvoegsels</th>
                                         <th>Email</th>
                                         <th>Telefoonnummer</th>
                                         <th>Woonstad</th>
