@@ -68,7 +68,7 @@ class Klant
 
         $this->db->bind(':id', $data['id']);
         $this->db->bind(':vnaam', $data['vnaam']);
-        $this->db->bind(':tussenvoegsels', $data['tussenvoegsels']);
+        $this->db->bind(':tussenvoegsels', $data['tuss']);
         $this->db->bind(':anaam', $data['anaam']);
         $this->db->bind(':mail', $data['mail']);
         $this->db->bind(':stnaam', $data['stnaam']);

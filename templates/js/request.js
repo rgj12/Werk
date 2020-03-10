@@ -39,6 +39,7 @@ $(document).ready(function() {
         $("#editid").val(data.id);
         $("#editvoornaam").val(data.voornaam);
         $("#editachternaam").val(data.achternaam);
+        $("#edittussenvoegsels").val(data.tussenvoegsels);
         $("#editemail").val(data.email);
         $("#edittelefoonnummer").val(data.telefoonnummer);
         $("#editwoonplaats").val(data.woonplaats);

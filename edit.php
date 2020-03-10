@@ -68,6 +68,7 @@ if (isset($_POST['editKlant'])) {
     $data = array();
     $data['id'] = $_POST['editid'];
     $data['vnaam'] = $_POST['editvoornaam'];
+    $data['tuss'] = $_POST['edittussenvoegsels'];
     $data['anaam'] = $_POST['editachternaam'];
     $data['mail'] = $_POST['editemail'];
     $data['stnaam'] = $_POST['editstraatnaam'];
