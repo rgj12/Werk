@@ -19,6 +19,11 @@
                     </div>
 
                     <div class="form-group">
+                        <label>Tussenvoegsels</label>
+                        <input type="text" name="edittussenvoegsels" id="edittussenvoegsels" class="form-control">
+                    </div>
+
+                    <div class="form-group">
                         <label>Achternaam</label>
                         <input type="text" class="form-control" name="editachternaam" id="editachternaam">
                     </div>

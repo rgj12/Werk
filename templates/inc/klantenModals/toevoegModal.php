@@ -17,6 +17,11 @@
                     </div>
 
                     <div class="form-group">
+                        <label>Tussenvoegsels</label>
+                        <input type="text" class="form-control" name="tussenvoegsels">
+                    </div>
+
+                    <div class="form-group">
                         <label>Achternaam</label>
                         <input type="text" class="form-control" name="achternaam">
                     </div>
