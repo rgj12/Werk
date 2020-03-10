@@ -75,7 +75,7 @@ class Klant
         $this->db->bind(':pcode', $data['pcode']);
         $this->db->bind(':wplaats', $data['wplaats']);
         $this->db->bind(':tel', $data['tel']);
-        $this->db->bind('red', $data['reden_bezoek']);
+        $this->db->bind(':red', $data['reden_bezoek']);
 
         if ($this->db->execute()) {
             return true;
