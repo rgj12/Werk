@@ -19,6 +19,7 @@ $(document).ready(function() {
         $("#woonplaats").val(data.woonplaats);
         $("#telefoonnummer").val(data.telefoonnummer);
         $("#postcode").val(data.postcode);
+        $("#tussenvoegsels").val(data.tussenvoegsels);
       }
     });
   });

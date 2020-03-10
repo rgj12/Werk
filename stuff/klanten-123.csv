@@ -1,4 +1,4 @@
-id;voornaam;de;achternaam;email;straatnaam;postcode;woonplaats;telefoonnummer;reden_bezoek
+id;voornaam;tussenvoegsel;achternaam;email;straatnaam;postcode;woonplaats;telefoonnummer;reden_bezoek
 ;Toos;de;Raad;toos-wil@hetnet.nl;Slotsedijk;3161PG;Rhoon;622078081;
 ;Rogier;van der;Vries;christiaanrogier@gmail.com;d. de Haanstraat;3161XA;Rhoon;6;
 ;Andre;;Draaij;a.draaij@kpnmail.nl;Uiterdijk ;3195GK;Pernis Rotterdam;620079774;
@@ -133,7 +133,7 @@ id;voornaam;de;achternaam;email;straatnaam;postcode;woonplaats;telefoonnummer;re
 ;M.H.;;Spieringhs;shsh@hotmail.com;Brem;3171NA;Poortugaal;652384981;
 ;Jerrel;;Sadhoe;jerrel75@hotmail.com;Malachiet;3162PM;Rhoon;611355287;
 ;L.W.;;Kok;boogie1@caiway.nl;Safierlaan;3162PL;Rhoon;104704051;
-;PrivÇŸ¶¸huis Lust;;Rotterdam;info@privehuislust.nl;Lange Hilleweg;3073BX;Rotterdam;620081862;
+;PrivÇŸï¿½ï¿½huis Lust;;Rotterdam;info@privehuislust.nl;Lange Hilleweg;3073BX;Rotterdam;620081862;
 ;Kleurkracht;de;.;marieke@kleurkracht.nl;Beugkant;2993DK;Barendrecht;648120002;
 ;G.H.;;Weerdt;ghdeweerdt@gmail.com;Waldeck Pyrmontlaan;3762CL;Soest;35;
 ;Hans;;Scheffer;scheffer1960@gmail.com;Margrietstraat;3171AP;Poortugaal;653530691;
