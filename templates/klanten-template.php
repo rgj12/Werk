@@ -40,6 +40,7 @@ require_once 'inc/klantenModals/toevoegModal.php';
                                 <thead>
                                     <tr>
                                         <th>Voornaam</th>
+                                        <th>Tussenvoegsels</th>
                                         <th>Achternaam</th>
                                         <th>Email</th>
                                         <th>Telefoonnummer</th>
@@ -53,6 +54,7 @@ require_once 'inc/klantenModals/toevoegModal.php';
                                     <?php ?>
                                     <tr>
                                         <td><?=$klant->voornaam;?></td>
+                                        <td><?=$klant->tussenvoegsels;?></td>
                                         <td><?=$klant->achternaam;?></td>
                                         <td><?=$klant->email;?></td>
                                         <td><?=$klant->telefoonnummer;?></td>

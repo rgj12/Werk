@@ -19,12 +19,13 @@ class Klant
     public function addCustomer($data)
     {
         $this->db->query(
-            "INSERT INTO klanten (voornaam,achternaam,email,straatnaam,postcode,woonplaats,telefoonnummer,reden_bezoek)
-            VALUES (:vnaam,:anaam,:mail,:stnaam,:pcode,:wplaats,:tel,:reden)"
+            "INSERT INTO klanten (voornaam,tussenvoegsels,achternaam,email,straatnaam,postcode,woonplaats,telefoonnummer,reden_bezoek)
+            VALUES (:vnaam, :tussenvoegsels, :anaam,:mail,:stnaam,:pcode,:wplaats,:tel,:reden)"
         );
 
         //bind data
         $this->db->bind(':vnaam', $data['vnaam']);
+        $this->db->bind(':tussenvoegsels', $data['tussenvoegsels']);
         $this->db->bind(':anaam', $data['anaam']);
         $this->db->bind(':mail', $data['mail']);
         $this->db->bind(':stnaam', $data['stnaam']);
@@ -63,17 +64,18 @@ class Klant
 
     public function editCustomer($data)
     {
-        $this->db->query('UPDATE klanten SET voornaam = :vnaam,achternaam = :anaam,email = :mail,straatnaam = :stnaam,postcode = :pcode,woonplaats = :wplaats,telefoonnummer = :tel, reden_bezoek = :red WHERE id = :id');
+        $this->db->query('UPDATE klanten SET voornaam = :vnaam, tussenvoegsels = :tussenvoegsels, achternaam = :anaam,email = :mail,straatnaam = :stnaam,postcode = :pcode,woonplaats = :wplaats,telefoonnummer = :tel, reden_bezoek = :red WHERE id = :id');
 
         $this->db->bind(':id', $data['id']);
         $this->db->bind(':vnaam', $data['vnaam']);
+        $this->db->bind(':tussenvoegsels', $data['tuss']);
         $this->db->bind(':anaam', $data['anaam']);
         $this->db->bind(':mail', $data['mail']);
         $this->db->bind(':stnaam', $data['stnaam']);
         $this->db->bind(':pcode', $data['pcode']);
         $this->db->bind(':wplaats', $data['wplaats']);
         $this->db->bind(':tel', $data['tel']);
-        $this->db->bind('red', $data['reden_bezoek']);
+        $this->db->bind(':red', $data['reden_bezoek']);
 
         if ($this->db->execute()) {
             return true;

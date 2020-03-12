@@ -83,9 +83,18 @@ class Dienst
         }
     }
 
-    public function totaalVerkocht(){
+    public function totaalVerkocht()
+    {
         $this->db->query("SELECT SUM(aantal_verkocht) as totaalverkocht from diensten");
-        $totaalVerkocht= $this->db->single();
+        $totaalVerkocht = $this->db->single();
         return $totaalVerkocht['totaalverkocht'];
+    }
+
+    public function showDienstenInGraph()
+    {
+        $this->db->query("SELECT * FROM diensten WHERE aantal_verkocht > 0");
+
+        $results = $this->db->resultSet();
+        return $results;
     }
 }
