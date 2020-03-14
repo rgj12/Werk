@@ -41,3 +41,28 @@ function displayMessage()
         echo '';
     }
 }
+
+function checkId($id)
+{
+    if (!is_numeric($id)) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function encryptId($id)
+{
+    $encryptedID = (($id * 123456789 * 5678) / 956783);
+    return urlencode(base64_encode($encryptedID));
+}
+
+function decryptId()
+{
+    foreach ($_GET as $key => $data) {
+        $data = $_GET[$key] = base64_decode(urldecode($data));
+        $decryptedId = ((($data * 956783) / 5678) / 123456789);
+        return round($decryptedId);
+
+    }
+}

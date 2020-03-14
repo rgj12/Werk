@@ -83,18 +83,9 @@ class Product
         }
     }
 
-    public function totaalVerkocht()
-    {
+    public function totaalVerkocht(){
         $this->db->query("SELECT SUM(aantal_verkocht) as totaalverkocht from producten");
-        $totaalVerkocht = $this->db->single();
+        $totaalVerkocht= $this->db->single();
         return $totaalVerkocht['totaalverkocht'];
-    }
-
-    public function showProductsInGraph()
-    {
-        $this->db->query("SELECT * FROM producten WHERE aantal_verkocht > 0");
-
-        $results = $this->db->resultSet();
-        return $results;
     }
 }

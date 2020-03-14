@@ -22,17 +22,17 @@ class Factuur
 
     public function makeInvoice($data)
     {
+
+        //BTW verschil toevoegen
         $this->db->query(
-            "INSERT INTO facturen (factuurnummer,voornaam,tussenvoegsels,achternaam,email,straatnaam,postcode,woonplaats,telefoonnummer,klantnummer,product1,product2,product3,dienst1,dienst2,dienst3,product_prijs1,product_prijs2,product_prijs3,dienst_prijs1,dienst_prijs2,dienst_prijs3,
+            "INSERT INTO facturen (voornaam,achternaam,email,straatnaam,postcode,woonplaats,telefoonnummer,klantnummer,product1,product2,product3,dienst1,dienst2,dienst3,product_prijs1,product_prijs2,product_prijs3,dienst_prijs1,dienst_prijs2,dienst_prijs3,
             totaalIncBtw,totaalExBtw,totaalBTW,datum,betaalOpties)
-            VALUES (:id,:vnaam,:tussenvoegsels,:anaam,:email,:straatnaam,:postcode,:woonplaats,:telefoon,:knummer,:p1,:p2,:p3,:d1,:d2,:d3,:pp1,:pp2,:pp3,:dp1,:dp2,:dp3,:totaalInc,:totaalExBtw,:totaalBTW,:datum,:btoptie)"
+            VALUES (:vnaam,:anaam,:email,:straatnaam,:postcode,:woonplaats,:telefoon,:knummer,:p1,:p2,:p3,:d1,:d2,:d3,:pp1,:pp2,:pp3,:dp1,:dp2,:dp3,:totaalInc,:totaalExBtw,:totaalBTW,:datum,:btoptie)"
         );
         // return $data['pp3'];
 
         //bind data
-        $this->db->bind(':id', $data['id']);
         $this->db->bind(':vnaam', $data['vnaam']);
-        $this->db->bind(':tussenvoegsels', $data['tussenvoegsels']);
         $this->db->bind(':anaam', $data['anaam']);
         $this->db->bind(':email', $data['email']);
         $this->db->bind(':straatnaam', $data['straatnaam']);
@@ -129,12 +129,5 @@ class Factuur
         $totaalprijsExBtw = ($data['totaal'] / (100 + $btw) * 100);
 
         return $totaalprijsExBtw;
-    }
-
-    public function getInvoiceRows()
-    {
-        $this->db->query("SELECT COUNT(factuurnummer) AS aantalRows FROM facturen");
-        $rows = $this->db->single();
-        return $rows['aantalRows'];
     }
 }

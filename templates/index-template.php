@@ -1,9 +1,9 @@
-<?php include './inc/header.php';?>
+<?php include './inc/header.php'; ?>
 <!-- Page Wrapper -->
 <div id="wrapper">
 
     <!-- Sidebar -->
-    <?php include 'inc/sidebar.php';?>
+    <?php include 'inc/sidebar.php'; ?>
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
@@ -14,8 +14,8 @@
 
             <!-- Topbar -->
             <?php include 'inc/navbar.php';
-include 'inc/registerModals/toevoegModal.php';
-?>
+            include 'inc/registerModals/toevoegModal.php';
+            ?>
             <!-- End of Topbar -->
 
             <!-- Begin Page Content -->
@@ -39,7 +39,7 @@ include 'inc/registerModals/toevoegModal.php';
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Omzet
                                             (Vandaag)</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">€ <?=$dagOmzet;?></div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">€ <?= $dagOmzet; ?></div>
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-euro-sign fa-2x text-gray-300"></i>
@@ -56,8 +56,8 @@ include 'inc/registerModals/toevoegModal.php';
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Omzet
-                                            (<?=date("Y");?>)</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">€ <?=$jaarOmzet?></div>
+                                            (<?= date("Y"); ?>)</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">€ <?= $jaarOmzet ?></div>
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-chart-line fa-2x text-gray-300"></i>
@@ -79,12 +79,12 @@ include 'inc/registerModals/toevoegModal.php';
                                         <div class="row no-gutters align-items-center">
                                             <div class="col-auto">
                                                 <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
-                                                    <?=$percentageCompleet?>%</div>
+                                                    <?= $percentageCompleet ?>%</div>
                                             </div>
                                             <div class="col">
                                                 <div class="progress progress-sm mr-2">
                                                     <div class="progress-bar bg-info" role="progressbar"
-                                                        style="width: <?=$percentageCompleet;?>%" aria-valuenow="60"
+                                                        style="width: <?= $percentageCompleet; ?>%" aria-valuenow="60"
                                                         aria-valuemin="0" aria-valuemax="100">
                                                     </div>
                                                 </div>
@@ -109,7 +109,7 @@ include 'inc/registerModals/toevoegModal.php';
                                             Aantal
                                             afspraken vandaag</div>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                            <?=$aantalAfspraken;?>
+                                            <?= $aantalAfspraken; ?>
                                         </div>
                                     </div>
                                     <div class="col-auto">
@@ -130,7 +130,7 @@ include 'inc/registerModals/toevoegModal.php';
                         <div class="card shadow mb-4">
                             <!-- Card Header - Dropdown -->
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                <h6 class="m-0 font-weight-bold text-primary">Maandelijkse Omzet <?=date('Y');?></h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Maandelijkse Omzet <?= date('Y'); ?></h6>
                                 <div class="dropdown no-arrow">
                                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -187,7 +187,7 @@ include 'inc/registerModals/toevoegModal.php';
                                     </span> -->
                                     <span class="mr-2">
                                         <i class="fas fa-circle text-success"></i>
-                                        <?=$totaalverkochtediensten + $totaalverkochteproducten;?> Totaal
+                                        <?= $totaalverkochtediensten + $totaalverkochteproducten; ?> Totaal
                                     </span>
                                     <!-- <span class="mr-2">
                                         <i class="fas fa-circle text-info"></i> Referral
@@ -203,7 +203,7 @@ include 'inc/registerModals/toevoegModal.php';
 
                     <div class="col-lg-6 mb-4">
 
-
+                        
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
                                 <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
@@ -242,7 +242,7 @@ include 'inc/registerModals/toevoegModal.php';
                             </div>
                         </div>
 
-
+                     
                         <div class="row">
                             <div class="col-lg-6 mb-4">
                                 <div class="card bg-primary text-white shadow">
@@ -298,7 +298,7 @@ include 'inc/registerModals/toevoegModal.php';
 
                     <div class="col-lg-6 mb-4">
 
-
+                       
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
                                 <h6 class="m-0 font-weight-bold text-primary">Illustrations</h6>
@@ -318,7 +318,7 @@ include 'inc/registerModals/toevoegModal.php';
                             </div>
                         </div>
 
-
+                       
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
                                 <h6 class="m-0 font-weight-bold text-primary">Development Approach</h6>
@@ -338,30 +338,30 @@ include 'inc/registerModals/toevoegModal.php';
 
             </div>
             <!-- /.container-fluid -->
-            <input type="hidden" id="jan" value="<?=$janomzet?>">
-            <input type="hidden" id="feb" value="<?=$febomzet?>">
-            <input type="hidden" id="maa" value="<?=$maomzet?>">
-            <input type="hidden" id="ap" value="<?=$apomzet?>">
-            <input type="hidden" id="mei" value="<?=$meiomzet?>">
-            <input type="hidden" id="jun" value="<?=$junomzet?>">
-            <input type="hidden" id="jul" value="<?=$julomzet?>">
-            <input type="hidden" id="aug" value="<?=$augomzet?>">
-            <input type="hidden" id="spt" value="<?=$sepomzet?>">
-            <input type="hidden" id="ok" value="<?=$okomzet?>">
-            <input type="hidden" id="nov" value="<?=$novomzet?>">
-            <input type="hidden" id="dec" value="<?=$decomzet?>">
+            <input type="hidden" id="jan" value="<?= $janomzet ?>">
+            <input type="hidden" id="feb" value="<?= $febomzet ?>">
+            <input type="hidden" id="maa" value="<?= $maomzet ?>">
+            <input type="hidden" id="ap" value="<?= $apomzet ?>">
+            <input type="hidden" id="mei" value="<?= $meiomzet ?>">
+            <input type="hidden" id="jun" value="<?= $junomzet ?>">
+            <input type="hidden" id="jul" value="<?= $julomzet ?>">
+            <input type="hidden" id="aug" value="<?= $augomzet ?>">
+            <input type="hidden" id="spt" value="<?= $sepomzet ?>">
+            <input type="hidden" id="ok" value="<?= $okomzet ?>">
+            <input type="hidden" id="nov" value="<?= $novomzet ?>">
+            <input type="hidden" id="dec" value="<?= $decomzet ?>">
 
             <?php
-$data = '';
-foreach ($productenInGraph as $product) {
-    $data .= '{ label: "' . $product->productnaam . '", value:"' . $product->aantal_verkocht . '"},';
-}
-foreach ($dienstenInGraph as $dienst) {
-    $data .= '{ label: "' . $dienst->dienstnaam . '", value:"' . $dienst->aantal_verkocht . '"},';
-}
-$data = substr($data, 0, -1);
+            $data = '';
+            foreach ($producten as $product) {
+                $data .= '{ label: "' . $product->productnaam . '", value:"' . $product->aantal_verkocht . '"},';
+            }
+            foreach ($diensten as $dienst) {
+                $data .= '{ label: "' . $dienst->dienstnaam . '", value:"' . $dienst->aantal_verkocht . '"},';
+            }
+            $data = substr($data, 0, -1);
 
-?>
+            ?>
 
         </div>
 
@@ -369,7 +369,7 @@ $data = substr($data, 0, -1);
         Morris.Donut({
             element: "pie-chart",
             data: [ <?php echo $data; ?> ],
-            colors: ["#03a9f4", "#0393d4", "#037EB5"]
+            colors:["#03a9f4", "#0393d4", "#037EB5"]
 
 
         });
@@ -379,5 +379,5 @@ $data = substr($data, 0, -1);
         </script>
 
         </script>
-        <?php include './inc/footer.php';?>
+        <?php include './inc/footer.php'; ?>
     </div>

@@ -68,7 +68,6 @@ if (isset($_POST['editKlant'])) {
     $data = array();
     $data['id'] = $_POST['editid'];
     $data['vnaam'] = $_POST['editvoornaam'];
-    $data['tuss'] = $_POST['edittussenvoegsels'];
     $data['anaam'] = $_POST['editachternaam'];
     $data['mail'] = $_POST['editemail'];
     $data['stnaam'] = $_POST['editstraatnaam'];
@@ -109,7 +108,7 @@ if (isset($_POST['editProduct'])) {
     $data = array();
     $data['id'] = $_POST['editid'];
     $data['pnaam'] = $_POST['editproductnaam'];
-    $data['pprijs'] = number_format($_POST['editprijs'],2,'.','');
+    $data['pprijs'] = $_POST['editprijs'];
 
     if ($producten->editProduct($data)) {
         redirect('producten', 'Succesvol aangepast', 'success');
@@ -124,7 +123,7 @@ if (isset($_POST['editDienst'])) {
     $data = array();
     $data['id'] = $_POST['editid'];
     $data['dnaam'] = $_POST['editdienstnaam'];
-    $data['dprijs'] = number_format($_POST['editdienstprijs'],2,'.','');
+    $data['dprijs'] = $_POST['editdienstprijs'];
 
     if ($diensten->editDienst($data)) {
         redirect('diensten', 'Succesvol aangepast', 'success');

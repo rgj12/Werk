@@ -40,7 +40,6 @@ require_once 'inc/klantenModals/toevoegModal.php';
                                 <thead>
                                     <tr>
                                         <th>Voornaam</th>
-                                        <th>Tussenvoegsel</th>
                                         <th>Achternaam</th>
                                         <th>Totaal</th>
                                         <th>Datum</th>
@@ -51,7 +50,6 @@ require_once 'inc/klantenModals/toevoegModal.php';
                                     <?php foreach ($facturen as $factuur): ?>
                                     <tr>
                                         <td><?=$factuur->voornaam;?></td>
-                                        <td><?=$factuur->tussenvoegsels;?></td>
                                         <td><?=$factuur->achternaam;?></td>
                                         <td><?=$factuur->totaalIncBtw;?> €</td>
                                         <td><?=date_format(new datetime($factuur->datum), 'd/m/Y');?></td>

@@ -136,10 +136,7 @@ if (isset($_POST['maakUser'])) {
 //facturen aanmaken
 if (isset($_POST['maakFactuur'])) {
     $data = array();
-    $rows = $facturen->getInvoiceRows();
-    $data['id'] = $rows + 1;
     $data['vnaam'] = $_POST['voornaam'];
-    $data['tussenvoegsels'] = $_POST['tussenvoegsels'];
     $data['anaam'] = $_POST['achternaam'];
     $data['email'] = $_POST['email'];
     $data['straatnaam'] = $_POST['straatnaam'];
