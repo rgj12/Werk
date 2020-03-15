@@ -25,13 +25,14 @@ class Factuur
 
         //BTW verschil toevoegen
         $this->db->query(
-            "INSERT INTO facturen (voornaam,achternaam,email,straatnaam,postcode,woonplaats,telefoonnummer,klantnummer,product1,product2,product3,dienst1,dienst2,dienst3,product_prijs1,product_prijs2,product_prijs3,dienst_prijs1,dienst_prijs2,dienst_prijs3,
+            "INSERT INTO facturen (id,voornaam,achternaam,email,straatnaam,postcode,woonplaats,telefoonnummer,klantnummer,product1,product2,product3,dienst1,dienst2,dienst3,product_prijs1,product_prijs2,product_prijs3,dienst_prijs1,dienst_prijs2,dienst_prijs3,
             totaalIncBtw,totaalExBtw,totaalBTW,datum,betaalOpties)
-            VALUES (:vnaam,:anaam,:email,:straatnaam,:postcode,:woonplaats,:telefoon,:knummer,:p1,:p2,:p3,:d1,:d2,:d3,:pp1,:pp2,:pp3,:dp1,:dp2,:dp3,:totaalInc,:totaalExBtw,:totaalBTW,:datum,:btoptie)"
+            VALUES (:id,:vnaam,:anaam,:email,:straatnaam,:postcode,:woonplaats,:telefoon,:knummer,:p1,:p2,:p3,:d1,:d2,:d3,:pp1,:pp2,:pp3,:dp1,:dp2,:dp3,:totaalInc,:totaalExBtw,:totaalBTW,:datum,:btoptie)"
         );
         // return $data['pp3'];
 
         //bind data
+        $this->db->bind(':id', $data['id']);
         $this->db->bind(':vnaam', $data['vnaam']);
         $this->db->bind(':anaam', $data['anaam']);
         $this->db->bind(':email', $data['email']);
@@ -65,10 +66,10 @@ class Factuur
         }
     }
 
-    public function getCustomerInvoice($factuurnummer)
+    public function getCustomerInvoice($id)
     {
-        $this->db->query("SELECT * FROM facturen WHERE factuurnummer = :id ");
-        $this->db->bind(':id', $factuurnummer);
+        $this->db->query("SELECT * FROM facturen WHERE id = :id ");
+        $this->db->bind(':id', $id);
         $results = $this->db->resultSet();
         return $results;
     }

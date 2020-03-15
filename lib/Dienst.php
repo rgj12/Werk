@@ -20,11 +20,12 @@ class Dienst
     public function addDienst($data)
     {
         $this->db->query(
-            "INSERT INTO diensten (dienstnaam, dienstprijs)
-            VALUES (:dnaam, :dprijs)"
+            "INSERT INTO diensten (id,dienstnaam, dienstprijs)
+            VALUES (:id,:dnaam, :dprijs)"
         );
 
         //bind data
+        $this->db->bind(':id', $data['id']);
         $this->db->bind(':dnaam', $data['dnaam']);
         $this->db->bind(':dprijs', $data['dprijs']);
 
@@ -83,9 +84,10 @@ class Dienst
         }
     }
 
-    public function totaalVerkocht(){
+    public function totaalVerkocht()
+    {
         $this->db->query("SELECT SUM(aantal_verkocht) as totaalverkocht from diensten");
-        $totaalVerkocht= $this->db->single();
+        $totaalVerkocht = $this->db->single();
         return $totaalVerkocht['totaalverkocht'];
     }
 }

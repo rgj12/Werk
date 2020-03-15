@@ -20,11 +20,12 @@ class Product
     public function addProduct($data)
     {
         $this->db->query(
-            "INSERT INTO producten (productnaam, prijs)
-            VALUES (:pnaam, :pprijs)"
+            "INSERT INTO producten (id,productnaam, prijs)
+            VALUES (:id,:pnaam, :pprijs)"
         );
 
         //bind data
+        $this->db->bind(':id', $data['id']);
         $this->db->bind(':pnaam', $data['pnaam']);
         $this->db->bind(':pprijs', $data['pprijs']);
 
@@ -83,9 +84,10 @@ class Product
         }
     }
 
-    public function totaalVerkocht(){
+    public function totaalVerkocht()
+    {
         $this->db->query("SELECT SUM(aantal_verkocht) as totaalverkocht from producten");
-        $totaalVerkocht= $this->db->single();
+        $totaalVerkocht = $this->db->single();
         return $totaalVerkocht['totaalverkocht'];
     }
 }

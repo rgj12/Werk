@@ -11,7 +11,7 @@ $(document).ready(function() {
       success: function(response) {
         data = JSON.parse(response);
         console.log(data);
-        $("#id").val(data.id);
+        $("#id").val(data.klantnummer);
         $("#voornaam").val(data.voornaam);
         $("#achternaam").val(data.achternaam);
         $("#email").val(data.email);
@@ -59,7 +59,7 @@ $(document).ready(function() {
       success: function(response) {
         data = JSON.parse(response);
         console.log(data);
-        $("#id").val(data.id);
+        $("#id").val(data.afspraak_id);
         $("#datum").val(data.datum);
         $("#tijd").val(data.tijd);
         $("#omschrijving").val(data.omschrijving);
@@ -78,7 +78,9 @@ $(document).ready(function() {
       data: { af_id: id },
       success: function(response) {
         data = JSON.parse(response);
-        $("#af_id").val(data.id);
+        console.log(data);
+
+        $("#af_id").val(data.klantnummer);
         $("#af_voornaam").val(data.voornaam);
         $("#af_achternaam").val(data.achternaam);
       }

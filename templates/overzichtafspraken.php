@@ -58,13 +58,13 @@ include 'inc/header.php';
                                         <td><?=$afspraak->omschrijving;?></td>
                                         <td>
                                             <a style="color:green;"
-                                                href="afspraak.php?afspr_voltooid=<?=$afspraak->id?>"
+                                                href="afspraak.php?afspr_voltooid=<?=$afspraak->afspraak_id?>"
                                                 class="fa fa-check fa-lg"></a> |&nbsp;
                                             <a class="fa fa-edit fa-lg edit_afspr_Btn" href="#" data-toggle="modal"
-                                                data-target="#editModal" id="<?=$afspraak->id?>"
+                                                data-target="#editModal" id="<?=$afspraak->afspraak_id?>"
                                                 title="Pas afspraak aan" style="color:orange;">
                                             </a> |&nbsp;
-                                            <a href="delete.php?afspr_del_id=<?=$afspraak->id?>"
+                                            <a href="delete.php?afspr_del_id=<?=$afspraak->afspraak_id?>"
                                                 title="Verwijder afspraak" class="fa fa-trash fa-lg" style="color:red;"
                                                 onclick="return confirm('Weet je zeker dat je deze klant wilt verwijderen?')"></a>
 

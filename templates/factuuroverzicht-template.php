@@ -57,12 +57,12 @@ require_once 'inc/klantenModals/toevoegModal.php';
                                                 data-target="#editModal" id="<?=$factuur->factuurnummer?>"
                                                 title="Pas factuur aan" style="color:orange;">
                                             </a> |&nbsp;
-                                            <a href="delete.php?fact_del_id=<?=encryptId($factuur->factuurnummer)?>"
+                                            <a href="delete.php?fact_del_id=<?=$factuur->factuurnummer;?>"
                                                 title="Verwijder factuur" class="fa fa-trash fa-lg" style="color:red;"
                                                 onclick="return confirm('Weet je zeker dat je deze factuur wilt verwijderen?')"></a>
                                             |&nbsp;
-                                            <a href="bekijk_factuur=<?=encryptId($factuur->factuurnummer)?>"
-                                                class="fa fa-file-pdf-o fa-lg" title="Bekijk Factuur"></a>
+                                            <a href="bekijk_factuur=<?=$factuur->id;?>" class="fa fa-file-pdf-o fa-lg"
+                                                title="Bekijk Factuur"></a>
 
                                         </td>
                                     </tr>

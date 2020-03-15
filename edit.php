@@ -12,26 +12,18 @@ if (isset($_POST['edit_id'])) {
 
     $id = $_POST['edit_id'];
 
-    //check of het id numeriek is
-    if (!checkId($id)) {
-        redirect('klanten', 'Er is iets misgegaan', 'error');
-    } else {
-        $klant = $klanten->getCustomerInfo($id);
-        echo json_encode($klant);
-    }
+    $klant = $klanten->getCustomerInfo($id);
+    echo json_encode($klant);
+
 }
 
 //afspraak edit gegevens ophalen
 if (isset($_POST['edit_afspr_id'])) {
     $id = $_POST['edit_afspr_id'];
 
-    //check of het id numeriek is
-    if (!checkId($id)) {
-        redirect('klanten', 'Er is iets misgegaan', 'error');
-    } else {
-        $appointment = $afspraak->getAppointmentInfo($id);
-        echo json_encode($appointment);
-    }
+    $appointment = $afspraak->getAppointmentInfo($id);
+    echo json_encode($appointment);
+
 }
 
 // product edit gegevens ophalen
@@ -39,13 +31,9 @@ if (isset($_POST['edit_product_id'])) {
 
     $id = $_POST['edit_product_id'];
 
-    //check of het id numeriek is
-    if (!checkId($id)) {
-        redirect('producten', 'Er is iets misgegaan', 'error');
-    } else {
-        $product = $producten->getProductInfo($id);
-        echo json_encode($product);
-    }
+    $product = $producten->getProductInfo($id);
+    echo json_encode($product);
+
 }
 
 // dienst edit gegevens ophalen
@@ -53,13 +41,9 @@ if (isset($_POST['edit_dienst_id'])) {
 
     $id = $_POST['edit_dienst_id'];
 
-    //check of het id numeriek is
-    if (!checkId($id)) {
-        redirect('diensten', 'Er is iets misgegaan', 'error');
-    } else {
-        $dienst = $diensten->getDienstInfo($id);
-        echo json_encode($dienst);
-    }
+    $dienst = $diensten->getDienstInfo($id);
+    echo json_encode($dienst);
+
 }
 
 //klant aanpassen
@@ -135,14 +119,9 @@ if (isset($_POST['editDienst'])) {
 //gegevens in factuur editform zetten
 if (isset($_POST['edit_factuur_id'])) {
     $id = $_POST['edit_factuur_id'];
+    $factuurInfo = $facturen->getCustomerInvoice($id);
+    echo json_encode($factuurInfo);
 
-    //check of het id numeriek is
-    if (!checkId($id)) {
-        redirect('facturen', 'Er is iets misgegaan', 'error');
-    } else {
-        $factuurInfo = $facturen->getCustomerInvoice($id);
-        echo json_encode($factuurInfo);
-    }
 }
 
 // edit factuur

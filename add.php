@@ -16,7 +16,7 @@ if (isset($_POST['toevoegen'])) {
 
     //valideer input
     if (!empty($_POST['voornaam']) || !empty($_POST['achternaam']) || !empty($_POST['email']) || !empty($_POST['straatnaam']) || !empty($_POST['postcode']) || !empty($_POST['woonplaats']) || !empty($_POST['telefoonnummer']) || !empty($_POST['reden'])) {
-
+        $data['id'] = getToken(15);
         $data['vnaam'] = trim(htmlspecialchars($_POST['voornaam']));
         $data['anaam'] = trim(htmlspecialchars($_POST['achternaam']));
         $data['mail'] = $_POST['email'];
@@ -46,7 +46,8 @@ if (isset($_POST['toevoegen'])) {
 //maak afspraak voor klant
 if (isset($_POST['maakAfspraak'])) {
     $data = array();
-    $data['id'] = $_POST['af_id'];
+    $data['klant_id'] = $_POST['af_id'];
+    $data['id'] = getToken(15);
     $data['datum'] = $_POST['af_datum'];
     $data['tijd'] = $_POST['af_tijd'];
     $data['omschr'] = $_POST['af_omschrijving'];
@@ -62,7 +63,7 @@ if (isset($_POST['maakProduct'])) {
     $data = array();
 
     if (!empty($_POST['productnaam']) || !empty($_POST['prijs'])) {
-
+        $data['id'] = getToken(15);
         $data['pnaam'] = trim(htmlspecialchars($_POST['productnaam']));
         $data['pprijs'] = number_format((float) $_POST['prijs'], 2, '.', '');
 
@@ -81,7 +82,7 @@ if (isset($_POST['maakDienst'])) {
     $data = array();
 
     if (!empty($_POST['dienstnaam']) || !empty($_POST['dienstprijs'])) {
-
+        $data['id'] = getToken(15);
         $data['dnaam'] = trim(htmlspecialchars($_POST['dienstnaam']));
         $data['dprijs'] = number_format((float) $_POST['dienstprijs'], 2, '.', '');
 
@@ -136,6 +137,7 @@ if (isset($_POST['maakUser'])) {
 //facturen aanmaken
 if (isset($_POST['maakFactuur'])) {
     $data = array();
+    $data['id'] = getToken(15);
     $data['vnaam'] = $_POST['voornaam'];
     $data['anaam'] = $_POST['achternaam'];
     $data['email'] = $_POST['email'];

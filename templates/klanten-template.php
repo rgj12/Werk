@@ -40,6 +40,7 @@ require_once 'inc/klantenModals/toevoegModal.php';
                                 <thead>
                                     <tr>
                                         <th>Voornaam</th>
+                                        <th>Tussenvoegsel</th>
                                         <th>Achternaam</th>
                                         <th>Email</th>
                                         <th>Telefoonnummer</th>
@@ -53,6 +54,7 @@ require_once 'inc/klantenModals/toevoegModal.php';
                                     <?php ?>
                                     <tr>
                                         <td><?=$klant->voornaam;?></td>
+                                        <td><?=$klant->tussenvoegsels;?></td>
                                         <td><?=$klant->achternaam;?></td>
                                         <td><?=$klant->email;?></td>
                                         <td><?=$klant->telefoonnummer;?></td>
@@ -70,9 +72,9 @@ require_once 'inc/klantenModals/toevoegModal.php';
                                                 data-target="#factuurModal"><sup class="fa fa-plus fa-sm"></sup></a>
                                             |&nbsp;
 
-                                            <a href="bekijk_facturen=<?=encryptId($klant->id);?>"
-                                                title="Bekijk facturen" class="fas fa-file-invoice fa-lg"
-                                                style="color:black;"><sup class="fas fa-eye fa-sm"></a> |&nbsp;
+                                            <a href="bekijk_facturen=<?=$klant->id?>" title="Bekijk facturen"
+                                                class="fas fa-file-invoice fa-lg" style="color:black;"><sup
+                                                    class="fas fa-eye fa-sm"></a> |&nbsp;
 
                                             <a class="fa fa-edit fa-lg editBtn" href="#" data-toggle="modal"
                                                 data-target="#editModal" id="<?=$klant->id?>" title="Pas klant aan"

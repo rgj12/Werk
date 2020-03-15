@@ -19,11 +19,12 @@ class Klant
     public function addCustomer($data)
     {
         $this->db->query(
-            "INSERT INTO klanten (voornaam,achternaam,email,straatnaam,postcode,woonplaats,telefoonnummer,reden_bezoek)
-            VALUES (:vnaam,:anaam,:mail,:stnaam,:pcode,:wplaats,:tel,:reden)"
+            "INSERT INTO klanten (id,voornaam,achternaam,email,straatnaam,postcode,woonplaats,telefoonnummer,reden_bezoek)
+            VALUES (:id,:vnaam,:anaam,:mail,:stnaam,:pcode,:wplaats,:tel,:reden)"
         );
 
         //bind data
+        $this->db->bind(':id', $data['id']);
         $this->db->bind(':vnaam', $data['vnaam']);
         $this->db->bind(':anaam', $data['anaam']);
         $this->db->bind(':mail', $data['mail']);
@@ -85,12 +86,13 @@ class Klant
     public function makeAppointment($data)
     {
         $this->db->query(
-            "INSERT INTO afspraken (klant_id,datum,tijd,omschrijving)
-            VALUES (:k_id,:datum,:tijd,:omsc)"
+            "INSERT INTO afspraken (afspraak_id,klant_id,datum,tijd,omschrijving)
+            VALUES (:id,:k_id,:datum,:tijd,:omsc)"
         );
 
         //bind data
-        $this->db->bind(':k_id', $data['id']);
+        $this->db->bind(':id', $data['id']);
+        $this->db->bind(':k_id', $data['klant_id']);
         $this->db->bind(':datum', $data['datum']);
         $this->db->bind(':tijd', $data['tijd']);
         $this->db->bind(':omsc', $data['omschr']);

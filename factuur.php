@@ -27,13 +27,15 @@ if (isset($_GET['overzicht'])) {
 }
 
 if (isset($_GET['bekijkid'])) {
+    $id = $_GET['bekijkid'];
     $template = new Template('templates/factuur-template.php');
-    $template->factuurInfo = $facturen->getCustomerInvoice(decryptId());
+    $template->factuurInfo = $facturen->getCustomerInvoice($id);
     echo $template;
 }
 
 if (isset($_GET['bekijk_facturen'])) {
+    $id = $_GET['bekijk_facturen'];
     $template = new Template('templates/factuuroverzicht-template.php');
-    $template->facturen = $facturen->getAllInvoices(decryptId());
+    $template->facturen = $facturen->getAllInvoices($id);
     echo $template;
 }
