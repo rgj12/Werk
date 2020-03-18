@@ -86,8 +86,8 @@ class Klant
     public function makeAppointment($data)
     {
         $this->db->query(
-            "INSERT INTO afspraken (afspraak_id,klant_id,datum,tijd,omschrijving)
-            VALUES (:id,:k_id,:datum,:tijd,:omsc)"
+            "INSERT INTO afspraken (afspraak_id,klant_id,datum,tijd,omschrijving,medewerker)
+            VALUES (:id,:k_id,:datum,:tijd,:omsc,:medewerker)"
         );
 
         //bind data
@@ -96,6 +96,7 @@ class Klant
         $this->db->bind(':datum', $data['datum']);
         $this->db->bind(':tijd', $data['tijd']);
         $this->db->bind(':omsc', $data['omschr']);
+        $this->db->bind(':medewerker', $data['medewerker']);
 
         if ($this->db->execute()) {
             return true;
@@ -111,5 +112,12 @@ class Klant
 
         $afspraken = $this->db->resultSet();
         return $afspraken;
+    }
+
+    public function getMedewerkers()
+    {
+        $this->db->query("SELECT username FROM users");
+        $info = $this->db->resultSet();
+        return $info;
     }
 }

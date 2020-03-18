@@ -22,6 +22,17 @@
                         <input type="text" class="form-control" name="af_achternaam" id="af_achternaam" disabled>
                     </div>
                     <div class="form-group">
+                        <label>Met medewerker</label>
+
+                        <select class="form-control" name="af_medewerker" id="af_medewerker">
+                            <option value="" selected>Kies medewerker</option>
+                            <?php foreach ($medewerkers as $medewerker): ?>
+                            <option value="<?=$medewerker->username;?>"><?=$medewerker->username?></option>
+                            <?php endforeach;?>
+                        </select>
+
+                    </div>
+                    <div class="form-group">
                         <label>Datum</label>
                         <input type="date" class="form-control" name="af_datum">
                     </div>

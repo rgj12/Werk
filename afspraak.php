@@ -24,6 +24,7 @@ if (isset($_POST['bk_afspraak_id'])) {
 //krijg overzicht van alle afspraken
 if (isset($_GET['overzichtafspraken'])) {
     $template->afspraken = $afspraken->getAllAppointments();
+    $template->medewerkers = $afspraken->getMedewerkers();
     echo $template;
 }
 
@@ -36,4 +37,10 @@ if (isset($_GET['afspr_voltooid'])) {
     } else {
         redirect('afspraak.php?overzichtafspraken', 'Er is iets misgegaan', 'error');
     }
+}
+
+if (isset($_GET['voltooideafspraken'])) {
+    $template = new Template('templates/voltooid_afspraken.php');
+    $template->afspraken = $afspraken->getAllCompleteAppointments();
+    echo $template;
 }

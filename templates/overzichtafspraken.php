@@ -30,8 +30,8 @@ include 'inc/header.php';
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <!-- <button class="btn btn-success" data-toggle="modal" data-target="#exampleModal"><i
-                                class="fa fa-plus" aria-hidden="true"> Voeg afspraak toe </i></button> -->
+                        <a class="btn btn-success" href="afspraak.php?voltooideafspraken"><i class="fas fa-eye"
+                                aria-hidden="true"> Bekijk voltooide afspraken</i></a>
                         <!-- <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6> -->
                     </div>
                     <div class="card-body">
@@ -44,6 +44,7 @@ include 'inc/header.php';
                                         <th>datum</th>
                                         <th>tijd</th>
                                         <th>omschrijving</th>
+                                        <th>Mederwerker</th>
                                         <th>Actie</th>
                                     </tr>
                                 </thead>
@@ -56,6 +57,7 @@ include 'inc/header.php';
                                         <td><?=date_format(new dateTime($afspraak->datum), "d-m-Y");?></td>
                                         <td><?=date("H:i", strtotime($afspraak->tijd));?> uur</td>
                                         <td><?=$afspraak->omschrijving;?></td>
+                                        <td><?=$afspraak->medewerker;?></td>
                                         <td>
                                             <a style="color:green;"
                                                 href="afspraak.php?afspr_voltooid=<?=$afspraak->afspraak_id?>"

@@ -47,6 +47,7 @@ if (isset($_POST['toevoegen'])) {
 if (isset($_POST['maakAfspraak'])) {
     $data = array();
     $data['klant_id'] = $_POST['af_id'];
+    $data['medewerker'] = $_POST['af_medewerker'];
     $data['id'] = getToken(15);
     $data['datum'] = $_POST['af_datum'];
     $data['tijd'] = $_POST['af_tijd'];

@@ -27,6 +27,16 @@
                         <textarea class="form-control" name="omschrijving" id="omschrijving" cols="30"
                             rows="10"></textarea>
                     </div>
+                    <div class="form-group">
+                        <label>Medewerker</label>
+                        <select class="form-control" name="editmedewerker">
+                            <option id="medewerker" value="" selected hidden></option>
+                            <?php foreach ($medewerkers as $medewerker): ?>
+                            <option value="<?=$medewerker->username;?>"><?=$medewerker->username;?></option>
+                            <?php endforeach;?>
+                        </select>
+
+                    </div>
 
 
                 </div>

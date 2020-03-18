@@ -20,7 +20,6 @@ if (isset($_POST['edit_id'])) {
 //afspraak edit gegevens ophalen
 if (isset($_POST['edit_afspr_id'])) {
     $id = $_POST['edit_afspr_id'];
-
     $appointment = $afspraak->getAppointmentInfo($id);
     echo json_encode($appointment);
 
@@ -75,6 +74,7 @@ if (isset($_POST['editAppointment'])) {
     $data['datum'] = $_POST['datum'];
     $data['tijd'] = $_POST['tijd'];
     $data['omschrijving'] = $_POST['omschrijving'];
+    $data['medewerker'] = $_POST['editmedewerker'];
 
     date_format(new DateTime($data['datum']), 'Y/m/d');
     date("H:i:s", strtotime($data['tijd']));
@@ -175,23 +175,11 @@ if (isset($_POST['editFactuur'])) {
     $data['dp2'] = explode("/", $data['dp2']);
     $data['dp3'] = explode("/", $data['dp3']);
 
-    // echo $data['pp1'][0] . "<br>";
-    // echo $data['pp2'][0] . "<br>";
-    // echo $data['pp3'][0] . "<br>";
-    // echo $data['dp1'][0] . "<br>";
-    // echo $data['dp2'][0] . "<br>";
-    // echo $data['dp3'][0] . "<br>";
-    // echo $data['btoptie'] . "<br>";
-
     $data["datum"] = date("Y/m/d");
     $data["totaal"] = number_format((float) $data["pp1"][1] + $data["pp2"][1] + $data["pp3"][1] + $data["dp1"][1] + $data["dp2"][1] + $data["dp3"][1], 2, '.', '');
 
     $data["totaalexBtw"] = number_format((float) $facturen->VAT($data), 2, '.', '');
     $data["totaalBTW"] = number_format($data["totaal"] - $data["totaalexBtw"], 2, '.', '');
-
-    // echo $data['totaal'] . "<br>";
-    // echo $data['totaalexBtw'] . "<br>";
-    // echo $data['totaalBTW'] . "<br>";
 
     if ($facturen->editInvoice($data)) {
         redirect('facturen', 'Succesvol aangepast', 'success');

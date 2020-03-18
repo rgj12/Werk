@@ -63,6 +63,8 @@ $(document).ready(function() {
         $("#datum").val(data.datum);
         $("#tijd").val(data.tijd);
         $("#omschrijving").val(data.omschrijving);
+        $("#medewerker").val(data.medewerker);
+        $("#medewerker").html(data.medewerker);
       }
     });
   });
@@ -83,34 +85,6 @@ $(document).ready(function() {
         $("#af_id").val(data.klantnummer);
         $("#af_voornaam").val(data.voornaam);
         $("#af_achternaam").val(data.achternaam);
-      }
-    });
-  });
-
-  //afspraken van klant ophalen
-  $(".bk_afspraak").click(function(e) {
-    e.preventDefault();
-    id = $(this).attr("id");
-    $.ajax({
-      url: "afspraak.php",
-      method: "POST",
-      data: { bk_afspraak_id: id },
-      success: function(response) {
-        data = JSON.parse(response);
-        if (data == false) {
-          $("#af_datum").text("Deze klant heeft geen afspraken");
-        } else {
-          for (i = 0; i < data.length; i++)
-            $("#af_datum").append(
-              "<div>Deze klant heeft een afspraak op : " +
-                "<b>" +
-                data[i].datum +
-                "</b> om " +
-                "<b>" +
-                data[i].tijd +
-                "</b></div>"
-            );
-        }
       }
     });
   });
