@@ -76,7 +76,7 @@ class Factuur
 
     public function deleteFactuur($id)
     {
-        $this->db->query("DELETE FROM facturen WHERE factuurnummer = :id");
+        $this->db->query("DELETE FROM facturen WHERE id = :id");
         $this->db->bind(":id", $id);
 
         if ($this->db->execute()) {
