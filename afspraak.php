@@ -29,16 +29,17 @@ if (isset($_GET['overzichtafspraken'])) {
 }
 
 //zet een afspraak op voltooid
-if (isset($_GET['afspr_voltooid'])) {
-    $id = $_GET['afspr_voltooid'];
-
-    if ($afspraken->completeAppointment($id)) {
-        redirect('afspraak.php?overzichtafspraken', 'Afspraak voltooid', 'success');
+if (isset($_POST['completeAppointment'])) {
+    $id = $_POST['complete_id'];
+    $datum = $_POST['complete_datum'];
+    if ($afspraken->completeAppointment($id, $datum)) {
+        redirect('afspraak.php?overzichtafspraken', 'Afspraak compleet', 'success');
     } else {
-        redirect('afspraak.php?overzichtafspraken', 'Er is iets misgegaan', 'error');
+        redirect('afspraak.php?overzichtafspraken', 'Eris iets misgegaan', 'error');
     }
-}
 
+}
+//afspraak voltooien pagina
 if (isset($_GET['voltooideafspraken'])) {
     $template = new Template('templates/voltooid_afspraken.php');
     $template->afspraken = $afspraken->getAllCompleteAppointments();

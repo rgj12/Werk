@@ -43,10 +43,10 @@ class Afspraken
         }
     }
 
-    public function completeAppointment($id)
+    public function completeAppointment($id, $datum)
     {
-        $datum = date('d-m-Y');
-        $this->db->query("UPDATE afspraken SET afspraak_voltooid = true,datum_afspr_voltooid = '$datum' WHERE afspraak_id = :id");
+        $this->db->query("UPDATE afspraken SET afspraak_voltooid = true,datum_afspr_voltooid = :datum WHERE afspraak_id = :id");
+        $this->db->bind(':datum', $datum);
         $this->db->bind(':id', $id);
 
         if ($this->db->execute()) {

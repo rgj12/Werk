@@ -59,8 +59,8 @@ include 'inc/header.php';
                                         <td><?=$afspraak->omschrijving;?></td>
                                         <td><?=$afspraak->medewerker;?></td>
                                         <td>
-                                            <a style="color:green;"
-                                                href="afspraak.php?afspr_voltooid=<?=$afspraak->afspraak_id?>"
+                                            <a href="#" style="color:green;" data-toggle="modal"
+                                                data-target="#completeApp" id="<?=$afspraak->afspraak_id?>"
                                                 class="fa fa-check fa-lg"></a> |&nbsp;
                                             <a class="fa fa-edit fa-lg edit_afspr_Btn" href="#" data-toggle="modal"
                                                 data-target="#editModal" id="<?=$afspraak->afspraak_id?>"
@@ -77,6 +77,7 @@ include 'inc/header.php';
                                     <!-- Modals-->
                                     <?php
 /* Modal voor editen */
+include 'inc/afspraakModals/afspraak_completeModal.php';
 include 'inc/afspraakModals/editModal.php';
 ?>
                                 </tbody>

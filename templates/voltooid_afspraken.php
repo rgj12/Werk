@@ -59,7 +59,8 @@ include 'inc/header.php';
                                         <td><?=date("H:i", strtotime($afspraak->tijd));?> uur</td>
                                         <td><?=$afspraak->omschrijving;?></td>
                                         <td><?=$afspraak->medewerker;?></td>
-                                        <td><?=$afspraak->datum_afspr_voltooid;?></td>
+                                        <td><?=date_format(new datetime($afspraak->datum_afspr_voltooid), 'd-m-Y');?>
+                                        </td>
                                         <td>
                                             <a href="delete.php?afspr_del_id=<?=$afspraak->afspraak_id?>"
                                                 title="Verwijder afspraak" class="fa fa-trash fa-lg" style="color:red;"
