@@ -20,7 +20,7 @@ class Index
     public function getAppointmentsNotComplete()
     {
         $date = date('Y/m/d');
-        $this->db->query("SELECT COUNT(id) AS aantalAfspraken FROM afspraken WHERE afspraak_voltooid = 0 AND datum = '$date'");
+        $this->db->query("SELECT COUNT(afspraak_id) AS aantalAfspraken FROM afspraken WHERE afspraak_voltooid = 0 AND datum = '$date'");
 
         $aantalAfspraken = $this->db->single();
         return $aantalAfspraken['aantalAfspraken'];
