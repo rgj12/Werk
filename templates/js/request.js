@@ -134,13 +134,14 @@ $(document).ready(function() {
     e.preventDefault();
 
     id = $(this).attr("id");
-
+    console.log(id);
     $.ajax({
       url: "edit.php",
       method: "POST",
       data: { edit_factuur_id: id },
       success: function(response) {
         data = JSON.parse(response);
+        console.log(data);
         $("#factuurnummer").val(data[0].factuurnummer);
         $("#editfactvoornaam").val(data[0].voornaam);
         $("#editfactachternaam").val(data[0].achternaam);

@@ -54,10 +54,10 @@ require_once 'inc/klantenModals/toevoegModal.php';
                                         <td><?=$factuur->totaalIncBtw;?> €</td>
                                         <td><?=date_format(new datetime($factuur->datum), 'd/m/Y');?></td>
                                         <td> <a class="fa fa-edit fa-lg editfactBtn" href="#" data-toggle="modal"
-                                                data-target="#editModal" id="<?=$factuur->factuurnummer?>"
-                                                title="Pas factuur aan" style="color:orange;">
+                                                data-target="#editModal" id="<?=$factuur->id?>" title="Pas factuur aan"
+                                                style="color:orange;">
                                             </a> |&nbsp;
-                                            <a href="delete.php?fact_del_id=<?=$factuur->factuurnummer;?>"
+                                            <a href="delete.php?fact_del_id=<?=$factuur->id;?>"
                                                 title="Verwijder factuur" class="fa fa-trash fa-lg" style="color:red;"
                                                 onclick="return confirm('Weet je zeker dat je deze factuur wilt verwijderen?')"></a>
                                             |&nbsp;
