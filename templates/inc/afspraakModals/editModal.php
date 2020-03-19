@@ -11,7 +11,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <input type="hidden" id="id" name="editid">
+                    <input type="hidden" id="edit_afspraak_id" name="editid">
 
                     <div class="form-group">
                         <label>Datum</label>

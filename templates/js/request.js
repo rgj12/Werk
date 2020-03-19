@@ -58,8 +58,7 @@ $(document).ready(function() {
       data: { edit_afspr_id: id },
       success: function(response) {
         data = JSON.parse(response);
-        console.log(data);
-        $("#id").val(data.afspraak_id);
+        $("#edit_afspraak_id").val(data.afspraak_id);
         $("#datum").val(data.datum);
         $("#tijd").val(data.tijd);
         $("#omschrijving").val(data.omschrijving);
