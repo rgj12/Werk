@@ -11,34 +11,36 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <input type="hidden" name="af_id" id="af_id">
+
                     <div class="form-group">
                         <label>Voornaam</label>
-                        <input type="text" class="form-control" name="af_voornaam" id="af_voornaam" disabled>
+                        <input type="text" class="form-control" name="naam" id="af_voornaam" readonly>
                     </div>
 
                     <div class="form-group">
                         <label>Achternaam</label>
-                        <input type="text" class="form-control" name="af_achternaam" id="af_achternaam" disabled>
+                        <input type="text" class="form-control" name="achternaam" id="af_achternaam" readonly>
                     </div>
                     <div class="form-group">
                         <label>Met medewerker</label>
 
                         <select class="form-control" name="af_medewerker" id="af_medewerker">
                             <option value="" selected>Kies medewerker</option>
-                            <?php foreach ($medewerkers as $medewerker): ?>
-                            <option value="<?=$medewerker->username;?>"><?=$medewerker->username?></option>
-                            <?php endforeach;?>
+                            <?php foreach ($medewerkers as $medewerker) : ?>
+                            <option value="<?= $medewerker->username; ?>"><?= $medewerker->username ?></option>
+                            <?php endforeach; ?>
                         </select>
 
                     </div>
                     <div class="form-group">
                         <label>Datum</label>
-                        <input type="date" class="form-control" name="af_datum">
+                        <input type="date" class="form-control" name="af_datum" id="datum">
                     </div>
                     <div class="form-group">
                         <label>Tijd</label>
-                        <input type="time" class="form-control" name="af_tijd">
+                        <select name="af_tijd" id="tijd" class="form-control">
+                            <option value="">Selecteer datum eerst</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label>Omschrijving</label>
@@ -48,7 +50,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluit af</button>
-                    <input type="submit" class="btn btn-primary" name="maakAfspraak" value="Maak afspraak">
+                    <input type="submit" class="btn btn-primary" name="bookAfspraak" value="Maak afspraak">
                 </div>
             </form>
         </div>

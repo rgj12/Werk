@@ -42,23 +42,6 @@ if (isset($_POST['toevoegen'])) {
         redirect('klanten', 'Vul alle velden in!', 'error');
     }
 }
-
-//maak afspraak voor klant
-if (isset($_POST['maakAfspraak'])) {
-    $data = array();
-    $data['klant_id'] = $_POST['af_id'];
-    $data['medewerker'] = $_POST['af_medewerker'];
-    $data['id'] = getToken(15);
-    $data['datum'] = $_POST['af_datum'];
-    $data['tijd'] = $_POST['af_tijd'];
-    $data['omschr'] = $_POST['af_omschrijving'];
-    if ($klanten->makeAppointment($data)) {
-        redirect('klanten', 'afspraak aangemaakt', 'success');
-    } else {
-        redirect('klanten', 'er is iets misgegaan', 'error');
-    }
-}
-
 // product toevoegen
 if (isset($_POST['maakProduct'])) {
     $data = array();
@@ -215,5 +198,39 @@ if (isset($_POST['maakFactuur'])) {
         redirect('klanten', 'Factuur aangemaakt', 'success');
     } else {
         redirect('klanten', 'Er is iets misgegaan', 'error');
+    }
+}
+
+if (isset($_POST['book'])) {
+    $data = array();
+    $datum = $_POST['current_date'];
+    $data['vnaam'] = $_POST['naam'];
+    $data['anaam'] = $_POST['achternaam'];
+    $data['medewerker'] = $_POST['af_medewerker'];
+    $data['id'] = getToken(15);
+    $data['datum'] = $_POST['af_datum'];
+    $data['tijd'] = $_POST['af_tijd'];
+    $data['omschr'] = $_POST['af_omschrijving'];
+    if ($klanten->book($data)) {
+        redirect('book.php?date=' . $datum . '', 'afspraak aangemaakt', 'success');
+    } else {
+        redirect('book.php?date=' . $datum . '', 'er is iets misgegaan', 'error');
+    }
+}
+
+if (isset($_POST['bookAfspraak'])) {
+    $data = array();
+    $datum = $_POST['current_date'];
+    $data['vnaam'] = $_POST['naam'];
+    $data['anaam'] = $_POST['achternaam'];
+    $data['medewerker'] = $_POST['af_medewerker'];
+    $data['id'] = getToken(15);
+    $data['datum'] = $_POST['af_datum'];
+    $data['tijd'] = $_POST['af_tijd'];
+    $data['omschr'] = $_POST['af_omschrijving'];
+    if ($klanten->book($data)) {
+        redirect('klanten', 'afspraak aangemaakt', 'success');
+    } else {
+        redirect('klanten', 'er is iets misgegaan', 'error');
     }
 }

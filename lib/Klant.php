@@ -120,4 +120,27 @@ class Klant
         $info = $this->db->resultSet();
         return $info;
     }
+
+    public function book($data)
+    {
+        $this->db->query(
+            "INSERT INTO bookings (afspraak_id,datum,tijd,omschrijving,medewerker,naam,achternaam)
+            VALUES (:id,:datum,:tijd,:omsc,:medewerker,:naam,:achternaam)"
+        );
+
+        //bind data
+        $this->db->bind(':id', $data['id']);
+        $this->db->bind(':datum', $data['datum']);
+        $this->db->bind(':tijd', $data['tijd']);
+        $this->db->bind(':omsc', $data['omschr']);
+        $this->db->bind(':medewerker', $data['medewerker']);
+        $this->db->bind(':naam', $data['vnaam']);
+        $this->db->bind(':achternaam', $data['anaam']);
+
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

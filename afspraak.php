@@ -35,13 +35,29 @@ if (isset($_POST['completeAppointment'])) {
     if ($afspraken->completeAppointment($id, $datum)) {
         redirect('afspraak.php?overzichtafspraken', 'Afspraak compleet', 'success');
     } else {
-        redirect('afspraak.php?overzichtafspraken', 'Eris iets misgegaan', 'error');
+        redirect('afspraak.php?overzichtafspraken', 'Er is iets misgegaan', 'error');
     }
-
 }
 //afspraak voltooien pagina
 if (isset($_GET['voltooideafspraken'])) {
     $template = new Template('templates/voltooid_afspraken.php');
     $template->afspraken = $afspraken->getAllCompleteAppointments();
     echo $template;
+}
+
+if (isset($_POST['bdatum'])) {
+    $datum = $_POST['bdatum'];
+    $tijden = $afspraken->getTijden();
+    foreach ($tijden as $tijd) {
+        $tijdCheck = $afspraken->checkIfTimeIsTaken($datum, $tijd->tijden);
+        $output = '';
+        if ($tijdCheck > 0) {
+            $output .= '<option  value="" selected hidden>Selecteer tijd</option>
+            <option class="notAvailable" disabled value="' . $tijd->tijden . '">' . $tijd->tijden . '</option>';
+        } else {
+            $output .= '<option  value="" selected hidden>Selecteer tijd</option>
+            <option class="available" value="' . $tijd->tijden . '">' . $tijd->tijden . '</option>';
+        }
+        echo $output;
+    }
 }

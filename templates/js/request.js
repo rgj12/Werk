@@ -1,6 +1,6 @@
-$(document).ready(function() {
+$(document).ready(function () {
   //factuur form invullen
-  $(".factBtn").click(function(e) {
+  $(".factBtn").click(function (e) {
     e.preventDefault();
     id = $(this).attr("id");
 
@@ -8,7 +8,7 @@ $(document).ready(function() {
       url: "factuur.php",
       method: "POST",
       data: { fk_id: id },
-      success: function(response) {
+      success: function (response) {
         data = JSON.parse(response);
         console.log(data);
         $("#id").val(data.klantnummer);
@@ -24,7 +24,7 @@ $(document).ready(function() {
   });
 
   //edit form klanten invullen
-  $(".editBtn").click(function(e) {
+  $(".editBtn").click(function (e) {
     e.preventDefault();
     id = $(this).attr("id");
 
@@ -32,7 +32,7 @@ $(document).ready(function() {
       url: "edit.php",
       method: "POST",
       data: { edit_id: id },
-      success: function(response) {
+      success: function (response) {
         data = JSON.parse(response);
         console.log(data);
         $("#editid").val(data.id);
@@ -48,7 +48,7 @@ $(document).ready(function() {
     });
   });
   //afspraak form in afspraak overzicht invullen
-  $(".edit_afspr_Btn").click(function(e) {
+  $(".edit_afspr_Btn").click(function (e) {
     e.preventDefault();
     id = $(this).attr("id");
 
@@ -56,7 +56,7 @@ $(document).ready(function() {
       url: "edit.php",
       method: "POST",
       data: { edit_afspr_id: id },
-      success: function(response) {
+      success: function (response) {
         data = JSON.parse(response);
         $("#edit_afspraak_id").val(data.afspraak_id);
         $("#datum").val(data.datum);
@@ -69,7 +69,7 @@ $(document).ready(function() {
   });
 
   //afspraak form invullen
-  $(".afsp_btn").click(function(e) {
+  $(".afsp_btn").click(function (e) {
     e.preventDefault();
     id = $(this).attr("id");
 
@@ -77,7 +77,7 @@ $(document).ready(function() {
       url: "afspraak.php",
       method: "POST",
       data: { af_id: id },
-      success: function(response) {
+      success: function (response) {
         data = JSON.parse(response);
         console.log(data);
 
@@ -89,7 +89,7 @@ $(document).ready(function() {
   });
 
   //edit form producten invullen
-  $(".edit_product_Btn").click(function(e) {
+  $(".edit_product_Btn").click(function (e) {
     e.preventDefault();
 
     id = $(this).attr("id");
@@ -98,7 +98,7 @@ $(document).ready(function() {
       url: "edit.php",
       method: "POST",
       data: { edit_product_id: id },
-      success: function(response) {
+      success: function (response) {
         data = JSON.parse(response);
         console.log(data);
         $("#editid").val(data.id);
@@ -109,7 +109,7 @@ $(document).ready(function() {
   });
 
   //edit form diensten invullen
-  $(".edit_dienst_Btn").click(function(e) {
+  $(".edit_dienst_Btn").click(function (e) {
     e.preventDefault();
 
     id = $(this).attr("id");
@@ -118,7 +118,7 @@ $(document).ready(function() {
       url: "edit.php",
       method: "POST",
       data: { edit_dienst_id: id },
-      success: function(response) {
+      success: function (response) {
         data = JSON.parse(response);
         console.log(data);
         $("#editid").val(data.id);
@@ -129,7 +129,7 @@ $(document).ready(function() {
   });
 
   //edit form facturen invullen
-  $(".editfactBtn").click(function(e) {
+  $(".editfactBtn").click(function (e) {
     e.preventDefault();
 
     id = $(this).attr("id");
@@ -138,7 +138,7 @@ $(document).ready(function() {
       url: "edit.php",
       method: "POST",
       data: { edit_factuur_id: id },
-      success: function(response) {
+      success: function (response) {
         data = JSON.parse(response);
         console.log(data);
         $("#factuurnummer").val(data[0].factuurnummer);
@@ -172,5 +172,22 @@ $(document).ready(function() {
         $("#editbtOptie").html(data[0].betaalOpties);
       }
     });
+  });
+
+  $("#datum").change(function () {
+    datum = $(this).val();
+
+    $.ajax({
+      url: "afspraak.php",
+      method: "POST",
+      data: { bdatum: datum },
+      success: function (response) {
+        console.log(response);
+
+        $("#tijd").html(response);
+
+      }
+    });
+
   });
 });

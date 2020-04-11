@@ -11,9 +11,7 @@ class Afspraken
     public function getAllAppointments()
     {
         $this->db->query("SELECT *
-         FROM afspraken
-         INNER JOIN klanten
-         ON afspraken.klant_id = klanten.klantnummer
+         FROM bookings
          WHERE afspraak_voltooid = false");
 
         $results = $this->db->resultSet();
@@ -22,9 +20,7 @@ class Afspraken
     public function getAllCompleteAppointments()
     {
         $this->db->query("SELECT *
-         FROM afspraken
-         INNER JOIN klanten
-         ON afspraken.klant_id = klanten.klantnummer
+         FROM bookings
          WHERE afspraak_voltooid = true");
 
         $results = $this->db->resultSet();
@@ -33,7 +29,7 @@ class Afspraken
 
     public function deleteAppointment($id)
     {
-        $this->db->query('DELETE FROM afspraken WHERE afspraak_id = :id');
+        $this->db->query('DELETE FROM bookings WHERE afspraak_id = :id');
         $this->db->bind(':id', $id);
 
         if ($this->db->execute()) {
@@ -45,7 +41,7 @@ class Afspraken
 
     public function completeAppointment($id, $datum)
     {
-        $this->db->query("UPDATE afspraken SET afspraak_voltooid = true,datum_afspr_voltooid = :datum WHERE afspraak_id = :id");
+        $this->db->query("UPDATE bookings SET afspraak_voltooid = true,datum_afspr_voltooid = :datum WHERE afspraak_id = :id");
         $this->db->bind(':datum', $datum);
         $this->db->bind(':id', $id);
 
@@ -58,7 +54,7 @@ class Afspraken
 
     public function editAppointment($data)
     {
-        $this->db->query('UPDATE afspraken SET datum = :datum, tijd = :tijd, omschrijving = :omschrijving ,medewerker = :medewerker WHERE afspraak_id = :id');
+        $this->db->query('UPDATE bookings SET datum = :datum, tijd = :tijd, omschrijving = :omschrijving ,medewerker = :medewerker WHERE afspraak_id = :id');
 
         $this->db->bind(':id', $data['id']);
         $this->db->bind(':datum', $data['datum']);
@@ -75,7 +71,7 @@ class Afspraken
 
     public function getAppointmentInfo($id)
     {
-        $this->db->query("SELECT * FROM afspraken WHERE afspraak_id = :id");
+        $this->db->query("SELECT * FROM bookings WHERE afspraak_id = :id");
         $this->db->bind(':id', $id);
 
         $info = $this->db->single();
@@ -88,4 +84,22 @@ class Afspraken
         return $info;
     }
 
+    public function getTijden()
+    {
+        $this->db->query("SELECT * FROM beschikbare_tijden");
+        $info = $this->db->resultSet();
+        return $info;
+    }
+
+    public function checkIfTimeIsTaken($datum, $tijd)
+    {
+        $this->db->query("SELECT COUNT(tijd) AS result FROM bookings WHERE datum = :datum AND tijd = :tijd");
+        $this->db->bind(":datum", $datum);
+        $this->db->bind(":tijd", $tijd);
+
+        $result = $this->db->single();
+
+        return $result['result'];
+    }
+    //kri
 }

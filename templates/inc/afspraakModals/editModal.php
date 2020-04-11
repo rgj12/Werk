@@ -20,7 +20,7 @@
 
                     <div class="form-group">
                         <label>Tijd</label>
-                        <input type="time" class="form-control" name="tijd" id="tijd">
+                        <input type="text" class="form-control" name="tijd" id="tijd">
                     </div>
                     <div class="form-group">
                         <label>Omschrijving</label>
@@ -31,9 +31,9 @@
                         <label>Medewerker</label>
                         <select class="form-control" name="editmedewerker">
                             <option id="medewerker" value="" selected hidden></option>
-                            <?php foreach ($medewerkers as $medewerker): ?>
-                            <option value="<?=$medewerker->username;?>"><?=$medewerker->username;?></option>
-                            <?php endforeach;?>
+                            <?php foreach ($medewerkers as $medewerker) : ?>
+                            <option value="<?= $medewerker->username; ?>"><?= $medewerker->username; ?></option>
+                            <?php endforeach; ?>
                         </select>
 
                     </div>

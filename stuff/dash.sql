@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 15 mrt 2020 om 13:34
+-- Gegenereerd op: 11 apr 2020 om 14:18
 -- Serverversie: 10.4.8-MariaDB
 -- PHP-versie: 7.3.11
 
@@ -25,26 +25,59 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `afspraken`
+-- Tabelstructuur voor tabel `beschikbare_tijden`
 --
 
-CREATE TABLE `afspraken` (
-  `afspraak_id` varchar(255) NOT NULL,
-  `klant_id` int(11) NOT NULL,
-  `datum` date NOT NULL,
-  `tijd` time NOT NULL,
-  `omschrijving` varchar(255) NOT NULL,
-  `datum_afspr_gemaakt` date NOT NULL DEFAULT current_timestamp(),
-  `afspraak_voltooid` tinyint(1) NOT NULL DEFAULT 0
+CREATE TABLE `beschikbare_tijden` (
+  `id` int(11) NOT NULL,
+  `tijden` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Gegevens worden geëxporteerd voor tabel `afspraken`
+-- Gegevens worden geëxporteerd voor tabel `beschikbare_tijden`
 --
 
-INSERT INTO `afspraken` (`afspraak_id`, `klant_id`, `datum`, `tijd`, `omschrijving`, `datum_afspr_gemaakt`, `afspraak_voltooid`) VALUES
-('gBnOtyupyBlUMrz', 5, '2020-03-05', '12:00:00', 'BROODJE BRENGENs', '2020-03-15', 0),
-('hSqiS6H1gdEOto8', 3, '2020-03-25', '13:04:00', 'testa', '2020-03-15', 0);
+INSERT INTO `beschikbare_tijden` (`id`, `tijden`) VALUES
+(1, '10:00-10:30'),
+(2, '10:30-11:00'),
+(3, '11:00-11:30'),
+(4, '11:30-12:00'),
+(5, '12:00-12:30'),
+(6, '12:30-13:00'),
+(7, '13:00-13:30'),
+(8, '13:30-14:00'),
+(9, '14:00-14:30'),
+(10, '14:30-15:00'),
+(11, '15:00-15:30'),
+(12, '15:30-16:00'),
+(13, '16:00-16:30'),
+(14, '16:30-17:00');
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `bookings`
+--
+
+CREATE TABLE `bookings` (
+  `afspraak_id` varchar(255) NOT NULL,
+  `datum` date NOT NULL,
+  `tijd` varchar(255) NOT NULL,
+  `omschrijving` text NOT NULL,
+  `medewerker` varchar(255) NOT NULL,
+  `datum_afspr_gemaakt` date NOT NULL DEFAULT current_timestamp(),
+  `afspraak_voltooid` tinyint(1) NOT NULL DEFAULT 0,
+  `datum_afspr_voltooid` varchar(255) NOT NULL,
+  `naam` varchar(255) NOT NULL,
+  `achternaam` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `bookings`
+--
+
+INSERT INTO `bookings` (`afspraak_id`, `datum`, `tijd`, `omschrijving`, `medewerker`, `datum_afspr_gemaakt`, `afspraak_voltooid`, `datum_afspr_voltooid`, `naam`, `achternaam`) VALUES
+('zKYfg68J6A07Fmu', '2020-04-14', '16:30-17:00', 'test', 'renato', '2020-04-11', 0, '', 'renato', 'Gomes');
 
 -- --------------------------------------------------------
 
@@ -61,6 +94,13 @@ CREATE TABLE `chat_message` (
   `urgentie` varchar(45) NOT NULL,
   `gelezen` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `chat_message`
+--
+
+INSERT INTO `chat_message` (`chat_message_id`, `to_user_id`, `from_user_id`, `bericht`, `time_stamp`, `urgentie`, `gelezen`) VALUES
+(2, 2, 1, 'h0ojhgug', '2020-04-02 22:31:18', 'hoog', 'niet');
 
 -- --------------------------------------------------------
 
@@ -80,7 +120,7 @@ CREATE TABLE `diensten` (
 --
 
 INSERT INTO `diensten` (`id`, `dienstnaam`, `dienstprijs`, `aantal_verkocht`) VALUES
-('2hKAlcUXesycIrS', 'testa', '12.12', 1);
+('2hKAlcUXesycIrS', 'testa', '12.12', 2);
 
 -- --------------------------------------------------------
 
@@ -123,7 +163,7 @@ CREATE TABLE `facturen` (
 --
 
 INSERT INTO `facturen` (`id`, `factuurnummer`, `voornaam`, `achternaam`, `email`, `straatnaam`, `postcode`, `woonplaats`, `telefoonnummer`, `klantnummer`, `product1`, `product2`, `product3`, `dienst1`, `dienst2`, `dienst3`, `product_prijs1`, `product_prijs2`, `product_prijs3`, `dienst_prijs1`, `dienst_prijs2`, `dienst_prijs3`, `totaalIncBtw`, `totaalExBtw`, `totaalBTW`, `datum`, `betaalOpties`) VALUES
-('5BLDxIHaxChAOhY', 21, 'gerrit', 'test', 'yo@gmail.com', 'teststraat', '3201ik', 'RDAM', '25666', 5, 'testa ', ' ', ' ', ' ', ' ', 'testa ', ' 33.00', ' 0', ' 0', ' 0', ' 0', ' 12.12', '45.12', '37.29', '7.83', '2020-03-15', 'per omgaande');
+('cCdGhPGvbaAnL3R', 22, 'Renato', 'gomes faial', 'renatogomes600@gmail.com', 'zuidakker 98', '3206tj', 'spijkenisse', '', 3, 'product ', 'product ', ' ', ' ', ' ', ' ', ' 21.00', ' 21.00', ' 0', ' 0', ' 0', ' 0', '42.00', '34.71', '7.29', '2020-03-19', '14 dagen');
 
 -- --------------------------------------------------------
 
@@ -183,7 +223,7 @@ CREATE TABLE `producten` (
 --
 
 INSERT INTO `producten` (`id`, `productnaam`, `prijs`, `aantal_verkocht`) VALUES
-('UC0ZcNVpHA3BzvG', 'product', '21.00', 6),
+('UC0ZcNVpHA3BzvG', 'product', '21.00', 7),
 ('wQfo65I0cdsSlz5', 'testa', '33.00', 1);
 
 -- --------------------------------------------------------
@@ -213,11 +253,16 @@ INSERT INTO `users` (`id`, `username`, `password`, `profiel_foto`, `level`) VALU
 --
 
 --
--- Indexen voor tabel `afspraken`
+-- Indexen voor tabel `beschikbare_tijden`
 --
-ALTER TABLE `afspraken`
-  ADD PRIMARY KEY (`afspraak_id`),
-  ADD KEY `klanten_afspraken` (`klant_id`);
+ALTER TABLE `beschikbare_tijden`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexen voor tabel `bookings`
+--
+ALTER TABLE `bookings`
+  ADD PRIMARY KEY (`afspraak_id`);
 
 --
 -- Indexen voor tabel `chat_message`
@@ -266,16 +311,22 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT voor een tabel `beschikbare_tijden`
+--
+ALTER TABLE `beschikbare_tijden`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
 -- AUTO_INCREMENT voor een tabel `chat_message`
 --
 ALTER TABLE `chat_message`
-  MODIFY `chat_message_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `chat_message_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT voor een tabel `facturen`
 --
 ALTER TABLE `facturen`
-  MODIFY `factuurnummer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `factuurnummer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT voor een tabel `klanten`
